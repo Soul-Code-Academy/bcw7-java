@@ -1,0 +1,17 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Instanciei a classe através de um novo objeto
+		//Classe Jogador
+		
+		Jogador j1 = new Jogador("Caio", 23);
+		Jogador j2 = new Jogador("Rafaela", 18);
+		Jogador j3 = new Jogador("José", 31);
+		System.out.println(j1.nome, j1.idade);
+		
+	}
+
+}
