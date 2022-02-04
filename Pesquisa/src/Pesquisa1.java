@@ -10,17 +10,14 @@ public class Pesquisa1 {
 		// TODO Auto-generated method stub
 		
 		
-//		Programa Java para preencher uma subarray de determinada matriz.
+// Programa Java para preencher uma subarray de determinada matriz.
 		
-//		Podemos preencher toda a matriz.
+// Podemos preencher toda a matriz.
 		
 		int ar[] = {2, 2, 1, 8, 3, 2, 2, 4, 2}; 
 
 		  
-
-//		Para preencher a matriz completa com um determinado 
-//
-//		valor 
+// Para preencher a matriz completa com um determinado valor 
 
         Arrays.fill(ar, 10); 
 
@@ -29,7 +26,6 @@ public class Pesquisa1 {
                   " com 10\n" + Arrays.toString(ar)); 
 
     
-	
 //	Podemos preencher parte da matriz.
 	
 //	Programa Java para preencher uma matriz de subarray com  
@@ -46,20 +42,18 @@ public class Pesquisa1 {
      System.out.println(Arrays.toString(ar)); 
      
      
-//     Podemos preencher uma matriz
-//     multidimensional Podemos usar um loop para preencher uma matriz multidimensional.
-//     1)Encha matriz 2D
+// Podemos preencher uma matriz multidimensional Podemos usar um loop para preencher uma matriz multidimensional.
 
-     
+// 1)Preenncha matriz 2D
 
-//		Programa Java para preencher uma matriz multidimensional com  
-//		dado valor. 
+    
+// Programa Java para preencher uma matriz multidimensional com dado valor. 
      
      int [][]arrr = new int [3][4]; 
 
      
 
-//     Preencha cada linha com 10.
+// Preencha cada linha com 10.
 
      for (int[] row : arrr) 
 
@@ -67,17 +61,14 @@ public class Pesquisa1 {
 
      System.out.println(Arrays.deepToString(arrr)); 
      
-//     2) Encha a matriz 3D
-//
-//
-//	Programa Java para preencher uma matriz multidimensional com  
-//	dado valor. 
+//  2) Preencha a matriz 3D
+
+//	Programa Java para preencher uma matriz multidimensional com dado valor. 
 
      int[][][] arrrr = new int[3][4][5]; 
 
-     
-
-//     Encha cada linha com -1.
+ 
+// Encha cada linha com -1.
 
      for (int[][] row : arrrr) { 
 

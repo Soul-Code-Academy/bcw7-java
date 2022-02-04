@@ -10,7 +10,7 @@
 //   extends Object
 
 
-	import java.lang.*;
+import java.lang.*;
    
    public class Pesquisa2 {
 

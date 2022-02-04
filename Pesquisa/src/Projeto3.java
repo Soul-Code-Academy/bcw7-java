@@ -28,9 +28,9 @@ public class Projeto3 {
 		// TODO Auto-generated method stub
 		
 
-//		Programa Java para demonstrar o trabalho de Arrays.equals()
+// Programa Java para demonstrar o trabalho de Arrays.equals()
 		
-		 // Vamos criar diferentes matrizes de inteiros
+// Vamos criar diferentes matrizes de inteiros
 		
         int[] arr1 = new int [] {1, 2, 3, 4};
         int[] arr2 = new int [] {1, 2, 3, 4};
@@ -41,8 +41,7 @@ public class Projeto3 {
         System.out.println("is arr1 equals to arr3 : " +
                                 Arrays.equals(arr1, arr3));
         
-//        Programa Java para demonstrar o trabalho de Arrays.equals()
-//        para objetos definidos pelo usuário.
+//  Programa Java para demonstrar o trabalho de Arrays.equals() para objetos definidos pelo usuário.
 
         Student [] arr4 = {new Student(111, "bbbb", "london"),
                 new Student(131, "aaaa", "nyc"),

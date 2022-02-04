@@ -1,4 +1,5 @@
 //PESQUISANDO ELEMENTOS EM VETOR USANDO ÍNDICE EM JAVA
+
 //O Vector implementa uma matriz dinâmica que significa que pode aumentar ou diminuir conforme necessário. Como uma matriz, ele contém componentes que podem ser acessados ​​por meio de um índice inteiro. Um elemento de um vetor pode ser pesquisado usando um índice com métodos diferentes. Suponha que se o elemento não estiver presente no Vector, o método retornará -1.
 //
 //Método 1: (Usando indexOf (Object o) )
