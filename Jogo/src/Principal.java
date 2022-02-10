@@ -2,7 +2,8 @@
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		System.out.println("Quantidade de Jogadores: " + Jogador.quantJogadores);
 		
 		//Instanciei a classe através de um novo objeto
 		//Classe Jogador
@@ -24,11 +25,22 @@ public class Principal {
 		System.out.println("Nome do jogador 2: " + j2.getNome() + "." +  " Idade: " + j2.getIdade() + " anos.");
 		System.out.println("Nome do jogador 3: " + j3.getNome() + "." +  " Idade: " + j3.getIdade() + " anos.");
 		
+		System.out.println("Quantidade de Jogadores: " + Jogador.quantJogadores);
+		
 		j1.diminuirVidas();
 		j1.diminuirVidas();
-		j1.diminuirVidas();
-		j1.diminuirVidas();
-		j1.diminuirVidas();	
+		j3.diminuirVidas();
+		j2.diminuirVidas();
+		
+		j1.pontuar(38);
+		j2.pontuar(18);
+		j3.pontuar(3);
+		j2.pontuar(-8);
+		
+		j1.dados();
+		j2.dados();
+		j3.dados();
+		
 	}
 
 }
