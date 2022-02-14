@@ -35,5 +35,11 @@ import java.util.Scanner;
 	public void fecharPedido(){
 		super.fecharPedido();
 	}
+	
+	public void notaFiscal() {
+		super.notaFiscal();
+		System.out.println("Salgado: " + getNome()); 
+	}
+
 		
 }

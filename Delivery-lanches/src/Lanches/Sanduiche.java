@@ -20,5 +20,10 @@ import java.util.List;
 		System.out.println("  Você escolheu os ingredientes: " + this.ingredientes);
 		
 	}
+	
+	public void notaFiscal() {
+		super.notaFiscal();
+		
+	}
 
 }

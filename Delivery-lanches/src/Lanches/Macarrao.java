@@ -4,6 +4,6 @@ package Lanches;
 	public class Macarrao extends Massa{
 
 	//Constructor
-	public Macarrao(){}		
-
+	public Macarrao(){}	
+	
 }

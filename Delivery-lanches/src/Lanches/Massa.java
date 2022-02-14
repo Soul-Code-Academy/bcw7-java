@@ -65,15 +65,19 @@ public abstract class Massa extends Lanche{
 	
 
 
+	public void notaFiscal() {
+		super.notaFiscal();
+		System.out.println("Massa: " + getSabor());
+	}
+	
 	public void fecharPedido() {
 		super.fecharPedido();	
 	}
 	
 	public void calcularTempo() {
 		super.calcularTempo(getTempoTotal());
+	}
 	
-
-}
-		
+	
 
 }

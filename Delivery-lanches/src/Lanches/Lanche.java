@@ -5,9 +5,11 @@ import java.util.Scanner;
 	//Super classe das classes Salgado, Massa, Bolo, Sanduiche
 	public abstract class Lanche {
 
+	//Atributos
 	private double preco;
 	private double tempoTotal;
 	private int quantidade;
+	private String cliente;
 	
 	//Constructor tem que ter o mesmo nome da classe
 	public Lanche() {}
@@ -37,13 +39,24 @@ import java.util.Scanner;
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-
+	
+	
 	//Métodos comuns a todas as subclasses 
-	public void escolherQuantidade() {
-		
+	
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void escolherQuantidade() {	
 		 Scanner entrada = new Scanner(System.in);	
 	     System.out.print("Digite a quantidade: " + getQuantidade());
 	     quantidade = entrada.nextInt();
+	}
+	
+	public void cliente() {	
+		 Scanner entrada = new Scanner(System.in);	
+	     System.out.print("Digite seu nome: " + getCliente());
+	     cliente = entrada.next();
 	}
 
 	public void calcularTempo(double distancia) {
@@ -67,6 +80,12 @@ import java.util.Scanner;
 		
 	}
 
+	public void notaFiscal() {
+		System.out.println("Nome: " + getCliente());
+		System.out.println("Quantidade: " + getQuantidade());
+		System.out.println("Valor Total: R$ " + (getPreco()* getQuantidade()));
+	
+	}
 
 	
 }

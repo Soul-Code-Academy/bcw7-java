@@ -1,7 +1,8 @@
+//Documento: https://docs.google.com/document/d/12VjowZSiKikKyrqMGPuWld2TOmc3JK0-1CeQX6rdJFM/edit?usp=sharing
+
 package Lanches;
 
 import java.util.Scanner;
-
 
 public class ProgramaMain {
 	public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class ProgramaMain {
 		System.out.println("				[ 3 ] - Bolos .......... R$ 120,00");
 		System.out.println("				[ 4 ] - Salgados ....... (depende do salgado");
 		System.out.println("Escolha a opção desejada:");
+		
 		
 		escolhaDoTipoLanche = ler.nextInt();
 		
@@ -53,6 +55,7 @@ public class ProgramaMain {
 				
 }
 	
+
 	public static void escolherIngrediente() {
 		int escolhaDoIngrediente=11, contador=0;
 		double distancia, quantIngrediente = -1;
@@ -121,10 +124,12 @@ public class ProgramaMain {
 		
 		lanche1.setPreco(10 + quantIngrediente * 2);
 		lanche1.escolherQuantidade();
+		lanche1.cliente();
 		mensagemTempoDeEntrega();
 		distancia = lerDados.nextInt();
 		lanche1.fecharPedido();
 		lanche1.calcularTempo(distancia);
+		lanche1.notaFiscal();
 		
 	}	
 	
@@ -183,10 +188,12 @@ public class ProgramaMain {
 	       			System.out.println("                           Você escolheu macarrão " + massa1.getSabor() + " e o molho escolhido foi: " + massa1.getMolho());
 	       			System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
 	       			massa1.escolherQuantidade();
+	       			massa1.cliente();
 	       			mensagemTempoDeEntrega();
 	       			distancia = lerDados.nextInt();
 	     			massa1.fecharPedido();
 	     			massa1.calcularTempo(distancia);
+	     			massa1.notaFiscal();
 	       			break;
 	       		case 2:
 	       			Massa massa2 = new Pizza();
@@ -237,10 +244,12 @@ public class ProgramaMain {
 	       			System.out.println("                            Você escolheu lasanha e o molho escolhido foi: " + massa3.getMolho());
 	       			System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
 	       			massa3.escolherQuantidade();
+	       			massa3.cliente();
 	       			mensagemTempoDeEntrega();
 	       			distancia = lerDados.nextInt();
 	       			massa3.fecharPedido();
 	       			massa3.calcularTempo(distancia);
+	       			massa3.notaFiscal();
 	       			break;
 	       		default:
 	       			System.out.println("Número inválido");
@@ -303,6 +312,7 @@ public class ProgramaMain {
        			escolha = lerDadosBolo.nextInt();
        		
        			bolo.escolherQuantidade();
+       			bolo.cliente();
        			switch (escolha) {
        			
 		     	case 1:
@@ -362,11 +372,11 @@ public class ProgramaMain {
 		       	System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
 	       			System.out.println("                           Você escolheu o bolo : " + bolo.getMassa() + " "  + bolo.getRecheioEcobertura());
 	       			System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
-	       		
 	       			mensagemTempoDeEntrega();
 	       			distancia = lerDadosBolo.nextInt();
 		     		bolo.fecharPedido();
 		     		bolo.calcularTempo(distancia);
+		     		bolo.notaFiscal();
 		     		break;	       			
 		}
 		
@@ -428,8 +438,10 @@ public class ProgramaMain {
 		       			System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
 		       			mensagemTempoDeEntrega();
 		       			distancia = lerDadosSalgado.nextInt();
+		       			salgado1.cliente();
 		     			salgado1.fecharPedido();
 		     			salgado1.calcularTempo(distancia);
+		     			salgado1.notaFiscal();
 		       			break;
 	       				
 	       	case 2:
@@ -472,13 +484,12 @@ public class ProgramaMain {
 				System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
        			System.out.println("                            Você escolheu salgado frito " + salgado2.getNome() + salgado2.getQuantidade());
        			System.out.println(" ----------------------------------------------------------------------------------------------------------- ");
-       			
-  
        			mensagemTempoDeEntrega();
        			distancia = lerDadosSalgado.nextInt();
-       		
+       			salgado2.cliente();
        			salgado2.fecharPedido();
        			salgado2.calcularTempo(distancia);
+       			salgado2.notaFiscal();
        			break;       		   			
 		
 			}	

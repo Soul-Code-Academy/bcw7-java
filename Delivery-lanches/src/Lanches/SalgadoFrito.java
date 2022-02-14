@@ -5,4 +5,5 @@ package Lanches;
 
 	//Constructor
 	public SalgadoFrito() {}
+	
 }

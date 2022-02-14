@@ -24,5 +24,10 @@ public class Bolo extends Lanche{
 		this.recheioEcobertura = recheioEcobertura;
 	}
 
+	public void notaFiscal() {
+		super.notaFiscal();
+		System.out.println("Bolo: " + getMassa() + "" + getRecheioEcobertura());	
+	}
+
 	
 }
