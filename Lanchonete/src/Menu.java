@@ -17,7 +17,7 @@ public class Menu {
 		public void fazerPedido() {
 			System.out.println("---------------------------------------------------------------------------");
 			System.out.printf("Nome do cliente: %s%n", this.getNome());
-			System.out.printf("Prato escolhido: %s%n" , this.getEscolha());
+			System.out.printf("Prato escolhido: %s%n" ,this.getEscolha());
 		}
 
 		public String getNome() {
