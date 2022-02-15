@@ -26,7 +26,7 @@ public class Bolo extends Lanche{
 
 	public void notaFiscal() {
 		super.notaFiscal();
-		System.out.println("Bolo: " + getMassa() + "" + getRecheioEcobertura());	
+		System.out.println("Bolo: " + getMassa() + " " + getRecheioEcobertura());	
 	}
 
 	

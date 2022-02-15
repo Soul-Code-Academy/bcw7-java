@@ -1,5 +1,3 @@
-//Pesquisar sobre o List
-
 
 import java.util.ArrayList;
 
