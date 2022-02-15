@@ -86,6 +86,24 @@ import java.util.Scanner;
 		System.out.println("Valor Total: R$ " + (getPreco()* getQuantidade()));
 	
 	}
+	
+	public static void mensagemTempoDeEntrega() {
+	    pularLinhas(1);
+		System.out.println(" _______________________________________________________________________________________________________________ ");
+		System.out.println(" ");
+		System.out.println("                Para cálculo do tempo de entrega, precisamos saber a distância até sua casa! ");
+		System.out.println(" ");
+		System.out.println(" Qual a distância da sua casa? (em km) ");
+	}
+	
+	public static void pularLinhas(int quantLinhas)
+    {
+            for(int i = 0; i < quantLinhas; i++)
+            System.out.println("");
+    }
+	
+	
+
 
 	
 }

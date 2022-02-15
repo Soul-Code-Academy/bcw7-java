@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity //Faz definição de tabela
 public class Aluno {
@@ -22,8 +26,10 @@ public class Aluno {
 	@Column(nullable = false, length = 30)
 	private String al_cidade;
 	
-	@Column(nullable = false, length = 20)
-	private String al_turma;
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "id_turma")
+	private Turma turma;
 
 	public Integer getRa_aluno() {
 		return ra_aluno;
@@ -57,13 +63,14 @@ public class Aluno {
 		this.al_cidade = al_cidade;
 	}
 
-	public String getAl_turma() {
-		return al_turma;
+	public Turma getTurma() {
+		return turma;
 	}
 
-	public void setAl_turma(String al_turma) {
-		this.al_turma = al_turma;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
+
 	
 	
 }

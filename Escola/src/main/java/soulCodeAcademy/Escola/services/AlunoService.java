@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import soulCodeAcademy.Escola.models.Aluno;
+import soulCodeAcademy.Escola.models.Turma;
 import soulCodeAcademy.Escola.repositorys.AlunoRepository;
 
 @Service //Criação dos serviços para utilizar os métodos JPA
@@ -16,6 +17,9 @@ public class AlunoService {
 	
 	@Autowired
 	private AlunoRepository alunoRepository;
+	
+	@Autowired
+	private TurmaService turmaService ;
 	
 	// Serviço: implementar listagem dos alunos cadastrados
 	public List<Aluno>mostrarTodosAlunos(){
@@ -30,7 +34,9 @@ public class AlunoService {
 		return aluno.orElseThrow();
 	}
 	
-	public Aluno inserirAluno(Aluno aluno) {
+	public Aluno inserirAluno(Integer id_turma, Aluno aluno) {
+		aluno.setRa_aluno(null);
+		Turma turma = turmaService.buscarUmaTurma(id_turma);
 		return alunoRepository.save(aluno);
 	}
 	

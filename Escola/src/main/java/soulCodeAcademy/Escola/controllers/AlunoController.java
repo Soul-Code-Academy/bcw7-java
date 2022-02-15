@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -50,18 +51,25 @@ public class AlunoController {
 		return ResponseEntity.ok().body(aluno);
 	}
 	
-	@PostMapping("/aluno")
-	public ResponseEntity<Void>inserirAluno(@RequestBody Aluno aluno){
-		
-		aluno = alunoService.inserirAluno(aluno);
-		
-		//URI - Identificador uniforme de recurso. Serve para identificar ou denominar um recurso vindo do servidor. 	Une o protocolo HTTP + localização do recurso (url + nome do recurso).
-		//ServletUriComponentsBuilder - e uma classe que possui métodos para criar ligações com o servidor.
-		//buildAndExpand- cria uma nova instância e coloca e coloca os dados que foram passados através do corpo da requisição no modelo que temos como objeto do aluno
-		
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aluno.getRa_aluno()).toUri();
-		return ResponseEntity.created(uri).build()
-;	}
+	//URI - Identificador uniforme de recurso. Serve para identificar ou denominar um recurso vindo do servidor. 	Une o protocolo HTTP + localização do recurso (url + nome do recurso).
+			//ServletUriComponentsBuilder - e uma classe que possui métodos para criar ligações com o servidor.
+			//buildAndExpand- cria uma nova instância e coloca e coloca os dados que foram passados através do corpo da requisição no modelo que temos como objeto do aluno
+	
+//	@PostMapping("/aluno")
+//	public ResponseEntity<Void>inserirAluno(@RequestBody Aluno aluno){
+//		
+//		aluno = alunoService.inserirAluno(aluno);
+//		
+//		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aluno.getRa_aluno()).toUri();
+//		return ResponseEntity.created(uri).build()
+//;	}
+	
+	@PostMapping
+	public ResponseEntity<Aluno> inserirAluno(@RequestParam(value="turma")Integer id_turma, @RequestBody Aluno aluno){
+		aluno = alunoService.inserirAluno(id_turma,aluno);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/aluno/{id}").buildAndExpand(aluno.getRa_aluno()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
 	
 	@DeleteMapping("/aluno/{ra_aluno}")
 	public ResponseEntity<Void>deletarUmAluno(@PathVariable Integer ra_aluno){

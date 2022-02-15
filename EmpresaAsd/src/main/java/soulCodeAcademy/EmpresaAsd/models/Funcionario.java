@@ -5,6 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity //Faz definição de tabela
 
@@ -21,8 +26,10 @@ public class Funcionario {
 		@Column(nullable = false, length = 30)
 		private String func_cidade;
 		
-		@Column(nullable = false, length = 20)
-		private String func_cargo;
+		@JsonIgnore
+		@ManyToOne
+		@JoinColumn(name = "id_cargo")
+		private Cargo cargo;
 
 		public Integer getId_funcionario() {
 			return id_funcionario;
@@ -48,12 +55,14 @@ public class Funcionario {
 			this.func_cidade = func_cidade;
 		}
 
-		public String getFunc_cargo() {
-			return func_cargo;
+		public Cargo getCargo() {
+			return cargo;
 		}
 
-		public void setFunc_cargo(String func_cargo) {
-			this.func_cargo = func_cargo;
+		public void setCargo(Cargo cargo) {
+			this.cargo = cargo;
 		}
 
+		
+		
 }
