@@ -11410,3 +11410,195 @@ org.eclipse.core.runtime.CoreException: Launch configuration EscolaApplication r
 2022-02-15 16:39:33,804 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-02-15 16:39:33,804 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-02-15 16:39:33,804 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/EmpresaAsd/src/test/resources
+2022-02-16 09:11:36,393 [Worker-17: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 10:46:27,572 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 10:46:27,713 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 10:46:27,725 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 10:46:31,560 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 10:46:31,582 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 10:46:31,583 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 10:46:31,621 [Worker-47: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 11:56:52,202 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 11:56:54,012 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 11:56:55,896 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 11:57:38,449 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 11:57:38,457 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 11:57:38,457 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 11:57:38,457 [Worker-92: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 11:59:09,723 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 11:59:09,744 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 11:59:09,745 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 11:59:09,772 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 11:59:09,775 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 11:59:09,775 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 11:59:09,775 [Worker-93: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 12:01:07,444 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 12:01:07,445 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 12:01:07,446 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 12:01:07,454 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 12:01:07,458 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 12:01:07,458 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 12:01:07,458 [Worker-95: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 12:05:16,739 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 12:05:16,774 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 12:05:16,817 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 12:05:16,869 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 12:05:16,873 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 12:05:16,873 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 12:05:16,873 [Worker-101: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:04:48,746 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:04:48,909 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:04:48,935 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:04:50,603 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:04:50,617 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:04:50,618 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:04:50,618 [Worker-109: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:11:03,135 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:11:03,152 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:11:03,153 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:11:03,210 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:11:03,213 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:11:03,213 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:11:03,214 [Worker-120: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:12:18,256 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:12:18,256 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:12:18,257 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:12:18,264 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:12:18,270 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:12:18,271 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:12:18,271 [Worker-117: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:13:50,632 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:13:50,632 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:13:50,632 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:13:50,646 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:13:50,649 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:13:50,650 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:13:50,650 [Worker-111: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:27:22,680 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:27:22,695 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:27:22,721 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:27:23,305 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:27:23,308 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:27:23,308 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:27:23,308 [Worker-126: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:38:08,204 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:38:08,243 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:38:08,244 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:38:09,678 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:38:09,706 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:38:09,706 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:38:09,706 [Worker-124: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:40:29,619 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:40:29,692 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:40:29,713 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:40:31,280 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:40:31,290 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:40:31,291 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:40:31,291 [Worker-131: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:42:32,170 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:42:32,170 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:42:32,183 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:42:32,216 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:42:32,221 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:42:32,222 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:42:32,222 [Worker-129: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:47:29,459 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:47:29,460 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:47:29,460 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:47:29,529 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:47:29,532 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:47:29,533 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:47:29,533 [Worker-130: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 13:58:39,894 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:58:39,894 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:58:39,894 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 13:58:39,905 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 13:58:39,920 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 13:58:39,920 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 13:58:39,920 [Worker-138: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 14:22:24,586 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 14:40:30,817 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 14:40:30,926 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 14:40:30,960 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 14:40:31,058 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 14:40:31,074 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 14:40:31,075 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 14:40:31,075 [Worker-26: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 14:41:12,537 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 14:41:12,537 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 14:41:12,561 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 14:41:12,581 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 14:41:12,585 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 14:41:12,585 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 14:41:12,585 [Worker-28: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 15:24:07,650 [Worker-9: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 15:39:00,067 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 15:39:00,096 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 15:39:00,101 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 15:39:00,173 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 15:39:00,179 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 15:39:00,180 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 15:39:00,180 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 15:57:41,863 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 15:57:51,413 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 15:57:51,414 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 15:57:51,422 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 15:57:51,526 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 15:57:51,547 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 15:57:51,547 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 15:57:51,550 [Worker-12: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 18:00:19,908 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-02-16 18:00:30,431 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 18:00:30,432 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 18:00:30,459 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 18:00:30,573 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 18:00:30,579 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 18:00:30,580 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 18:00:30,580 [Worker-14: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 19:32:16,628 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 19:34:53,309 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 19:34:53,310 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 19:34:53,314 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 19:34:53,409 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 19:34:53,421 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 19:34:53,421 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 19:34:53,421 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 19:38:35,563 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 19:38:35,592 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 19:38:35,660 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 19:38:35,767 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 19:38:35,772 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 19:38:35,772 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 19:38:35,772 [Worker-8: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-16 21:18:36,653 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-16 21:18:44,245 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 21:18:44,252 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 21:18:44,258 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-16 21:18:44,332 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-16 21:18:44,339 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-16 21:18:44,339 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-16 21:18:44,339 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-17 09:17:00,696 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-17 09:17:11,953 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 09:17:11,953 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 09:17:11,962 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-17 09:17:12,014 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-17 09:17:12,019 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 09:17:12,019 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 09:17:12,019 [Worker-0: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-17 10:26:53,296 [Worker-9: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-17 10:27:04,952 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 10:27:04,953 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 10:27:04,973 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-17 10:27:05,037 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-17 10:27:05,045 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 10:27:05,045 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 10:27:05,046 [Worker-5: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources
+2022-02-17 11:26:24,162 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-02-17 11:26:34,092 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 11:26:34,093 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 11:26:34,107 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-02-17 11:26:34,163 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-02-17 11:26:34,168 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-02-17 11:26:34,169 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-02-17 11:26:34,169 [Worker-11: Launching EscolaApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alanadias/eclipse-workspace/java/Escola/src/test/resources

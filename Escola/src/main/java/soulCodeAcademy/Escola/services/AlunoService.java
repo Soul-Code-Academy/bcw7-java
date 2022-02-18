@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import soulCodeAcademy.Escola.models.Aluno;
 import soulCodeAcademy.Escola.models.Turma;
 import soulCodeAcademy.Escola.repositorys.AlunoRepository;
+import soulCodeAcademy.Escola.services.exceptions.ObjectNotFoundException;
 
 @Service //Criação dos serviços para utilizar os métodos JPA
 public class AlunoService {
@@ -31,12 +32,13 @@ public class AlunoService {
 		//Optional - evita os erros NullPointerExcetion, tirando a necessidade da verificação por criação de código. Ex.: (if aluno != null
 		//orElseThrow() - se o aluno estiver no banco de dads, retorna o aluno. Se não, lança uma exceção.
 		Optional<Aluno>aluno = alunoRepository.findById(ra_Aluno);
-		return aluno.orElseThrow();
+		return aluno.orElseThrow(() -> new ObjectNotFoundException("Objeto não cadastrado. ID: " + ra_Aluno));
 	}
 	
 	public Aluno inserirAluno(Integer id_turma, Aluno aluno) {
 		aluno.setRa_aluno(null);
 		Turma turma = turmaService.buscarUmaTurma(id_turma);
+		aluno.setTurma(turma);		
 		return alunoRepository.save(aluno);
 	}
 	
