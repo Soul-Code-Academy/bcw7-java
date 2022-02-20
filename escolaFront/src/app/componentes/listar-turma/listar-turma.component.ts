@@ -7,7 +7,7 @@ import { Turma } from 'src/app/modelos/turmaModel';
   templateUrl: './listar-turma.component.html',
   styleUrls: ['./listar-turma.component.css']
 })
-export class ListarTurmaComponent implements OnInit { 
+export class ListarTurmaComponent implements OnInit {
 
 turmas: Turma [] = []
 
@@ -23,15 +23,6 @@ turmas: Turma [] = []
     })
   }
 
-  excluirUmaTurma(id_turma: any){
-    this.turmaService.excluirUmaTurma(id_turma)
-      .subscribe(
-       resposta => {
-          
-        this.turmas = resposta
-      }),
-      (  error: any) => console.log(error);
- 
-    }
+
 
 }

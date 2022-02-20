@@ -12,7 +12,7 @@
 	<artifactId>EmpresaAsd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EmpresaAsd</name>
-	<description>Projeto paralelo ao desenvolvido em aula</description>
+	<description>Meu projeto</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

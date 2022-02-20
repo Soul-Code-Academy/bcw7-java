@@ -1,0 +1,22 @@
+<div class="container w-50 mt-5">
+  <h3 class="text-center title my-5">Cadastrar Cargo</h3>
+  <form class="p-3">
+    <div class="mb-3">
+        <label class="form-label">Nome do Cargo</label>
+        <input type="text" class="form-control" id="ca_nome" [(ngModel)]="cargo.ca_nome" name="ca_nome" >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Atribuição do Cargo </label>
+        <input type="text" class="form-control" id="ca_atribuicao"  [(ngModel)] ="cargo.ca_atribuicao"  name = "ca_atribuicao">
+    </div>
+    <div class="text-center mt-3">
+      <button (click)="cadastrarCargo()" class="btn btn-success">Cadastrar</button>
+      <button type="reset" class="btn btn-dark mx-3">Limpar</button>
+      <button  routerLink="/listarCargos"class="btn btn-dark">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+
+
+

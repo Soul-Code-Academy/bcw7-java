@@ -12,18 +12,19 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Cargo {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id_cargo;
 	
-	@Column(nullable=false, length=10)
+	@Column(nullable=false, length=100)
 	private String ca_nome;
 	
-	@Column(nullable=false, length=80)
+	@Column(nullable=false, length=1000)
 	private String ca_atribuicao;
 	
 	@OneToMany(mappedBy = "cargo")
-	private List<Funcionario>funcionario = new ArrayList<>();
+	private List<Funcionario> funcionario = new ArrayList<>();
 
 	public Integer getId_cargo() {
 		return id_cargo;
@@ -56,6 +57,6 @@ public class Cargo {
 	public void setFuncionario(List<Funcionario> funcionario) {
 		this.funcionario = funcionario;
 	}
-	
+
 	
 }

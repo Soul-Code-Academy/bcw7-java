@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Turma } from 'src/app/modelos/turmaModel';
 import { TurmaService } from 'src/app/servicos/turma.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-excluir-turma',
@@ -15,7 +16,8 @@ export class ExcluirTurmaComponent implements OnInit {
     tu_descricao:'',
     tu_nome:''
   }
-  constructor(private turmaService:TurmaService, private activatedRoute:ActivatedRoute) { }
+
+  constructor(private turmaService:TurmaService, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.turma.id_turma = this.activatedRoute.snapshot.paramMap.get('id')
@@ -28,4 +30,16 @@ export class ExcluirTurmaComponent implements OnInit {
     })
   }
 
+
+  excluirTurma() {
+    this.turmaService.excluirUmaTurma(this.turma.id_turma).subscribe({
+      complete: () => alert('Turma excluída com sucesso!'),
+      error: () => alert('Esta turma possui alunos associados e não pode ser excluída!'),
+    });
+    this.router.navigate(['/turma']);
+
+    }
 }
+
+
+

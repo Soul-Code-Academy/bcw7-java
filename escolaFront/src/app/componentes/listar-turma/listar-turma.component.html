@@ -1,6 +1,7 @@
-<div class="container my-5">
+<div class="container p-5 ">
+  <h5 class="text-center">Turmas</h5>
   <a routerLink="/cadastrarTurma"  class="btn btn-dark" title="Cadastrar Turma"><i class="fa-solid fa-square-pen"></i></a>
-  <table class="table text-center">
+  <table class="table table-hover text-center">
     <thead>
       <tr>
         <th scope="col">Código</th>
@@ -15,12 +16,12 @@
         <th scope="row">{{turma.id_turma}}</th>
         <td>{{turma.tu_nome}}</td>
         <td>{{turma.tu_descricao}}</td>
-        <td> <a class="btn btn-dark"><i class="fa-solid fa-user"></i></a></td>
+        <td> <a routerLink="/alunoTurma/{{turma.id_turma}}"  class="btn btn-dark"><i class="fa-solid fa-user"></i></a></td>
         <td>
-          <a  class="btn btn-success" title="EditarDados"><i class="fa-solid fa-pen-to-square"></i></a>
-          <a (click)="excluirUmaTurma(turma.id_turma)" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>
+          <a  routerLink="editarTurma/{{turma.id_turma}}" class="btn btn-success" title="EditarDados"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a  routerLink="/excluirTurma/{{turma.id_turma}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>
         </td>
-      </tr> 
+      </tr>
     </tbody>
   </table>
 </div>

@@ -1,40 +1,58 @@
 package soulCodeAcademy.EmpresaAsd.services;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.repositorys.CargoRepository;
-
+import soulCodeAcademy.EmpresaAsd.services.exceptions.DataIntegrityViolationException;
+import soulCodeAcademy.EmpresaAsd.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CargoService {
+
 	@Autowired
 	private CargoRepository cargoRepository;
-	
-	public List<Cargo>mostrarTodosCargos(){
-		return cargoRepository.findAll();	
-		}
-	
+
+	public List<Cargo> mostrarTodosCargos() {
+		return cargoRepository.findAll();
+	}
+
 	public Cargo buscarUmCargo(Integer id_cargo) {
-		Optional<Cargo>cargo = cargoRepository.findById(id_cargo);
-		return cargo.orElseThrow();
-		}
-	
-	public Cargo inserirCargo(Cargo cargo) {
+		Optional<Cargo> cargo = cargoRepository.findById(id_cargo);
+		// Lançamento de exceção. Tratamento de erro para ooperações críticas, passíveis de erro.
+		// Se der erro, lança a exceção, a mensagem, que foi criada dentro da classe
+		// ObjectNotFoundException é enviada.
+		return cargo.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não cadastrado no banco de dados! O id procurado foi: " + id_cargo));
+	}
+
+	public Cargo cadastrarCargo(Cargo cargo) {
+		// é uma forma de segurança para não setarmos o id;
+		cargo.setId_cargo(null);
 		return cargoRepository.save(cargo);
-		}
-	
-	public void deletarUmCargo(Integer id_cargo) {
-		cargoRepository.deleteById(id_cargo);
-		}
-	
+	}
+
 	public Cargo editarCargo(Cargo cargo) {
 		buscarUmCargo(cargo.getId_cargo());
 		return cargoRepository.save(cargo);
+	}
+
+	public void deletarUmCargo(Integer id_cargo){
+		buscarUmCargo(id_cargo);
+		try {
+			cargoRepository.deleteById(id_cargo);
+		} catch (org.springframework.dao.DataIntegrityViolationException e) {
+			// O catch vem diretamente do Spring
+			throw new DataIntegrityViolationException
+			// Aqui no throw será inserido o tratamento de erro personalizado
+			("O cargo não pode ser deletado, pois possui funcionários relacionados");
 		}
-		
+	}
 }
+

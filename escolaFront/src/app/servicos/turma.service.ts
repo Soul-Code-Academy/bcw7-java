@@ -25,7 +25,14 @@ export class TurmaService {
     return this.http.get<Turma>(url)
   }
 
-  excluirUmaTurma(id_turma:string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id_turma}`, { responseType: 'text' });
+  excluirUmaTurma(id:String):Observable<void>{
+    const url = `${this.baseUrl}/turma/${id}`
+    return this.http.delete<void>(url)
+
+  }
+
+  editarTurma(turma:Turma):Observable<void>{
+    const url = `${this.baseUrl}/turma/${turma.id_turma}`
+    return this.http.put<void>(url,turma)
   }
 }

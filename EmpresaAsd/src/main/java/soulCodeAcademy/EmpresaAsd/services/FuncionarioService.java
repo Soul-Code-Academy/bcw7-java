@@ -1,6 +1,7 @@
 package soulCodeAcademy.EmpresaAsd.services;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,42 +9,48 @@ import org.springframework.stereotype.Service;
 
 import soulCodeAcademy.EmpresaAsd.models.Funcionario;
 import soulCodeAcademy.EmpresaAsd.repositorys.FuncionarioRepository;
+import soulCodeAcademy.EmpresaAsd.models.Cargo;
+import soulCodeAcademy.EmpresaAsd.services.exceptions.ObjectNotFoundException;
 
-
-@Service //Criação dos serviços para utilizar os métodos JPA
+@Service
 public class FuncionarioService {
 
-	//Fazendo a injeção de dependência
+//	Fazendo injeção de dependência
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
 	
-		@Autowired
-		private FuncionarioRepository funcionarioRepository;
-		
-		// Serviço: implementar listagem dos funcionariocadastrados
-		public List<Funcionario> mostrarTodosFuncionarios(){
-			return funcionarioRepository.findAll();	//findAll mostra todos os registros
-			}
-		
-		public Funcionario buscarUmFuncionario(Integer id_funcionario) {
-			
-			//Optional - evita os erros NullPointerExcetion, tirando a necessidade da verificação por criação de código. Ex.: (if aluno != null
-			//orElseThrow() - se o funcionario estiver no banco de dados, retorna o aluno. Se não, lança uma exceção.
-			Optional<Funcionario> funcionario = funcionarioRepository.findById(id_funcionario);
-			return funcionario.orElseThrow();
-		}
-		
-		public Funcionario inserirFuncionario(Funcionario funcionario) {
-			return funcionarioRepository.save(funcionario);
-		}
-		
-		public void deletarUmFuncionario(Integer id_funcionario) {
-			funcionarioRepository.deleteById(id_funcionario);
-		}
-		
-		public Funcionario editarFuncionario(Funcionario funcionario) {
-			buscarUmFuncionario(funcionario.getId_funcionario());
-			return funcionarioRepository.save(funcionario);
-		}
-		
+	@Autowired
+	private CargoService cargoService;
+	
+//	O primeiro serviço que vamos implementar é a listagem de todos os funcionários cadastrados
+	public List<Funcionario> findAll() {
+		return funcionarioRepository.findAll();
+	}
 
+	public Funcionario buscarUmFuncionario(Integer id_funcionario) {
+		Optional<Funcionario> funcionario = funcionarioRepository.findById(id_funcionario);
+		return funcionario.orElseThrow();
+	}
 
+	public Funcionario inserirFuncionario(Integer id_cargo, Funcionario funcionario) {
+		funcionario.setId_funcionario(null);
+		Cargo cargo = cargoService.buscarUmCargo(id_cargo);
+		funcionario.setCargo(cargo);
+		return funcionarioRepository.save(funcionario);
+	}
+
+	public void deletarUmFuncionario(Integer id_funcionario) {
+		funcionarioRepository.deleteById(id_funcionario);
+	}
+
+	public Funcionario editarFuncionario(Funcionario funcionario) {
+		buscarUmFuncionario(funcionario.getId_funcionario());
+		return funcionarioRepository.save(funcionario);
+	}
+	
+	public List<Funcionario> buscarFuncionarioCargo(Integer id_cargo){
+		List <Funcionario> funcionario = funcionarioRepository.fetchByCargo(id_cargo);
+		return funcionario;
+	}
 }
+
