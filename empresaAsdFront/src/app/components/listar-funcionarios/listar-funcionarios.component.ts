@@ -13,10 +13,11 @@ export class ListarFuncionariosComponent implements OnInit {
   id_cargo: string = ''
   funcionarios:Funcionario[]=[]
 
-  constructor(private funcionarioService:FuncionarioService, private route:ActivatedRoute, private router:Router) {  this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!; }
+  constructor(private funcionarioService:FuncionarioService, private route:ActivatedRoute, private router:Router) {
+      this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
+    }
 
   ngOnInit(): void {
-
     this.buscarFuncionarioCargo();
   }
 

@@ -9,6 +9,7 @@ import { ListarAlunoComponent } from './componentes/listar-aluno/listar-aluno.co
 import { CadastrarAlunoComponent } from './componentes/cadastrar-aluno/cadastrar-aluno.component';
 import { ExcluirAlunoComponent } from './componentes/excluir-aluno/excluir-aluno.component';
 import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.component';
+import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/lista-geral-alunos.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
@@ -16,11 +17,12 @@ const routes: Routes = [
   {path: "turma", component:ListarTurmaComponent},
   {path: "cadastrarTurma", component:CadastrarTurmaComponent},
   {path: "excluirTurma/:id", component:ExcluirTurmaComponent},
-  {path:"turma/editarTurma/:id", component:EditarTurmaComponent},
+  {path: "turma/editarTurma/:id", component:EditarTurmaComponent},
   {path: "alunoTurma/:id_turma", component:ListarAlunoComponent},
   {path: "cadastrarAluno/:id_turma", component:CadastrarAlunoComponent},
-  {path: "excluirAluno/:ra_aluno", component:ExcluirAlunoComponent},
-  {path:"editarAluno/:ra_aluno", component:EditarAlunoComponent},
+  {path: "excluirAluno/:ra_aluno/:id_turma", component:ExcluirAlunoComponent},
+  {path: "editarAluno/:ra_aluno/:id_turma", component:EditarAlunoComponent},
+  {path: "listaGeralAlunos", component:ListaGeralAlunosComponent},
 
 ];
 

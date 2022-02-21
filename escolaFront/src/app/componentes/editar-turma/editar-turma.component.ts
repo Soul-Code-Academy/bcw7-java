@@ -35,10 +35,12 @@ export class EditarTurmaComponent implements OnInit {
 
   editarTurma() {
     this.turmaService.editarTurma(this.turma).subscribe({
-      complete: () => alert('Turma editada com sucesso!'),
-      error: () => alert('Não foi possível editar a turma!'),
+      complete: () => {alert('Turma editada com sucesso!'),
+                       this.router.navigate(['/turma'])},
+      error: () => {alert('Não foi possível editar a turma!'),
+                      this.router.navigate(['/turma'])},
     });
-    this.router.navigate(['/turma']);
+
     }
 
   }

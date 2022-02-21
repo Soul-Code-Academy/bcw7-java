@@ -7,13 +7,21 @@ import { Aluno } from '../modelos/alunoModel';
   providedIn: 'root'
 })
 export class AlunoService {
+  buscarAlunos() {
+    throw new Error('Method not implemented.');
+  }
 
-  baseUrl: string= 'http://localhost:8080/escola'
+  baseUrl: string= 'http://localhost:8181/escola'
 
   constructor(private http:HttpClient) { }
 
   buscarAlunosTurma(id_turma: string):Observable<Aluno[]>{
     const url = `${this.baseUrl}/aluno/busca-turma/${id_turma}`
+    return this.http.get<Aluno[]>(url)
+  }
+
+  buscarTodosAlunos():Observable<Aluno[]>{
+    const url = `${this.baseUrl}/aluno`
     return this.http.get<Aluno[]>(url)
   }
 
@@ -33,9 +41,10 @@ export class AlunoService {
 
   }
 
-  editarAluno(aluno:Aluno):Observable<void>{
-    const url = `${this.baseUrl}/alunoTurma/:id_turma/${aluno.ra_aluno}`
-    return this.http.put<void>(url,aluno)
+  editarAluno(aluno:Aluno, ra_aluno:string, id_turma:string):Observable<Aluno>{
+    // http://localhost:8181/escola/aluno/1?turma=3
+    const url = `${this.baseUrl}/aluno/${ra_aluno}?turma=${id_turma}`
+    return this.http.put<Aluno>(url,aluno)
   }
 }
 

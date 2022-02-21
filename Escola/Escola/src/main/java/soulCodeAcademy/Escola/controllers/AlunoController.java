@@ -44,6 +44,13 @@ public class AlunoController {
 		return aluno;
 	}
 	
+	@GetMapping("/aluno-turma")
+		public List<List> alunosComTurma(){
+			List<List> alunoTurma = alunoService.alunosComTurma();
+			return alunoTurma;
+			
+	}
+	
 	// ResponseEntity - retorna os dados reais de um registro do banco de dados. Retorna uma resposta inteira, incluindo cabeçalho, corpo e status.
 	
 	@GetMapping("/aluno/{ra_aluno}")
@@ -93,6 +100,8 @@ public class AlunoController {
 //		return ResponseEntity.noContent().build();
 //	}
 	
+//	
+
 	@PutMapping("/aluno/{ra_aluno}")
 	public ResponseEntity<Void>editarAluno(@RequestParam(value = "turma")Turma turma, @PathVariable Integer ra_aluno, @RequestBody Aluno aluno){
 		aluno.setRa_aluno(ra_aluno);

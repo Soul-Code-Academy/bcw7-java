@@ -36,7 +36,7 @@ public class CargoController {
 	@GetMapping("/cargo/{id_cargo}")
 	public ResponseEntity<Cargo> buscarUmCargo(@PathVariable Integer id_cargo) {
 		Cargo cargo = cargoService.buscarUmCargo(id_cargo);
-		return ResponseEntity.ok().body(cargo);
+		return ResponseEntity.ok(cargo);
 	}
 
 	@PostMapping("/cargo")

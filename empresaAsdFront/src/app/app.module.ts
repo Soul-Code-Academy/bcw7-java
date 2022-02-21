@@ -17,6 +17,8 @@ import { ListarFuncionariosComponent } from './components/listar-funcionarios/li
 import { EditarFuncionarioComponent } from './components/editar-funcionario/editar-funcionario.component';
 import { ExcluirFuuncionarioComponent } from './components/excluir-fuuncionario/excluir-fuuncionario.component';
 import { CadastrarFuncionarioComponent } from './components/cadastrar-funcionario/cadastrar-funcionario.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { ContatoComponent } from './components/contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CadastrarFuncionarioComponent } from './components/cadastrar-funcionari
     ListarFuncionariosComponent,
     EditarFuncionarioComponent,
     ExcluirFuuncionarioComponent,
-    CadastrarFuncionarioComponent
+    CadastrarFuncionarioComponent,
+    GaleriaComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,

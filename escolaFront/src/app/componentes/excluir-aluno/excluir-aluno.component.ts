@@ -9,6 +9,8 @@ import { AlunoService } from 'src/app/servicos/aluno.service';
 })
 export class ExcluirAlunoComponent implements OnInit {
 
+  id_turma: string = ''
+
   aluno: Aluno={
     ra_aluno:'',
     al_nome:'',
@@ -18,6 +20,7 @@ export class ExcluirAlunoComponent implements OnInit {
 
   constructor(private alunoService:AlunoService, private activatedRoute:ActivatedRoute, private router:Router) {
     this.aluno.ra_aluno= this.activatedRoute.snapshot.paramMap.get('ra_aluno')
+    this.id_turma = this.activatedRoute.snapshot.paramMap.get('id_turma')!
    }
 
   ngOnInit() {
@@ -35,11 +38,14 @@ export class ExcluirAlunoComponent implements OnInit {
 
     excluirAluno() {
       this.alunoService.excluirUmAluno(this.aluno.ra_aluno).subscribe({
-        next: () => {alert("Aluno deletado com sucesso")},
-        error: () => {alert("Não foi possível deletar este aluno")},
-        complete: () => {this.router.navigate(["/turma"])}
+        complete: () =>{alert("Aluno deletado com sucesso"),
+                      this.router.navigate([`/alunoTurma/${this.id_turma}`])},
+        error: () => {alert("Não foi possível deletar este aluno"),
+                      this.router.navigate([`/alunoTurma/${this.id_turma}`])},
+
 
       })
 
     }
+
   }

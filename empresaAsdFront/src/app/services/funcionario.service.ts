@@ -1,4 +1,3 @@
-import { Cargo } from './../models/cargoModelo';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,7 +9,7 @@ import { Funcionario } from '../models/funcionarioModelo';
 
 export class FuncionarioService {
 
-  baseUrl: string= 'http://localhost:8080/empresa'
+  baseUrl: String= 'http://localhost:8080/empresa'
 
   constructor(private http:HttpClient) { }
 
@@ -18,6 +17,7 @@ export class FuncionarioService {
     const url = `${this.baseUrl}/funcionario/busca-cargo/${id_cargo}`
     return this.http.get<Funcionario[]>(url)
   }
+
 
   cadastrarFuncionario(funcionario:Funcionario, id_cargo:string):Observable<Funcionario>{
     const url = `${this.baseUrl}/funcionario?cargo=${id_cargo}`
@@ -35,9 +35,11 @@ export class FuncionarioService {
 
   }
 
-  editarFuncionario(funcionario:Funcionario):Observable<void>{
+  editarFuncionario(funcionario:Funcionario):Observable<Funcionario>{
     const url = `${this.baseUrl}/funcionarioCargo/:id_cargo/${funcionario.id_funcionario}`
-    return this.http.put<void>(url,funcionario)
+    return this.http.put<Funcionario>(url,funcionario)
   }
 
 }
+
+

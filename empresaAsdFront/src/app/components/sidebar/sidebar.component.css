@@ -79,8 +79,9 @@
 
 .wrapper .main_content{
   width: 100%;
-  margin-left: 250px;
+  margin: auto;
   height: 100%;
+
 }
 
 .wrapper .main_content .header{
@@ -103,4 +104,9 @@
   marquee{
     width: 200px;
   }
+
+.wrapper .main_content{
+  margin-left: 250px;
+
+}
 }

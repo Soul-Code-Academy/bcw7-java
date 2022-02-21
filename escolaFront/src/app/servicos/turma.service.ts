@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TurmaService {
 
-  baseUrl: String = 'http://localhost:8080/escola'
+  baseUrl: String = 'http://localhost:8181/escola'
   constructor(private http:HttpClient) { }
 
   mostrarTodasTurmas():Observable<Turma[]>{

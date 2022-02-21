@@ -1,16 +1,14 @@
 package soulCodeAcademy.EmpresaAsd.services;
 
 import java.util.List;
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Funcionario;
 import soulCodeAcademy.EmpresaAsd.repositorys.FuncionarioRepository;
-import soulCodeAcademy.EmpresaAsd.models.Cargo;
-import soulCodeAcademy.EmpresaAsd.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class FuncionarioService {

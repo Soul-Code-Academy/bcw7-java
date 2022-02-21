@@ -13,22 +13,22 @@ export class CargoService {
   constructor(private http:HttpClient) { }
 
   mostrarTodosCargos():Observable<Cargo[]>{
-    const url = `${this.baseUrl}/listarCargos`
+    const url = `${this.baseUrl}/cargo`
     return this.http.get<Cargo[]>(url)
   }
 
   cadastrarCargo(cargo:Cargo):Observable<Cargo>{
-    const url = `${this.baseUrl}/listarCargos`
+    const url = `${this.baseUrl}/cargo`
     return this.http.post<Cargo>(url,cargo)
   }
 
   mostrarUmCargo(id:string):Observable<Cargo>{
-    const url = `${this.baseUrl}/listarCargos/${id}`
+    const url = `${this.baseUrl}/cargo/${id}`
     return this.http.get<Cargo>(url)
   }
 
   excluirUmCargo(id:String):Observable<Cargo>{
-    const url = `${this.baseUrl}/listarCargos/${id}`
+    const url = `${this.baseUrl}/cargo/${id}`
     return this.http.delete<Cargo>(url)
 
   }

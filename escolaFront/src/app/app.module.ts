@@ -15,6 +15,7 @@ import { ListarAlunoComponent } from './componentes/listar-aluno/listar-aluno.co
 import { CadastrarAlunoComponent } from './componentes/cadastrar-aluno/cadastrar-aluno.component';
 import { ExcluirAlunoComponent } from './componentes/excluir-aluno/excluir-aluno.component';
 import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.component';
+import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/lista-geral-alunos.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.co
     CadastrarAlunoComponent,
     ExcluirAlunoComponent,
     EditarAlunoComponent,
+    ListaGeralAlunosComponent,
 
   ],
   imports: [

@@ -25,6 +25,7 @@ import soulCodeAcademy.EmpresaAsd.models.Cargo;
 
 //Mapeamento dos endpoints
 
+@CrossOrigin
 @RestController
 @RequestMapping("empresa")
 public class FuncionarioController {

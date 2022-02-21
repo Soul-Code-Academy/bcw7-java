@@ -27,6 +27,9 @@ public class AlunoService {
 		return alunoRepository.findAll();	//findAll mostra todos os registros
 		}
 	
+	public List<List> alunosComTurma(){
+		return alunoRepository.alunosComTurma();
+	}
 	
 	public Aluno buscarUmAluno(Integer ra_Aluno) {
 		
