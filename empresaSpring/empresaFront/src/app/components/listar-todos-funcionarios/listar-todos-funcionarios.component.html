@@ -1,0 +1,27 @@
+<div class="container ">
+  <h3 class="title text-center mt-5 mb-3 ">Todos Funcionários</h3>
+
+  <div class="table-responsive">
+    <table class="table table-hover myTable">
+      <thead>
+        <tr>
+          <th scope="col">Identificação</th>
+          <th scope="col">Nome do Funcionario</th>
+          <th scope="col">Nome da Cidade</th>
+          <th scope="col">Nome do Cargo</th>
+          <th scope="col">Atribuição do Cargo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionariosGeral of funcionariosGeral "class="fs-5">
+          <th scope="row">{{funcionariosGeral.id_funcionario[1]}}</th>
+          <td>{{funcionariosGeral[1]}}</td>
+          <td>{{funcionariosGeral.func_cidade}}</td>
+          <td>{{funcionariosGeral.ca_nome}}</td>
+          <td>{{funcionariosGeral.ca_atribuicao}}</td>
+          <td>{{funcionariosGeral}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

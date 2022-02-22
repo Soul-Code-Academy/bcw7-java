@@ -1,0 +1,10 @@
+section{
+  /* background: radial-gradient(circle, var(--color3) 0%, var(--color1) 100%); */
+  background-image: url("/assets/img/vangogh1.jpg");
+  color: var(--color2);
+}
+
+form{
+  background: var(--color1);
+
+}

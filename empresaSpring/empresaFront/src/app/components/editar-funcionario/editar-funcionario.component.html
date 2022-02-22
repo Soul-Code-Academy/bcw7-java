@@ -1,0 +1,49 @@
+
+  <div class="container w-50 mt-5">
+      <h3 class="text-center title my-5">Editar Funcionário</h3>
+      <form class="p-3">
+        <div class="mb-3">
+            <label class="form-label">Nome do Funcionario</label>
+            <input type="text" class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome" >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cidade do Funcionário </label>
+            <input type="text" class="form-control" [(ngModel)]="funcionario.func_cidade"  name = "func_cidade">
+        </div>
+        <div class="text-center mt-3">
+          <button (click)="editarFuncionario()" class="btn btn-success">Salvar</button>
+            <button  routerLink="/listarCargos"class="btn btn-dark mx-3">Cancelar</button>
+            <button (click)="mostrarModal()" class="btn btn-dark">Tranferir Cargo</button>
+            <select class="form-select my-3" aria-label="Default select example" autocomplete="on">
+              <option selected>Consultar Cargos</option>
+              <option *ngFor="let cargo of cargos" value="id_cargo">{{cargo.ca_nome}}-{{cargo.id_cargo}} </option>
+            </select>
+        </div>
+      </form>
+      <div *ngIf = 'isModal'>
+        <div class="myModal">
+          <div class="tituloModal">
+            <h5 class="fs-5 fw-bolder">Atenção!</h5>
+          </div>
+          <h6 class="my-4 fs-5">Qual a identificação do cargo para transferir?</h6>
+          <input class="mb-2 w-25" type="text" [(ngModel)]="id_cargo" name="id_cargo" >
+          <button class="btn mx-1 btn-modal" (click)="cancelarAcao()">Sair</button>
+          <button class="btn btn-modal" (click)="transferirCargo()">OK</button>
+          <button class="btn btn-modal" (click)="mostrarModalCargo()">Consultar Cargos</button>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
