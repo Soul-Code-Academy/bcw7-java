@@ -16,7 +16,9 @@ import { CadastrarAlunoComponent } from './componentes/cadastrar-aluno/cadastrar
 import { ExcluirAlunoComponent } from './componentes/excluir-aluno/excluir-aluno.component';
 import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.component';
 import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/lista-geral-alunos.component';
+import { ListarProfessorComponent } from './componentes/listar-professor/listar-professor.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
 
@@ -33,13 +35,16 @@ import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/list
     ExcluirAlunoComponent,
     EditarAlunoComponent,
     ListaGeralAlunosComponent,
+    ListarProfessorComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

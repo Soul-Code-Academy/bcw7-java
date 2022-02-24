@@ -9,8 +9,8 @@ import { Turma } from 'src/app/modelos/turmaModel';
 })
 export class ListarTurmaComponent implements OnInit {
 
-turmas: Turma [] = []
-
+  turmas: Turma [] = []
+  search:any
   constructor(private turmaService: TurmaService) { }
 
   ngOnInit(): void {
@@ -21,6 +21,11 @@ turmas: Turma [] = []
     this.turmaService.mostrarTodasTurmas().subscribe(resposta =>{
       this.turmas = resposta
     })
+  }
+
+
+  resetSearch() {
+    this.search = '';
   }
 
 

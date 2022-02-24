@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Turma {
@@ -25,6 +29,11 @@ public class Turma {
 	
 	@OneToMany(mappedBy = "turma")
 	private List<Aluno> aluno = new ArrayList<>();
+	
+	@OneToOne
+	@JoinColumn(name = "id_professor", unique = true)
+//	@JsonIgnore
+	private Professor professor;
 
 	public Integer getId_turma() {
 		return id_turma;
@@ -56,6 +65,14 @@ public class Turma {
 
 	public void setAluno(List<Aluno> aluno) {
 		this.aluno = aluno;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 	
 	

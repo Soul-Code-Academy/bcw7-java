@@ -17,7 +17,7 @@ public class Cargo {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id_cargo;
 	
-	@Column(nullable=false, length= 60)
+	@Column(nullable=false, length=100)
 	private String ca_nome;
 	
 	@Column(nullable=false, length=200)

@@ -1,7 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FuncionarioGeral } from 'src/app/models/funcionarioGeralModelo';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 
@@ -12,14 +11,15 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class ListarTodosFuncionariosComponent implements OnInit {
 
-  funcionariosGeral:any
+  funcionariosGeral:any=[]
 
 
-constructor(private funcionarioService:FuncionarioService, private route:ActivatedRoute, private router:Router){}
+constructor(private funcionarioService:FuncionarioService,
+             private route:ActivatedRoute,
+              private router:Router){}
 
 
   ngOnInit(): void {
-
     this.mostrarTodosFuncionarios();
   }
 
@@ -27,7 +27,7 @@ constructor(private funcionarioService:FuncionarioService, private route:Activat
   mostrarTodosFuncionarios(){
     this.funcionarioService.mostrarTodosFuncionarios().subscribe(res =>{
 
-      res.forEach((funcionario:any)=>{
+      res.forEach((funcionario:any=[])=>{
 
         let funcionariosGeral: any = {
           id_funcionario:'',
@@ -44,7 +44,8 @@ constructor(private funcionarioService:FuncionarioService, private route:Activat
           funcionariosGeral.ca_nome = funcionario[3]
           funcionariosGeral.ca_atribuicao = funcionario[4]
 
-        funcionario.push(this.funcionariosGeral)
+        this.funcionariosGeral.push(funcionario)
+        console.log(funcionario)
       })
 
   })

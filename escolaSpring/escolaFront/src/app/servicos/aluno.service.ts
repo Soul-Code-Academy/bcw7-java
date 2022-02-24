@@ -7,9 +7,6 @@ import { Aluno } from '../modelos/alunoModel';
   providedIn: 'root'
 })
 export class AlunoService {
-  buscarAlunos() {
-    throw new Error('Method not implemented.');
-  }
 
   baseUrl: string= 'http://localhost:8181/escola'
 
@@ -21,7 +18,7 @@ export class AlunoService {
   }
 
   buscarTodosAlunos():Observable<Aluno[]>{
-    const url = `${this.baseUrl}/aluno`
+    const url = `${this.baseUrl}/aluno-turma`
     return this.http.get<Aluno[]>(url)
   }
 

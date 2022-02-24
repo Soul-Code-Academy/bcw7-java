@@ -13,13 +13,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let funcionariosGeral of funcionariosGeral "class="fs-5">
-          <th scope="row">{{funcionariosGeral.id_funcionario[1]}}</th>
-          <td>{{funcionariosGeral[1]}}</td>
-          <td>{{funcionariosGeral.func_cidade}}</td>
-          <td>{{funcionariosGeral.ca_nome}}</td>
-          <td>{{funcionariosGeral.ca_atribuicao}}</td>
-          <td>{{funcionariosGeral}}</td>
+        <tr *ngFor="let funcionario of funcionariosGeral "class="fs-5">
+          <th scope="row">{{funcionario.id_funcionario}}</th>
+          <td>{{funcionario.func_nome}}</td>
+          <td>{{funcionario.func_cidade}}</td>
+          <td>{{funcionario.ca_nome}}</td>
+          <td>{{funcionario.ca_atribuicao}}</td>
         </tr>
       </tbody>
     </table>

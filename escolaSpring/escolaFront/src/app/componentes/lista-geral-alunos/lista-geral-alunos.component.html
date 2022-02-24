@@ -1,22 +1,29 @@
 <div class="container p-5">
-  <h5 class="text-center">Alunos</h5>
-  <!-- <a routerLink="/cadastrarAluno/{{id_turma}}"  class="btn btn-dark" title="Cadastrar Aluno"><i class="fa-solid fa-square-pen"></i></a> -->
-  <table class="table table-hover table-responsive-md text-center">
+  <h5 class="text-center">Dados dos Alunos</h5>
+  <div class="search-box float-end my-3">
+    <input type="text" [(ngModel)]="search">
+    <button class="btn-search" type="reset" (click)="resetSearch()"></button>
+  </div>
+  <table class="table table-hover table-responsive-md text-center" id="myTable">
     <thead>
       <tr>
-        <th scope="col">Código</th>
+        <th scope="col">Ra do Aluno</th>
         <th scope="col">Nome do Aluno</th>
         <th scope="col">Nome do Responsável</th>
         <th scope="col">Cidade do Aluno</th>
-        <th scope="col">Ações</th>
+        <th scope="col">Nome da Turma</th>
+        <th scope="col">Dscrição da Turma</th>
+        <th scope="col">Editar/Excluir</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let aluno of alunos">
+      <tr *ngFor="let aluno of alunos | filter:search">
         <th scope="row">{{aluno.ra_aluno}}</th>
         <td>{{aluno.al_nome}}</td>
         <td>{{aluno.al_responsavel}}</td>
         <td>{{aluno.al_cidade}}</td>
+        <td>{{aluno.tu_nome}}</td>
+        <td>{{aluno.tu_descricao}}</td>
         <td>
           <a  routerLink="/editarAluno/{{aluno.ra_aluno}}" class="btn btn-success" title="EditarDados"><i class="fa-solid fa-pen-to-square"></i></a>
           <a  routerLink="/excluirAluno/{{aluno.ra_aluno}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>
@@ -25,3 +32,4 @@
     </tbody>
   </table>
 </div>
+

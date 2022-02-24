@@ -21,7 +21,6 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ListarTodosFuncionariosComponent } from './components/listar-todos-funcionarios/listar-todos-funcionarios.component';
 import { ListarFuncionariosCargoComponent } from './components/listar-funcionarios-cargo/listar-funcionarios-cargo.component';
-import { PipeSearchFilterPipe } from 'src/pipes/pipeSearchFilter';
 import { TelaLoginComponent } from './components/tela-login/tela-login.component';
 
 
@@ -41,7 +40,7 @@ import { TelaLoginComponent } from './components/tela-login/tela-login.component
     GaleriaComponent,
     ContatoComponent,
     ListarTodosFuncionariosComponent,
-    PipeSearchFilterPipe,
+
     TelaLoginComponent,
 
   ],

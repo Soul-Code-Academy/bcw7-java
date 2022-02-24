@@ -10,6 +10,7 @@ import { CadastrarAlunoComponent } from './componentes/cadastrar-aluno/cadastrar
 import { ExcluirAlunoComponent } from './componentes/excluir-aluno/excluir-aluno.component';
 import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.component';
 import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/lista-geral-alunos.component';
+import { ListarProfessorComponent } from './componentes/listar-professor/listar-professor.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: "excluirAluno/:ra_aluno/:id_turma", component:ExcluirAlunoComponent},
   {path: "editarAluno/:ra_aluno/:id_turma", component:EditarAlunoComponent},
   {path: "listaGeralAlunos", component:ListaGeralAlunosComponent},
+  {path: "professorTurma/:id_turma", component:ListarProfessorComponent},
 
 ];
 

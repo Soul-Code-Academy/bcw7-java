@@ -12,7 +12,7 @@ export class ListarAlunoComponent implements OnInit {
 
   id_turma: string = ''
   alunos:Aluno[]=[]
-
+  search:any
   constructor(private alunoService:AlunoService, private route:ActivatedRoute, private router:Router) {  this.id_turma = this.route.snapshot.paramMap.get('id_turma')!; }
 
   ngOnInit(): void {
@@ -24,6 +24,10 @@ export class ListarAlunoComponent implements OnInit {
     this.alunoService.buscarAlunosTurma(this.id_turma).subscribe((resultado)=>{
       this.alunos = resultado;
     })
+  }
+
+  resetSearch() {
+    this.search = '';
   }
 
 }

@@ -1,4 +1,4 @@
-import { FuncionarioGeral } from './../models/funcionarioGeralModelo';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -19,16 +19,10 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(url)
   }
 
-  buscarTodosFuncionarios():Observable<Funcionario[]>{
+  mostrarTodosFuncionarios():Observable<Funcionario[]>{
     const url = `${this.baseUrl}/funcionario`
     return this.http.get<Funcionario[]>(url)
   }
-
-  mostrarTodosFuncionarios():Observable<FuncionarioGeral[]>{
-    const url = `${this.baseUrl}/funcionario-cargo`
-    return this.http.get<FuncionarioGeral[]>(url)
-  }
-
 
   cadastrarFuncionario(funcionario:Funcionario, id_cargo:any):Observable<Funcionario>{
     const url = `${this.baseUrl}/funcionario?cargo=${id_cargo}`
