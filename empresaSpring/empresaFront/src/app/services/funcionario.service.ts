@@ -20,7 +20,7 @@ export class FuncionarioService {
   }
 
   mostrarTodosFuncionarios():Observable<Funcionario[]>{
-    const url = `${this.baseUrl}/funcionario`
+    const url = `${this.baseUrl}/funcionario-cargo`
     return this.http.get<Funcionario[]>(url)
   }
 

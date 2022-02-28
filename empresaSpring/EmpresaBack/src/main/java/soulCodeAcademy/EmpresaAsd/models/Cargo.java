@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cargo {
@@ -25,6 +27,11 @@ public class Cargo {
 	
 	@OneToMany(mappedBy = "cargo")
 	private List<Funcionario> funcionario = new ArrayList<>();
+	
+	@OneToOne
+	@JoinColumn(name = "id_servico", unique = true)
+//	@JsonIgnore
+	private Servico servico;
 
 	public Integer getId_cargo() {
 		return id_cargo;
@@ -58,5 +65,14 @@ public class Cargo {
 		this.funcionario = funcionario;
 	}
 
+	public Servico getServico() {
+		return servico;
+	}
+
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
+
+	
 	
 }

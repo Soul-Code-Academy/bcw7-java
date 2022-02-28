@@ -26,7 +26,7 @@ public class Professor {
 	@Column(nullable = true, length = 100)
 	private String pro_foto;
 
-	
+
 	@OneToOne
 	@JoinColumn(name = "id_turma", unique = true)
 	@JsonIgnore
@@ -81,6 +81,8 @@ public class Professor {
 	public void setTurma(Turma turma) {
 		this.turma = turma;
 	}
+
+
 	
 	
 }

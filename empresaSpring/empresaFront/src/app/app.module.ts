@@ -6,23 +6,24 @@ import { AppComponent } from './app.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { ListarCargosComponent } from './components/listar-cargos/listar-cargos.component';
-import { EditarCargoComponent } from './components/editar-cargo/editar-cargo.component';
-import { ExcluirCargoComponent } from './components/excluir-cargo/excluir-cargo.component';
-import { CadastrarCargoComponent } from './components/cadastrar-cargo/cadastrar-cargo.component';
+import { ListarCargosComponent } from './components/cargo/listar-cargos/listar-cargos.component';
+import { EditarCargoComponent } from './components/cargo/editar-cargo/editar-cargo.component';
+import { ExcluirCargoComponent } from './components/cargo/excluir-cargo/excluir-cargo.component';
+import { CadastrarCargoComponent } from './components/cargo/cadastrar-cargo/cadastrar-cargo.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { EditarFuncionarioComponent } from './components/editar-funcionario/editar-funcionario.component';
-import { ExcluirFuuncionarioComponent } from './components/excluir-fuuncionario/excluir-fuuncionario.component';
+import { SidebarComponent } from './components/templates/sidebar/sidebar.component';
+import { EditarFuncionarioComponent } from './components/funcionario/editar-funcionario/editar-funcionario.component';
+import { ExcluirFuuncionarioComponent } from './components/funcionario/excluir-fuuncionario/excluir-fuuncionario.component';
 import { CadastrarFuncionarioComponent } from './components/cadastrar-funcionario/cadastrar-funcionario.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { ContatoComponent } from './components/contato/contato.component';
-import { ListarTodosFuncionariosComponent } from './components/listar-todos-funcionarios/listar-todos-funcionarios.component';
-import { ListarFuncionariosCargoComponent } from './components/listar-funcionarios-cargo/listar-funcionarios-cargo.component';
-import { TelaLoginComponent } from './components/tela-login/tela-login.component';
-
+import { ListarTodosFuncionariosComponent } from './components/funcionario/listar-todos-funcionarios/listar-todos-funcionarios.component';
+import { ListarFuncionariosCargoComponent } from './components/funcionario/listar-funcionarios-cargo/listar-funcionarios-cargo.component';
+import { TelaLoginComponent } from './components/security/tela-login/tela-login.component';
+import { FooterComponent } from './components/templates/footer/footer.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TelaLoginComponent } from './components/tela-login/tela-login.component
     ListarTodosFuncionariosComponent,
 
     TelaLoginComponent,
+     FooterComponent,
 
   ],
   imports: [
@@ -51,6 +53,7 @@ import { TelaLoginComponent } from './components/tela-login/tela-login.component
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [

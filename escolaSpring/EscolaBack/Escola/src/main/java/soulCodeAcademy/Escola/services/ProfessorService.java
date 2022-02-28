@@ -38,6 +38,14 @@ public class ProfessorService {
 		return professor;
 	}
 	
+	public List<Professor> professorSemTurma(){
+		return professorRepository.professorSemTurma()
+;	}
+	
+	public List<List> professoresComTurma(){
+		return professorRepository.professoresComTurma();
+	}
+	
 	public Professor inserirProfessor(Integer id_turma, Professor professor) {
 		professor.setId_professor(null);
 			if(id_turma != null) {

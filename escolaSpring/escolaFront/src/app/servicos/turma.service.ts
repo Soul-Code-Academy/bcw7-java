@@ -1,3 +1,4 @@
+import { Professor } from './../modelos/professorModel';
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Turma } from '../modelos/turmaModel';
@@ -35,4 +36,10 @@ export class TurmaService {
     const url = `${this.baseUrl}/turma/${turma.id_turma}`
     return this.http.put<void>(url,turma)
   }
+
+  atribuirProfessor(turma:Turma,id_turma:string, id_professor:string):Observable<void>{
+    const url = `${this.baseUrl}/turma/definir-professor/${id_turma}/${id_professor}`
+    return this.http.put<void>(url,turma)
+  }
+
 }

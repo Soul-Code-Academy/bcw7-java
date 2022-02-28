@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './componentes/home/home.component';
-import { ListarTurmaComponent } from './componentes/listar-turma/listar-turma.component';
-import { CadastrarTurmaComponent } from './componentes/cadastrar-turma/cadastrar-turma.component';
-import { ExcluirTurmaComponent } from './componentes/excluir-turma/excluir-turma.component';
-import { EditarTurmaComponent } from './componentes/editar-turma/editar-turma.component';
-import { ListarAlunoComponent } from './componentes/listar-aluno/listar-aluno.component';
-import { CadastrarAlunoComponent } from './componentes/cadastrar-aluno/cadastrar-aluno.component';
-import { ExcluirAlunoComponent } from './componentes/excluir-aluno/excluir-aluno.component';
-import { EditarAlunoComponent } from './componentes/editar-aluno/editar-aluno.component';
-import { ListaGeralAlunosComponent } from './componentes/lista-geral-alunos/lista-geral-alunos.component';
-import { ListarProfessorComponent } from './componentes/listar-professor/listar-professor.component';
+import { HomeComponent } from './seguranca/login/home.component';
+import { ListarTurmaComponent } from './componentes/turma/listar-turma/listar-turma.component';
+import { CadastrarTurmaComponent } from './componentes/turma/cadastrar-turma/cadastrar-turma.component';
+import { ExcluirTurmaComponent } from './componentes/turma/excluir-turma/excluir-turma.component';
+import { EditarTurmaComponent } from './componentes/turma/editar-turma/editar-turma.component';
+import { ListarAlunoComponent } from './componentes/aluno/listar-aluno/listar-aluno.component';
+import { CadastrarAlunoComponent } from './componentes/aluno/cadastrar-aluno/cadastrar-aluno.component';
+import { ExcluirAlunoComponent } from './componentes/aluno/excluir-aluno/excluir-aluno.component';
+import { EditarAlunoComponent } from './componentes/aluno/editar-aluno/editar-aluno.component';
+import { ListaGeralAlunosComponent } from './componentes/aluno/lista-geral-alunos/lista-geral-alunos.component';
+import { ListarProfessorComponent } from './componentes/professor/listar-professor/listar-professor.component';
+import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadastrar-professor-turma/cadastrar-professor-turma.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: "excluirAluno/:ra_aluno/:id_turma", component:ExcluirAlunoComponent},
   {path: "editarAluno/:ra_aluno/:id_turma", component:EditarAlunoComponent},
   {path: "listaGeralAlunos", component:ListaGeralAlunosComponent},
-  {path: "professorTurma/:id_turma", component:ListarProfessorComponent},
+  {path: "professor", component:ListarProfessorComponent},
+  {path: "professorTurma/:id_turma", component:CadastrarProfessorTurmaComponent},
 
 ];
 

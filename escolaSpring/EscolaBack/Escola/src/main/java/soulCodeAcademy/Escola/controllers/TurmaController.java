@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import soulCodeAcademy.Escola.models.Professor;
 import soulCodeAcademy.Escola.models.Turma;
 import soulCodeAcademy.Escola.services.TurmaService;
 
@@ -60,5 +61,13 @@ public class TurmaController {
 		turma = turmaService.editarTurma(turma);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@PutMapping("/turma/definir-professor/{id_turma}/{id_professor}")
+	public ResponseEntity<Professor> atribuirProfessor(@PathVariable Integer id_turma, @PathVariable Integer id_professor){
+	    turmaService.atribuirProfessor(id_turma, id_professor);
+		return ResponseEntity.noContent().build();
+		
+	}
+	
 	
 }

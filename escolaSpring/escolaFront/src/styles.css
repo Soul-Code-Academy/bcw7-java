@@ -67,3 +67,18 @@ body{
   transition: top 150ms ease-out, right 150ms ease-out, opacity 150ms ease-out;
 }
 
+.card-login{
+  background:no-repeat url("assets/img/escola.jpg");
+  background-size: cover;
+}
+
+@media(max-width: 900px){
+  .w-50, .w-25, .w-75, .btn {
+      width: 100%!important;
+  }
+
+  .btn{
+    margin: 1rem 0;
+  }
+
+}

@@ -30,6 +30,9 @@ public class Turma {
 	@OneToMany(mappedBy = "turma")
 	private List<Aluno> aluno = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "turma")
+	private List<Professor> professores = new ArrayList<>();
+	
 	@OneToOne
 	@JoinColumn(name = "id_professor", unique = true)
 //	@JsonIgnore
@@ -74,6 +77,15 @@ public class Turma {
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
+	}
+	
 	
 	
 
