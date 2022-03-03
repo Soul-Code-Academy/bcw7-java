@@ -29,9 +29,9 @@ public class Cargo {
 	private List<Funcionario> funcionario = new ArrayList<>();
 	
 	@OneToOne
-	@JoinColumn(name = "id_servico", unique = true)
+	@JoinColumn(name = "id_departamento", unique = true)
 //	@JsonIgnore
-	private Servico servico;
+	private Departamento departamento;
 
 	public Integer getId_cargo() {
 		return id_cargo;
@@ -65,13 +65,17 @@ public class Cargo {
 		this.funcionario = funcionario;
 	}
 
-	public Servico getServico() {
-		return servico;
+	public Departamento getDepartamento() {
+		return departamento;
 	}
 
-	public void setServico(Servico servico) {
-		this.servico = servico;
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
+
+	
+
+	
 
 	
 	

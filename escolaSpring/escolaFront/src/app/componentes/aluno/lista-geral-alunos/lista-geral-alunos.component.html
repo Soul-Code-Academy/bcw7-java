@@ -13,7 +13,7 @@
         <th scope="col">Cidade do Aluno</th>
         <th scope="col">Nome da Turma</th>
         <th scope="col">Dscrição da Turma</th>
-        <th scope="col">Editar/Excluir</th>
+
       </tr>
     </thead>
     <tbody>
@@ -24,10 +24,6 @@
         <td>{{aluno.al_cidade}}</td>
         <td>{{aluno.tu_nome}}</td>
         <td>{{aluno.tu_descricao}}</td>
-        <td>
-          <a  routerLink="/editarAluno/{{aluno.ra_aluno}}" class="btn btn-success" title="EditarDados"><i class="fa-solid fa-pen-to-square"></i></a>
-          <a  routerLink="/excluirAluno/{{aluno.ra_aluno}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>
-        </td>
       </tr>
     </tbody>
   </table>

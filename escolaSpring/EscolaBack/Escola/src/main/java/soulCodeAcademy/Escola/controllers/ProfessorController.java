@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,7 @@ public class ProfessorController {
 	
 	@GetMapping("/professor-turma")
 	public List<List> professoresComTurma(){
-		List<List> professorTurma = professorService.professoresComTurma();
+		List<List> professorTurma = professorService.professsorComSuaTurma();
 		return professorTurma;		
 }
 	
@@ -50,7 +51,7 @@ public class ProfessorController {
 	
 	@GetMapping("/professor-turma/{id_turma}")
 	public ResponseEntity<Professor> buscarProfessorDaTurma(@PathVariable Integer id_turma){
-		Professor professor = professorService.buscarProfessorTurma(id_turma);
+		Professor professor = professorService.buscarProfessorDaTurma(id_turma);
 		return ResponseEntity.ok().body(professor);
 	}
 	
@@ -61,19 +62,28 @@ public class ProfessorController {
 	}
 
 	@PostMapping("/professor")
-	public ResponseEntity<Professor> inserirProfessor(@RequestParam(value="turma", required = false)Integer id_turma,@RequestBody Professor professor){
-		professor = professorService.inserirProfessor(id_turma, professor);	
+	public ResponseEntity<Professor> inserirProfessorComTurma(@RequestParam(value="turma", required = false)Integer id_turma,@RequestBody Professor professor){
+		professor = professorService.inserirProfessor(id_turma, professor);
+		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(professor.getId_professor()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 	
-	
 	@PutMapping("/professor/{id_professor}")
-	public ResponseEntity<Professor> editarProfessor(@RequestParam(value="turma", required=false)Integer id_turma, @PathVariable Integer id_professor, @RequestBody Professor professor){
+	public ResponseEntity<Professor> editarProfessor(@RequestParam(value="turma")Turma turma, @PathVariable Integer id_professor, @RequestBody Professor professor){
 		professor.setId_professor(id_professor);
-		professor = professorService.editarProfessor(id_turma, professor);	
+		professor.setTurma(turma);
+		turma.setProfessor(professor);
+		professor = professorService.editarProfessor(professor);
+		
 		return ResponseEntity.noContent().build();
+	}
+	
+	@DeleteMapping("/professor/{id_professor}")
+	public ResponseEntity<Void>  deletarUmProfessor(@PathVariable Integer id_professor){
+		professorService.deletarUmProfessor(id_professor);
+		return  ResponseEntity.noContent().build();
 	}
 
 }

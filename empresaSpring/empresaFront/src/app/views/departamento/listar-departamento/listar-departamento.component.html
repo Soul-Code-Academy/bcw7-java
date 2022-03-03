@@ -1,0 +1,37 @@
+<div class="container ">
+  <div class="search-box float-end">
+    <input type="text" [(ngModel)]= "search" >
+    <button class="btn-search" type="reset" (click)="resetSearch()"></button>
+  </div>
+  <h3 class="title text-start mt-5 mb-3 ">Todos Departamentos</h3>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Identificação</th>
+          <th scope="col">Nome do Departamento</th>
+          <th scope="col">Nome do Funcionário</th>
+          <th scope="col">Nome do Cargo</th>
+          <th scope="col">Atribuição do Cargo</th>
+          <th scope="col">Editar/Excluir</th>
+          <th scope="col"><a routerLink="/cargoDepartamento/{{id_cargo}}"  class="btn btn-dark" title="Cadastrar Departamento"><i class="fa-solid fa-square-pen"></i></a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let departamento of departamentos | filter: search" class="fs-5">
+          <th scope="row">{{departamento.id_departamento}}</th>
+          <td>{{departamento.dep_nome}}</td>
+          <td>{{departamento.func_nome}}</td>
+          <td>{{departamento.ca_nome}}</td>
+          <td>{{departamento.ca_atribuicao}}</td>
+          <td>
+            <a  routerLink="/editarFuncionario/{{departamento.id_funcionario}}/{{id_cargo}}" class="btn btn-success" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a  routerLink="/excluirFuncionario/{{departamento.id_funcionario}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Funcionário"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

@@ -1,23 +1,22 @@
-<div class="container p-5 w-75">
+<div class="container mb-5 p-5 w-75">
   <div class="card">
       <div class="card-body">
         <h5 *ngIf="professorCadastrado" class="card-title text-center">Dados do Professor da Turma {{id_turma}}</h5>
         <h5 *ngIf="!professorCadastrado" class="card-title text-center"> Turma {{id_turma}} sem professor!</h5>
-
         <form>
           <div class="mb-3">
             <label class="form-label">Nome do professor</label>
-            <input type="text" class="form-control" [(ngModel)]="professor.pro_nome" name="pro_nome">
+            <input type="text" class="form-control" readonly [(ngModel)]="professor.pro_nome" name="pro_nome">
           </div>
           <div class="mb-3">
             <label class="form-label">Formação do professor</label>
-            <input type="text" class="form-control" [(ngModel)]="professor.pro_formacao"  name="pro_formacao">
+            <input type="text" class="form-control" readonly [(ngModel)]="professor.pro_formacao"  name="pro_formacao">
           </div>
           <div class="mb-3">
             <label class="form-label">Foto de identificação</label>
-            <input type="text" class="form-control" [(ngModel)]="professor.pro_foto"  name="pro_foto">
+            <input type="text" class="form-control" readonly [(ngModel)]="professor.pro_foto"  name="pro_foto">
           </div>
-          <div *ngIf="!professorCadastrado" class="my-3">
+          <div *ngIf="!professorCadastrado"  class="my-3">
             <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="professorSemTurma" name="professorSemTurma" (ngModelChange)="mostrarProfessor()" class="w-100 p-2">
               <option selected [ngValue]="professorSemTurma">Professores sem Turma</option>
               <option *ngFor="let professor of professoresSemTurma" [ngValue]="professor" >
@@ -26,7 +25,7 @@
             </select>
           </div>
 
-          <div *ngIf="professorCadastrado" class="my-3">
+          <div *ngIf="professorCadastrado"  class="my-3">
             <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="professorSemTurma" name="professorSemTurma" (ngModelChange)="mostrarProfessor()" class="w-100 p-2">
               <option selected [ngValue]="professorSemTurma">Professores sem Turma</option>
               <option *ngFor="let professor of professoresSemTurma" [ngValue]="professor" >
@@ -34,21 +33,15 @@
               </option>
             </select>
           </div>
-
-          <button *ngIf="professorCadastrado"  class="btn btn-success me-3" (click)="atribuirProfessor()">Alterar</button>
-          <button *ngIf="!professorCadastrado" class="btn btn-success me-3" (click)="atribuirProfessor()">Salvar</button>
+          <button (click)="atribuirProfessor()" class="btn btn-success me-3">Salvar</button>
           <button  routerLink="/turma/{{id_turma}}" class="btn btn-dark">Cancelar</button>
+
+          <div class="my-3" *ngIf="professorCadastrado" >
+            <h5 class="card-title bg-success text-center text-white mx-5 p-2 rounded-3">Deixar Professor sem Turma? <button (click)=" deixarTurmaSemProfessor()" class="btn btn-dark">Confirmar</button></h5>
+          </div>
         </form>
       </div>
     </div>
 </div>
 
 
-<!-- <div *ngIf="!professorCadastrado" class="my-3">
-  <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="id_professorSemTurma" name="id_professorSemTurma" (ngModelChange)="mostrarProfessor()" class="w-100">
-    <option selected>Professores sem Turma</option>
-    <option *ngFor="let professor of professorSemTurma" [ngValue]="professor.id_professor" >
-      {{professor.pro_nome}} - {{professor.pro_formacao}}
-    </option>
-  </select>
-</div> -->

@@ -31,16 +31,16 @@ export class ListarProfessorComponent implements OnInit {
       resultado.forEach((professor: any=[]) =>{
 
         let profs: any ={
-
+          id_professor:'',
           pro_nome:'',
           pro_formacao: '',
           tu_turma: '',
         }
 
-
-        profs.pro_nome = professor[0]
-        profs.pro_formacao = professor[1]
-        profs.tu_turma = professor[2]
+        profs.id_professor = professor[0]
+        profs.pro_nome = professor[1]
+        profs.pro_formacao = professor[2]
+        profs.tu_turma = professor[3]
 
         if(profs.tu_turma  == undefined){
           profs.tu_turma='Professor sem turma.'

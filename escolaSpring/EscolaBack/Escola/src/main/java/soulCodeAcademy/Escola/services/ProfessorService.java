@@ -11,6 +11,7 @@ import soulCodeAcademy.Escola.models.Professor;
 import soulCodeAcademy.Escola.models.Turma;
 import soulCodeAcademy.Escola.repositorys.ProfessorRepository;
 import soulCodeAcademy.Escola.repositorys.TurmaRepository;
+import soulCodeAcademy.Escola.services.exceptions.DataIntegrityViolationException;
 
 @Service
 public class ProfessorService {
@@ -33,8 +34,9 @@ public class ProfessorService {
 		return professor.orElseThrow();
 	}
 	
-	public Professor buscarProfessorTurma(Integer id_turma) {
-		Professor professor = professorRepository.buscarProfessorTurma(id_turma);
+
+	public Professor buscarProfessorDaTurma(Integer id_turma){
+		Professor professor = professorRepository.fetchByTurma(id_turma);
 		return professor;
 	}
 	
@@ -42,48 +44,43 @@ public class ProfessorService {
 		return professorRepository.professorSemTurma()
 ;	}
 	
-	public List<List> professoresComTurma(){
-		return professorRepository.professoresComTurma();
+	public List<List> professsorComSuaTurma(){
+		return professorRepository.professorComSuaTurma();
 	}
+	
 	
 	public Professor inserirProfessor(Integer id_turma, Professor professor) {
 		professor.setId_professor(null);
-			if(id_turma != null) {
-				Turma turma = turmaService.buscarUmaTurma(id_turma);
-				professor.setTurma(turma);
-				turma.setProfessor(professor);
-			
-	}
-	return professorRepository.save(professor);
-}
-	
-//	public Professor inserirProfessorSemTurma(Professor professor) {
-//		professor.setId_professor(null);
-//		return professorRepository.save(professor);
-//	}
-//	
-//	public Professor inserirProfessorComTurma(Integer id_turma, Professor professor) {
-//		professor.setId_professor(null);
-//		Turma turma = turmaService.buscarUmaTurma(id_turma);
-//		professor.setTurma(turma);
-//		return professorRepository.save(professor);
-//		
-//	}
-	
-	public Professor editarProfessor(Integer id_turma, Professor professor) {
 		
-			if(id_turma != null) {
-				Professor professorAnterior = mostrarUmProfessor(professor.getId_professor());
-				Turma turmaAnterior = professorAnterior.getTurma();
-					if(turmaAnterior != null) {
-						turmaAnterior.setProfessor(null);
-						turmaRepository.save(turmaAnterior);
-				}
-				Turma turma = turmaService.buscarUmaTurma(id_turma);
-				professor.setTurma(turma);
-				turma.setProfessor(professor);
-			}
-			return professorRepository.save(professor);
+		if(id_turma != null) {
+			Turma turma = turmaService.buscarUmaTurma(id_turma);
+			professor.setTurma(turma);		
+		}
+		return professorRepository.save(professor);
+		
 	}
+	
+	public Professor editarProfessor(Professor professor) {
+		mostrarUmProfessor(professor.getId_professor());
+		return professorRepository.save(professor);
+	}
+	
+	public Professor salvarFoto (Integer id_professor, String caminhoFoto) {
+		Professor professor = mostrarUmProfessor(id_professor);
+		professor.setPro_foto(caminhoFoto);
+		return professorRepository.save(professor);
+	}
+	
+	public void deletarUmProfessor(Integer id_professor) {
+		professorRepository.deleteById(id_professor);
+		try {
+			professorRepository.deleteById(id_professor);
+			}catch(org.springframework.dao.DataIntegrityViolationException e) {
+				throw new DataIntegrityViolationException("Esse professor não pode ser excluído.");
+			}
+		}
+	
 
+	
+	
 }

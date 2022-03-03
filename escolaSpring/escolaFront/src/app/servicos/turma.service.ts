@@ -16,9 +16,9 @@ export class TurmaService {
     return this.http.get<Turma[]>(url)
   }
 
-  cadastrarTurma(turma:Turma):Observable<Turma>{
-    const url = `${this.baseUrl}/turma`
-    return this.http.post<Turma>(url,turma)
+  mostrarTurmasSemProfesor():Observable<Turma[]>{
+    const url = `${this.baseUrl}/turma-sem-professor`
+    return this.http.get<Turma[]>(url)
   }
 
   mostrarUmaTurma(id:string):Observable<Turma>{
@@ -26,10 +26,24 @@ export class TurmaService {
     return this.http.get<Turma>(url)
   }
 
+  buscarTurmaDoProfessor(id_professor:String):Observable<Turma>{
+    const url = `${this.baseUrl}/turma/turma-professor/${id_professor}`
+    return this.http.get<Turma>(url)
+  }
+
+  buscarTodasTurmas():Observable<any>{
+    const url = `${this.baseUrl}/turma/turma-professor`
+    return this.http.get<any>(url)
+  }
+
+  cadastrarTurma(turma:Turma): Observable<Turma>{
+    const url = `${this.baseUrl}/turma`
+    return this.http.post<Turma>(url,turma)
+  }
+
   excluirUmaTurma(id:String):Observable<void>{
     const url = `${this.baseUrl}/turma/${id}`
     return this.http.delete<void>(url)
-
   }
 
   editarTurma(turma:Turma):Observable<void>{
@@ -37,9 +51,16 @@ export class TurmaService {
     return this.http.put<void>(url,turma)
   }
 
-  atribuirProfessor(turma:Turma,id_turma:string, id_professor:string):Observable<void>{
+  atribuirProfessor(turma:Turma,id_turma:String, id_professor:String):Observable<void>{
     const url = `${this.baseUrl}/turma/definir-professor/${id_turma}/${id_professor}`
-    return this.http.put<void>(url,turma)
+    return this.http.put<void>(url,turma);
+
+  }
+
+  deixarTurmaSemProfessor(turma:Turma,id_turma:String, id_professor:String):Observable<void>{
+    const url = `${this.baseUrl}/turma/tirar-professor/${id_turma}/${id_professor}`
+    return this.http.put<void>(url,turma);
+
   }
 
 }

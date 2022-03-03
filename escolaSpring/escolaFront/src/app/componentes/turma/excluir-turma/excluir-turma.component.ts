@@ -17,7 +17,9 @@ export class ExcluirTurmaComponent implements OnInit {
     tu_nome:''
   }
 
-  constructor(private turmaService:TurmaService, private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor(private turmaService:TurmaService,
+              private activatedRoute:ActivatedRoute,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.turma.id_turma = this.activatedRoute.snapshot.paramMap.get('id')

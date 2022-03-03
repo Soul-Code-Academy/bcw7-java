@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './seguranca/login/home.component';
+import { LoginComponent } from './seguranca/login/login.component';
 import { ListarTurmaComponent } from './componentes/turma/listar-turma/listar-turma.component';
 import { CadastrarTurmaComponent } from './componentes/turma/cadastrar-turma/cadastrar-turma.component';
 import { ExcluirTurmaComponent } from './componentes/turma/excluir-turma/excluir-turma.component';
@@ -12,10 +12,13 @@ import { EditarAlunoComponent } from './componentes/aluno/editar-aluno/editar-al
 import { ListaGeralAlunosComponent } from './componentes/aluno/lista-geral-alunos/lista-geral-alunos.component';
 import { ListarProfessorComponent } from './componentes/professor/listar-professor/listar-professor.component';
 import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadastrar-professor-turma/cadastrar-professor-turma.component';
+import { CadastrarDadosProfessorComponent } from './componentes/professor/cadastrar-dados-professor/cadastrar-dados-professor.component';
+import { ExcluirProfessorComponent } from './componentes/professor/excluir-professor/excluir-professor.component';
+import { EditarProfessorComponent } from './componentes/professor/editar-professor/editar-professor.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
-  {path: "home", component:HomeComponent},
+  {path: "home", component:LoginComponent},
   {path: "turma", component:ListarTurmaComponent},
   {path: "cadastrarTurma", component:CadastrarTurmaComponent},
   {path: "excluirTurma/:id", component:ExcluirTurmaComponent},
@@ -27,6 +30,9 @@ const routes: Routes = [
   {path: "listaGeralAlunos", component:ListaGeralAlunosComponent},
   {path: "professor", component:ListarProfessorComponent},
   {path: "professorTurma/:id_turma", component:CadastrarProfessorTurmaComponent},
+  {path: "cadastrarProfessor", component:CadastrarDadosProfessorComponent},
+  {path: "excluirProfessor", component:ExcluirProfessorComponent},
+  {path: "editarProfessor", component:EditarProfessorComponent},
 
 ];
 

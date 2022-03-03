@@ -1,0 +1,32 @@
+<div class="container ">
+  <div class="search-box float-end">
+    <input type="text" [(ngModel)] = "search" >
+    <button class="btn-search" type="reset" (click)="resetSearch()"></button>
+  </div>
+  <h3 class="title  mt-5 mb-3 ">Funcionários</h3>
+  <div class="table-responsive">
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Identificação</th>
+          <th scope="col">Nome do Funcionario</th>
+          <th scope="col">Nome da Cidade</th>
+          <th scope="col">Editar/Excluir</th>
+          <th scope="col"><a routerLink="/cadastrarFuncionario/{{id_cargo}}"  class="btn btn-dark" title="Cadastrar Funcionário"><i class="fa-solid fa-square-pen"></i></a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios | filter: search" class="fs-5">
+          <td scope="row">{{funcionario.id_funcionario}}</td>
+          <td>{{funcionario.func_nome}}</td>
+          <td>{{funcionario.func_cidade}}</td>
+            <td>
+              <a  routerLink="/editarFuncionario/{{funcionario.id_funcionario}}/{{id_cargo}}" class="btn btn-success" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a  routerLink="/excluirFuncionario/{{funcionario.id_funcionario}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Funcionário"></i></a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

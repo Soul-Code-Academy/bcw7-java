@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
+import soulCodeAcademy.EmpresaAsd.models.Departamento;
 import soulCodeAcademy.EmpresaAsd.services.CargoService;
 
 @CrossOrigin
@@ -38,6 +39,24 @@ public class CargoController {
 		Cargo cargo = cargoService.buscarUmCargo(id_cargo);
 		return ResponseEntity.ok(cargo);
 	}
+	
+	@GetMapping("/cargo-sem-departamento")
+	public List<Cargo> departamentoSemCargo(){
+		List<Cargo> cargo = cargoService.cargoSemDepartamento();
+		return cargo;
+	}
+	@GetMapping("/cargo/cargo-departamento/{id_professor}")
+	public Cargo cargoDoDepartamento(@PathVariable Integer id_departamento){
+		
+		return cargoService.cargoDoDepartamento(id_departamento);
+	}
+	
+	@GetMapping("/cargo/cargo-departamento")
+	public List<List> cargosComDepartamntos(){
+		List<List> cargoDepartamento = cargoService.cargoComSeuDepartamento();
+		return cargoDepartamento;
+	}
+	
 
 	@PostMapping("/cargo")
 	public ResponseEntity<Void> cadastrarCargo(@RequestBody Cargo cargo) {
@@ -58,6 +77,20 @@ public class CargoController {
 	@DeleteMapping("/cargo/{id_cargo}")
 	public ResponseEntity<Void> deletarUmCargo(@PathVariable Integer id_cargo) {
 		cargoService.deletarUmCargo(id_cargo);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@PutMapping("/cargo/definir-departamento/{id_cargo}/{id_departamento}")
+	public ResponseEntity<Departamento> atribuirDepartamento(@PathVariable Integer id_cargo, @PathVariable Integer id_departamento){
+	    cargoService.atribuirDepartamento(id_cargo, id_departamento);
+		return ResponseEntity.noContent().build();
+		
+	}
+	
+	
+	@PutMapping("/cargo/tirar-departamento/{id_cargo}/{id_departamento}")
+	public ResponseEntity<Departamento> deixarCargoSemDepartamento(@PathVariable Integer id_cargo, @PathVariable Integer id_departamento){
+		cargoService.deixarCargoSemDepartamento(id_cargo, id_departamento);
 		return ResponseEntity.noContent().build();
 	}
 }

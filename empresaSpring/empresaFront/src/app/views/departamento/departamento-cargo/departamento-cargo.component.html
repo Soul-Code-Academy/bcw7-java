@@ -1,0 +1,48 @@
+<div class="container w-50 mt-5">
+  <h5 *ngIf="departamentoCadastrado" class="card-title text-center">Dados do Departamento do Cargo {{id_cargo}}</h5>
+  <h5 *ngIf="!departamentoCadastrado" class="card-title text-center"> Cargo {{id_cargo}} sem departamento!</h5>
+
+  <form class="p-3">
+    <div class="mb-3">
+        <label class="form-label">Nome do Departamento</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="departamento.dep_nome" name="dep_nome" >
+    </div>
+    <div *ngIf="!departamentoCadastrado" class="my-3">
+      <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="departamentoSemCargo" name="departamentoSemCargo" (ngModelChange)="mostrarDepartamento()" class="w-100 p-2">
+        <option selected [ngValue]="departamentoSemCargo">Selecione o Nome do Departamento sem Cargo</option>
+        <option *ngFor="let departameto of departamentosSemCargo" [ngValue]="departamento" >
+          {{departamento.dep_nome}}
+        </option>
+      </select>
+    </div>
+
+
+    <div *ngIf="departamentoCadastrado" class="my-3">
+      <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="departamentoSemCargo" name="departamentoSemCargo" (ngModelChange)="mostrarDepartamento()" class="w-100 p-2">
+        <option selected [ngValue]="departamentoSemCargo">Departamentos sem Cargo</option>
+        <option *ngFor="let departamento of departamentosSemCargo" [ngValue]="departamento" >
+          {{departamento.dep_nome}}
+        </option>
+      </select>
+    </div>
+
+    <button *ngIf="departamentoCadastrado"  class="btn btn-success me-3" (click)="atribuirDepartamento()">Alterar</button>
+    <button *ngIf="!departamentoCadastrado" class="btn btn-success me-3" (click)="atribuirDepartamento()">Salvar</button>
+    <button  routerLink="/departamento/{{id_cargo}}" class="btn btn-dark">Cancelar</button>
+
+
+      <div class=" my-3 ">
+        <h5 class="bg-success text-center text-warning fs-4 p-1 rounded-3 mx-5" >Deixar Departamento sem Cargo? <button (click)=" deixarCargoSemDepartamento()" class="btn btn-dark">Confirmar</button></h5>
+    </div>
+
+    <div *ngIf="cadastrado" class="alert alert-success w-75 text-center m-auto" role="alert">Departamento Cadastrado ao Cargo!</div>
+    <div *ngIf="error" class="alert alert-danger w-75 text-center m-auto" role="alert">Erro!Não foi possível cadastrar este departamento.</div>
+
+    <div *ngIf="retirado" class="alert alert-success w-75 text-center m-auto" role="alert">Cargo sem departamento.</div>
+    <div *ngIf="erro" class="alert alert-danger w-75 text-center m-auto" role="alert">Erro! Não foi possível retirar o departamento desse cargo.</div>
+
+
+
+
+
+

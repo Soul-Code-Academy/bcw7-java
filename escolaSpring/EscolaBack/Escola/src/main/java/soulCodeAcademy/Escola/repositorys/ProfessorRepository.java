@@ -9,14 +9,16 @@ import org.springframework.data.jpa.repository.Query;
 import soulCodeAcademy.Escola.models.Professor;
 
 public interface ProfessorRepository extends JpaRepository<Professor,Integer>{
-	@Query(value= "SELECT * FROM professor WHERE id_turma= :id_turma", nativeQuery = true)
-	Professor buscarProfessorTurma(Integer id_turma);
-	
-	@Query(value = "SELECT  pro_nome, pro_formacao, tu_nome FROM turma right JOIN professor ON professor.id_turma = turma.id_turma order by pro_nome", nativeQuery = true)
-	List<List> professoresComTurma();
-	
-	@Query(value = "SELECT * FROM professor WHERE id_turma is null", nativeQuery = true)
+
+	@Query(value = "SELECT * FROM professor WHERE id_turma = :id_turma", nativeQuery = true)
+	Professor fetchByTurma(Integer id_turma);
+
+	@Query(value="SELECT * FROM professor WHERE id_turma is null", nativeQuery = true)
 	List<Professor> professorSemTurma();
+	
+	@Query(value = "SELECT professor.id_professor,professor.pro_nome,professor.pro_formacao,turma.id_turma,turma.tu_nome,turma.tu_descricao FROM turma right JOIN professor ON professor.id_turma = turma.id_turma order by professor.pro_nome;",nativeQuery = true)
+	List<List> professorComSuaTurma();
+
 	
 }
 

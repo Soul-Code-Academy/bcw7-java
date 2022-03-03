@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
-import { HomeComponent } from './seguranca/login/home.component';
+import { LoginComponent } from './seguranca/login/login.component';
 import { ListarTurmaComponent } from './componentes/turma/listar-turma/listar-turma.component';
 import { CadastrarTurmaComponent } from './componentes/turma/cadastrar-turma/cadastrar-turma.component';
 import { ExcluirTurmaComponent } from './componentes/turma/excluir-turma/excluir-turma.component';
@@ -20,12 +20,15 @@ import { ListarProfessorComponent } from './componentes/professor/listar-profess
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadastrar-professor-turma/cadastrar-professor-turma.component';
+import { CadastrarDadosProfessorComponent } from './componentes/professor/cadastrar-dados-professor/cadastrar-dados-professor.component';
+import { ExcluirProfessorComponent } from './componentes/professor/excluir-professor/excluir-professor.component';
+import { EditarProfessorComponent } from './componentes/professor/editar-professor/editar-professor.component';
 @NgModule({
   declarations: [
 
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
+    LoginComponent,
     ListarTurmaComponent,
     CadastrarTurmaComponent,
     ExcluirTurmaComponent,
@@ -38,6 +41,9 @@ import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadast
     ListaGeralAlunosComponent,
     ListarProfessorComponent,
     CadastrarProfessorTurmaComponent,
+    CadastrarDadosProfessorComponent,
+    ExcluirProfessorComponent,
+    EditarProfessorComponent,
 
 
   ],

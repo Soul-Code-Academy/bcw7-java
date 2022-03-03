@@ -40,9 +40,12 @@ export class CadastrarProfessorTurmaComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscarProfessorComTurma()
+
     this.professorService.buscarProfessorSemTurma().subscribe((resultado)=>{
       this.professoresSemTurma = resultado
     })
+
+    this.professor = this.professorSemTurma
   }
 
   buscarProfessorComTurma(){
@@ -66,15 +69,30 @@ export class CadastrarProfessorTurmaComponent implements OnInit {
   }
 
   atribuirProfessor(){
-    this.turmaService.mostrarUmaTurma(this.id_turma).subscribe({
-      complete: () =>{alert('Professor cadastrado na turma')},
 
-      error: () => {alert('Professor não cadastrado.')}
+    this.turmaService.mostrarUmaTurma(this.id_turma).subscribe((resultado)=>{
+      this.turma = resultado
+
     })
-    this.turmaService.atribuirProfessor(this.turma, this.id_turma, this.professor.id_professor).subscribe((resultado)=>{
-      console.log(resultado)
+
+    this.turmaService.atribuirProfessor(this.turma, this.id_turma,this.professor.id_professor).subscribe({
+      complete: () => {alert("O professor foi atribuído para a turma")
+                      this.router.navigate(['/turma'])},
+      error: () => {alert("Erro: o professor não foi atribuído")
+                    this.router.navigate(['/turma']) }
     })
-    // this.router.navigate([`/professorTurma/${this.id_turma}`])
+
+
+
+  }
+
+  deixarTurmaSemProfessor(){
+    this.turmaService.deixarTurmaSemProfessor (this.turma, this.id_turma,this.professor.id_professor).subscribe({
+      complete: () => {alert("A turma agora está sem Professor")
+                      this.router.navigate(['/turma'])},
+      error: () => {alert("Erro: o professor não foi retirado da turma")
+                    this.router.navigate(['/turma']) }
+    })
   }
 
 

@@ -1,0 +1,17 @@
+.fas{
+  width: 25px;
+}
+
+.bg{
+  background-color: var(--color1);
+}
+
+marquee{
+  color: var(--color2);
+}
+
+@media only screen and (max-width: 1024px) {
+  marquee{
+    width: 200px;
+  }
+}

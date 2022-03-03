@@ -12,6 +12,11 @@ export class ProfessorService {
 
   constructor(private http:HttpClient) { }
 
+  buscarUmProfessor(id_professor:String):Observable<Professor>{
+    const url = `${this.baseUrl}/professor/${id_professor}`
+    return this.http.get<Professor>(url)
+  }
+
   buscarProfessorComTurma(id_turma: string):Observable<Professor>{
     const url = `${this.baseUrl}/professor-turma/${id_turma}`
     return this.http.get<Professor>(url)
@@ -28,5 +33,19 @@ export class ProfessorService {
     return this.http.get<Professor[]>(url)
   }
 
+  cadastrarProfessor(professor:Professor): Observable<Professor>{
+    const url = `${this.baseUrl}/professor`
+    return this.http.post<Professor>(url,professor)
+  }
+
+  excluirProfessor(id_professor:String):Observable<void>{
+    const url = `${this.baseUrl}/professor/${id_professor}`
+    return this.http.delete<void>(url)
+  }
+
+  editarProfessor(professor:Professor):Observable<void>{
+    const url = `${this.baseUrl}/professor/${professor.id_professor}`
+    return this.http.put<void>(url,professor)
+  }
 
 }
