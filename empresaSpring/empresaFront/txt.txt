@@ -1,0 +1,27 @@
+<div *ngIf="!departamentoCadastrado"  class="my-3">
+  <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="departamentoSemCargo" name="departamentoSemCargo" (ngModelChange)="mostrarDepartamento()" class="w-100 p-2">
+    <option selected [ngValue]="departamentoSemCargo">Professores sem Cargo</option>
+    <option *ngFor="let professor of departamentosSemCargo" [ngValue]="departamento" >
+      {{professor.dep_nome}}
+    </option>
+  </select>
+</div>
+
+
+
+
+<div *ngIf="!departamentoCadastrado" class="my-3">
+      <select class="form-select my-3" aria-label="Default select example" autocomplete="on" [(ngModel)]="departamentoSemCargo" name="departamentoSemCargo" (ngModelChange)="mostrarDepartamento()" class="w-100 p-2">
+        <option selected [ngValue]="departamentoSemCargo">Selecione o Nome do Departamento sem Cargo</option>
+        <option *ngFor="let departameto of departamentosSemCargo" [ngValue]="departamento" >
+          {{departamento.dep_nome}}
+        </option>
+      </select>
+    </div>
+
+
+
+
+
+
+

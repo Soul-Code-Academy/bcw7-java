@@ -43,8 +43,8 @@ export class CargoService {
     return this.http.post<Cargo>(url,cargo)
   }
 
-  excluirUmCargo(id:String):Observable<Cargo>{
-    const url = `${this.baseUrl}/cargo/${id}`
+  excluirUmCargo(id_cargo:String):Observable<Cargo>{
+    const url = `${this.baseUrl}/cargo/${id_cargo}`
     return this.http.delete<Cargo>(url)
   }
 

@@ -48,6 +48,11 @@ public class ProfessorService {
 		return professorRepository.professorComSuaTurma();
 	}
 	
+	public Professor buscarProfessorPeloCpf(String pro_cpf) {
+		Professor professor = professorRepository.fetchByCpf(pro_cpf);
+		return professor;
+	}
+	
 	
 	public Professor inserirProfessor(Integer id_turma, Professor professor) {
 		professor.setId_professor(null);

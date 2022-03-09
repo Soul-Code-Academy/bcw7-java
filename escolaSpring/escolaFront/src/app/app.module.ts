@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import localePt from '@angular/common/locales/pt';
+import { NgxCurrencyModule } from "ngx-currency";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,11 +20,19 @@ import { EditarAlunoComponent } from './componentes/aluno/editar-aluno/editar-al
 import { ListaGeralAlunosComponent } from './componentes/aluno/lista-geral-alunos/lista-geral-alunos.component';
 import { ListarProfessorComponent } from './componentes/professor/listar-professor/listar-professor.component';
 
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadastrar-professor-turma/cadastrar-professor-turma.component';
 import { CadastrarDadosProfessorComponent } from './componentes/professor/cadastrar-dados-professor/cadastrar-dados-professor.component';
 import { ExcluirProfessorComponent } from './componentes/professor/excluir-professor/excluir-professor.component';
 import { EditarProfessorComponent } from './componentes/professor/editar-professor/editar-professor.component';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ListarBoletoAlunoComponent } from './componentes/boleto/listar-boleto-aluno/listar-boleto-aluno.component';
+import { registerLocaleData } from '@angular/common';
+import { CadastrarBoletoComponent } from './componentes/boleto/cadastrar-boleto/cadastrar-boleto.component';
+import { EditarBoletoComponent } from './componentes/boleto/editar-boleto/editar-boleto.component';
+import { ListarBoletoComponent } from './componentes/boleto/listar-boleto/listar-boleto.component';
+
+registerLocaleData(localePt)
 @NgModule({
   declarations: [
 
@@ -44,6 +54,10 @@ import { EditarProfessorComponent } from './componentes/professor/editar-profess
     CadastrarDadosProfessorComponent,
     ExcluirProfessorComponent,
     EditarProfessorComponent,
+    ListarBoletoAlunoComponent,
+    CadastrarBoletoComponent,
+    EditarBoletoComponent,
+    ListarBoletoComponent,
 
 
   ],
@@ -52,9 +66,13 @@ import { EditarProfessorComponent } from './componentes/professor/editar-profess
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxCurrencyModule
   ],
-  providers: [],
+  providers: [
+    {provide:LOCALE_ID, useValue:'pt-BR'},
+    {provide:DEFAULT_CURRENCY_CODE, useValue:'BRL'},
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

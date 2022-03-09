@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Cargo } from '../models/cargoModelo';
 import { Funcionario } from '../models/funcionarioModelo';
 
 @Injectable({
@@ -10,11 +11,11 @@ import { Funcionario } from '../models/funcionarioModelo';
 
 export class FuncionarioService {
 
-  baseUrl: String= 'http://localhost:8080/empresa'
+  baseUrl: String = 'http://localhost:8080/empresa'
 
   constructor(private http:HttpClient) { }
 
-  buscarFuncionarioCargo(id_cargo: string):Observable<Funcionario[]>{
+    buscarFuncionarioCargo(id_cargo: string):Observable<Funcionario[]>{
     const url = `${this.baseUrl}/funcionario/busca-cargo/${id_cargo}`
     return this.http.get<Funcionario[]>(url)
   }
@@ -45,6 +46,10 @@ export class FuncionarioService {
     return this.http.put<Funcionario>(url,funcionario)
   }
 
+
+  buscarFuncionarioPeloCpf(func_cpf:String):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionario-cpf/${func_cpf}`
+    return this.http.get<Funcionario>(url)
+  }
+
 }
-
-

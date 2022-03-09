@@ -5,25 +5,29 @@
     <button class="btn-search" type="reset" (click)="resetSearch()"></button>
   </div>
   <a routerLink="/cadastrarProfessor"  class="btn btn-dark" title="Cadastrar Professor"><i class="fa-solid fa-square-pen"></i></a>
-  <table class="table table-hover table-responsive-md text-center">
+  <table class="table table-hover table-responsive text-center">
     <thead>
       <tr>
-        <th scope="col">Registro Professor</th>
+        <th scope="col">Registro do Professor</th>
+        <th scope="col">Foto do Professor</th>
+        <th scope="col">CPF do Professor</th>
         <th scope="col">Nome do Professor</th>
         <th scope="col">Formação</th>
         <th scope="col">Turma</th>
-        <th scope="col">Ações</th>
+        <th scope="col">Editar/Excluir</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let professor of professores | filter: search">
         <td>{{professor.id_professor}}</td>
+        <td class="my-2 border border-success rounded-3" style="height:7rem ;">{{professor.pro_foto}}</td>
+        <td>{{professor.pro_cpf}}</td>
         <td>{{professor.pro_nome}}</td>
         <td>{{professor.pro_formacao}}</td>
         <td>{{professor.tu_turma}}</td>
         <td>
-          <a  routerLink="/editarProfessor" class="btn btn-success" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
-          <a  routerLink="/excluirProfessor" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Professor"></i></a>
+          <a  routerLink="/editarProfessor/{{professor.id_professor}}" class="btn btn-success me-3" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a  routerLink="/excluirProfessor/{{professor.id_professor}}" class="btn btn-danger"><i class="fa-solid fa-trash-can" title="Excluir Professor"></i></a>
         </td>
       </tr>
     </tbody>

@@ -28,7 +28,9 @@ export class EditarFuncionarioComponent implements OnInit {
   funcionario:Funcionario= {
     id_funcionario:'',
     func_nome:'',
-    func_cidade:''
+    func_cidade:'',
+    func_foto:'',
+    func_cpf:''
   }
 
   constructor(private funcionarioService:FuncionarioService,
@@ -40,16 +42,16 @@ export class EditarFuncionarioComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    this.mostrarUmFuncionario()
-    this.mostrarTodosCargos()
-  }
-
-  mostrarUmFuncionario(){
     this.funcionarioService.mostrarUmFuncionario(this.funcionario.id_funcionario).subscribe((resposta)=>{
       this.funcionario = resposta
       console.log(this.funcionario)
     })
+    this.cargoService.mostrarTodosCargos().subscribe(resposta =>{
+      this.cargos = resposta
+      console.log(this.cargos)
+    })
   }
+
 
   editarFuncionario() {
     this.funcionarioService.editarFuncionario(this.funcionario, this.funcionario.id_funcionario, this.id_cargo).subscribe({
@@ -81,11 +83,12 @@ export class EditarFuncionarioComponent implements OnInit {
       this.isModal = true
     }
 
+    fechar(){
+      this.transferido=false
+      this.error=false
+      this.erro=false
+      this.editado=false
+    }
 
-    mostrarTodosCargos(){
-      this.cargoService.mostrarTodosCargos().subscribe(resposta =>{
-        this.cargos = resposta
-        console.log(this.cargos)
-      })
-}
+   
 }

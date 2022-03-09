@@ -14,6 +14,7 @@ export class ListarProfessorComponent implements OnInit {
 
   id_turma:string
   professores:any=[]
+
   search:any
 
   constructor(private professorService:ProfessorService,
@@ -32,15 +33,19 @@ export class ListarProfessorComponent implements OnInit {
 
         let profs: any ={
           id_professor:'',
+          // pro_foto:'',
+          pro_cpf:'',
           pro_nome:'',
           pro_formacao: '',
           tu_turma: '',
         }
 
         profs.id_professor = professor[0]
-        profs.pro_nome = professor[1]
-        profs.pro_formacao = professor[2]
-        profs.tu_turma = professor[3]
+        // profs.pro_foto = professor[1]
+        profs.pro_cpf = professor[1]
+        profs.pro_nome = professor[2]
+        profs.pro_formacao = professor[3]
+        profs.tu_turma = professor[4]
 
         if(profs.tu_turma  == undefined){
           profs.tu_turma='Professor sem turma.'

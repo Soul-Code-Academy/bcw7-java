@@ -20,22 +20,19 @@ export class EditarCargoComponent implements OnInit {
   }
 
   constructor(private cargoService:CargoService,
-    private route: ActivatedRoute,
-    private router: Router) {
+              private route: ActivatedRoute,
+              private router: Router) {
       this.cargo.id_cargo = this.route.snapshot.paramMap.get('id')
      }
 
   ngOnInit(): void {
 
-    this.mostrarUmCargo()
-  }
-
-  mostrarUmCargo(){
     this.cargoService.mostrarUmCargo(this.cargo.id_cargo).subscribe((resposta)=>{
       this.cargo = resposta
       console.log(this.cargo)
     })
   }
+
 
   editarCargo() {
     this.cargoService.editarCargo(this.cargo).subscribe({
@@ -47,5 +44,10 @@ export class EditarCargoComponent implements OnInit {
 
     })
 
+    }
+
+    fechar(){
+      this.editado = false;
+      this.error = false;
     }
 }

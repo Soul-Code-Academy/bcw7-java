@@ -12,7 +12,8 @@
         <th scope="col">Nome do Aluno</th>
         <th scope="col">Nome do Responsável</th>
         <th scope="col">Cidade do Aluno</th>
-        <th scope="col">Ações</th>
+        <th scope="col">Boleto</th>
+        <th scope="col">Editar/Excluir</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td>{{aluno.al_nome}}</td>
         <td>{{aluno.al_responsavel}}</td>
         <td>{{aluno.al_cidade}}</td>
+        <td> <a  routerLink="/boleto/{{aluno.ra_aluno}}" class="btn btn-dark" title="Boletos"><i class="fa-solid fa-coins"></i></a></td>
         <td>
           <a  routerLink="/editarAluno/{{aluno.ra_aluno}}/{{id_turma}}" class="btn btn-success" title="EditarDados"><i class="fa-solid fa-pen-to-square"></i></a>
           <a  routerLink="/excluirAluno/{{aluno.ra_aluno}}/{{id_turma}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>

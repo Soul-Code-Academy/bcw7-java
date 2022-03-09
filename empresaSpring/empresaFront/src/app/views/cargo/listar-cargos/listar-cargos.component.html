@@ -4,8 +4,9 @@
     <input type="text" [(ngModel)] = "search" >
     <button class="btn-search" type="reset" (click)="resetSearch()"></button>
   </div>
-  <h3 class="title text-start mt-5 mb-2">Cargos</h3>
-  <div class="table-responsive">
+  <h3 class="text-start mt-5 mb-2">Cargos</h3>
+  <hr>
+  <div class="table-responsive" style="height: 300px; overflow: auto;">
     <table class="table table-hover table-borderless">
       <thead>
         <tr>
@@ -29,9 +30,9 @@
           <td> <a routerLink="/departamentoCargo/{{cargo.id_cargo}}" class="btn btn-dark"> <i class="fa-solid fa-warehouse" title="Listar departamento desse cargo"></i></a></td>
 
           <td>
-            <a  routerLink="/editarCargo/{{cargo.id_cargo}}" class="btn btn-success" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a  routerLink="/editarCargo/{{cargo.id_cargo}}" class="btn btn-success me-3" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>
 
-            <a  routerLink ="/excluirCargo/{{cargo.id_cargo}}" class="btn btn-danger mx-3"><i class="fa-solid fa-trash-can" title="Excluir Turma"></i></a>
+            <a  (click)="mostrarModal(cargo.id_cargo)" class="btn btn-danger"><i class="fa-solid fa-trash-can" title="Excluir Cargo"></i></a>
           </td>
 
       </tr>
@@ -39,3 +40,27 @@
     </table>
   </div>
 </div>
+
+<div *ngIf = 'isModal'>
+  <div class="myModal" *ngFor="let cargo of cargos ">
+    <div class="tituloModal">
+      <h3 class="fs-3 fw-bolder">Atenção!</h3>
+    </div>
+   <h4 class="my-3 fs-4 p-2 text-light">Confirma exclusão do cargo?</h4>
+    <div class="text-start mb-3 ">
+      <ul class="fs-5">
+        <li>Nome do Cargo:</li>
+        <span>{{cargo.ca_nome}}</span>
+        <li>Atribuição do Cargo:</li>
+        <span>{{cargo.ca_atribuicao}}</span>
+      </ul>
+    </div>
+    <button class="btn mx-1 btn-modal" (click)="cancelarAcao()">Não</button>
+    <button class="btn btn-modal" (click)="excluirCargo()">Sim</button>
+  </div>
+</div>
+<div class="fixed-top">
+  <div *ngIf="deletado" class="alert alert-danger w-75 text-center m-auto" role="alert">Cargo excluído.<i (click)="fechar()" class="fa-solid fa-rectangle-xmark fs-1 float-end" style="cursor: pointer;"></i></div>
+  <div *ngIf="error" class="alert alert-danger w-75 text-center m-auto" role="alert">Este cargo possui funcionários associados e não pode ser excluído!<i (click)="fechar()" class="fa-solid fa-rectangle-xmark fs-1 float-end" style="cursor: pointer;"></i></div>
+</div>
+

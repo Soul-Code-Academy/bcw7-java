@@ -1,8 +1,7 @@
 <div class="container mb-5 p-5 w-75">
   <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Cadastrar Professor {{id_turma}}</h5>
-
+        <h5 class="card-title text-center">Cadastrar Professor</h5>
         <form>
           <div class="mb-3">
             <label class="form-label">Nome do professor</label>
@@ -13,16 +12,20 @@
             <input type="text" class="form-control" [(ngModel)]="professor.pro_formacao"  name="pro_formacao">
           </div>
           <div class="mb-3">
-            <label class="form-label">Foto de identificação</label>
-            <input type="file" class="form-control"  [(ngModel)]="professor.pro_foto"  name="pro_foto">
+            <label class="form-label">CPF do professor</label>
+            <input type="text" class="form-control" [(ngModel)]="professor.pro_cpf"  name="pro_cpf">
           </div>
-
-          <button (click)="cadastrarProfessor()" class="btn btn-success me-3">Salvar</button>
-          <button  routerLink="/turma/{{id_turma}}" class="btn btn-dark">Cancelar</button>
-
+          <div class="my-3">
+            <button (click)="cadastrarProfessor()" class="btn btn-success me-3">Salvar</button>
+             <button  routerLink="/professor" class="btn btn-dark">Cancelar</button>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Foto de identificação</label>
+            <div class="w-25 my-2 border border-success rounded-3" style="height:7rem ;" [(ngModel)]="professor.pro_foto"  name="pro_foto"></div>
+            <input type="file" class="form-control" [disabled]="!profCadastrado" (change)="subirFoto($event)"   name="pro_foto">
+          </div>
         </form>
       </div>
     </div>
 </div>
-
 

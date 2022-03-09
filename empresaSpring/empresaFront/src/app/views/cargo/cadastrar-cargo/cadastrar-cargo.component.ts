@@ -31,6 +31,11 @@ export class CadastrarCargoComponent implements OnInit {
         }, 2000)
       })
      }
+
+     fechar(){
+       this.cadastrado=false
+       this.error=false
+     }
   }
 
 

@@ -60,6 +60,12 @@ public class ProfessorController {
 		List <Professor> professor = professorService.professorSemTurma();
 		return professor;
 	}
+	
+	@GetMapping("/professor-cpf/{pro_cpf}")
+	public ResponseEntity<Professor> buscarProfessorPeloCpf(@PathVariable String pro_cpf){
+		Professor professor = professorService.buscarProfessorPeloCpf(pro_cpf);
+		return ResponseEntity.ok().body(professor);
+	}
 
 	@PostMapping("/professor")
 	public ResponseEntity<Professor> inserirProfessorComTurma(@RequestParam(value="turma", required = false)Integer id_turma,@RequestBody Professor professor){

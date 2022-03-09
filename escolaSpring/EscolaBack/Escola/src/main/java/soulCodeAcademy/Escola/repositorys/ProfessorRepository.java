@@ -16,9 +16,11 @@ public interface ProfessorRepository extends JpaRepository<Professor,Integer>{
 	@Query(value="SELECT * FROM professor WHERE id_turma is null", nativeQuery = true)
 	List<Professor> professorSemTurma();
 	
-	@Query(value = "SELECT professor.id_professor,professor.pro_nome,professor.pro_formacao,turma.id_turma,turma.tu_nome,turma.tu_descricao FROM turma right JOIN professor ON professor.id_turma = turma.id_turma order by professor.pro_nome;",nativeQuery = true)
+	@Query(value = "SELECT professor.id_professor, professor.pro_cpf, professor.pro_nome,professor.pro_formacao, turma.id_turma,turma.tu_nome,turma.tu_descricao FROM turma right JOIN professor ON professor.id_turma = turma.id_turma order by professor.pro_nome;",nativeQuery = true)
 	List<List> professorComSuaTurma();
 
-	
+
+	@Query(value="SELECT * FROM professor WHERE pro_cpf = :pro_cpf", nativeQuery = true)
+	Professor fetchByCpf(String pro_cpf);
 }
 

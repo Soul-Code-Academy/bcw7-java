@@ -24,7 +24,12 @@ public class Funcionario {
 
 	@Column(nullable = false, length = 30)
 	private String func_cidade;
+	
+	@Column(nullable = false, length = 11)
+	private String func_cpf;
 
+	@Column(nullable = false, length = 1000)
+	private String func_foto;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_cargo")
@@ -61,5 +66,23 @@ public class Funcionario {
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
+
+	public String getFunc_foto() {
+		return func_foto;
+	}
+
+	public void setFunc_foto(String func_foto) {
+		this.func_foto = func_foto;
+	}
+
+	public String getFunc_cpf() {
+		return func_cpf;
+	}
+
+	public void setFunc_cpf(String func_cpf) {
+		this.func_cpf = func_cpf;
+	}
+	
+	
 }
 

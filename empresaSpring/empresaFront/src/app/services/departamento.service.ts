@@ -31,6 +31,21 @@ export class DepartamentoService {
     const url = `${this.baseUrl}/departamento/departamento-cargo`
     return this.http.get<any>(url)
   }
+
+  cadastrarDepartamento(departamento:Departamento):Observable<Departamento>{
+    const url = `${this.baseUrl}/departamento`
+    return this.http.post<Departamento>(url,departamento);
+  }
+
+  editarDepartamento(departamento:Departamento):Observable<Departamento>{
+    const url = `${this.baseUrl}/departamento/${departamento.id_departamento}`
+    return this.http.put<Departamento>(url,departamento)
+  }
+
+  excluirUmDepartamento(id_departamento:String):Observable<Departamento>{
+    const url = `${this.baseUrl}/departamento/${id_departamento}`
+    return this.http.delete<Departamento>(url)
+  }
 }
 
 

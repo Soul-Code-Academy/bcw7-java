@@ -15,6 +15,10 @@ import { CadastrarProfessorTurmaComponent } from './componentes/professor/cadast
 import { CadastrarDadosProfessorComponent } from './componentes/professor/cadastrar-dados-professor/cadastrar-dados-professor.component';
 import { ExcluirProfessorComponent } from './componentes/professor/excluir-professor/excluir-professor.component';
 import { EditarProfessorComponent } from './componentes/professor/editar-professor/editar-professor.component';
+import { ListarBoletoAlunoComponent } from './componentes/boleto/listar-boleto-aluno/listar-boleto-aluno.component';
+import { CadastrarBoletoComponent } from './componentes/boleto/cadastrar-boleto/cadastrar-boleto.component';
+import { EditarBoletoComponent } from './componentes/boleto/editar-boleto/editar-boleto.component';
+import { ListarBoletoComponent } from './componentes/boleto/listar-boleto/listar-boleto.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
@@ -31,8 +35,13 @@ const routes: Routes = [
   {path: "professor", component:ListarProfessorComponent},
   {path: "professorTurma/:id_turma", component:CadastrarProfessorTurmaComponent},
   {path: "cadastrarProfessor", component:CadastrarDadosProfessorComponent},
-  {path: "excluirProfessor", component:ExcluirProfessorComponent},
-  {path: "editarProfessor", component:EditarProfessorComponent},
+  {path: "excluirProfessor/:id_professor", component:ExcluirProfessorComponent},
+  {path: "editarProfessor/:id_professor", component:EditarProfessorComponent},
+  {path: "boleto/:ra_aluno", component:ListarBoletoAlunoComponent},
+  {path: "cadastrarBoleto/:ra_aluno", component:CadastrarBoletoComponent},
+  {path: "editarBoleto/:codigo/:ra_aluno", component:EditarBoletoComponent},
+  {path: "listarBoletos", component:ListarBoletoComponent},
+
 
 ];
 

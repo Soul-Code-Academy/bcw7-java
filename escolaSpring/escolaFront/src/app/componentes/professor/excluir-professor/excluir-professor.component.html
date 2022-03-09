@@ -14,7 +14,8 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Foto de identificação</label>
-            <input type="text" class="form-control" readonly  [(ngModel)]="professor.pro_foto"  name="pro_foto">
+            <div class="w-25 my-2 border border-success rounded-3" style="height:7rem ;" [(ngModel)]="professor.pro_foto"  name="pro_foto"></div>
+            <input type="file" class="form-control" readonly [(ngModel)]="professor.pro_foto"  name="pro_foto">
           </div>
 
           <button (click)="excluirProfessor()" class="btn btn-success me-3">Confirmar</button>

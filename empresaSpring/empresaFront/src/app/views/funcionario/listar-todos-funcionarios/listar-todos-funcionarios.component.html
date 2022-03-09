@@ -3,28 +3,46 @@
     <input type="text" [(ngModel)] = "search" >
     <button class="btn-search" type="reset" (click)="resetSearch()"></button>
   </div>
-  <h3 class="title text-start mt-5 mb-3 ">Todos Funcionários</h3>
-
-  <div class="table-responsive">
+  <h3 class="text-start mt-5 mb-3 ">Todos Funcionários</h3>
+  <hr>
+  <div class="table-responsive" style="height: 300px; overflow: auto;">
     <table class="table table-hover table-borderless">
       <thead>
         <tr>
           <th scope="col">Identificação</th>
-          <th scope="col">Nome do Funcionario</th>
-          <th scope="col">Nome da Cidade</th>
-          <th scope="col">Nome do Cargo</th>
+          <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Cargo</th>
+          <!-- <th scope="col">Departamento</th> -->
           <th scope="col">Atribuição do Cargo</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let funcionario of funcionarios | filter: search" class="fs-5">
           <th scope="row">{{funcionario.id_funcionario}}</th>
-          <td>{{funcionario.func_nome}}</td>
+          <td><a class="a" (click)="mostrarModal()">{{funcionario.func_nome}}</a></td>
+          <td>{{funcionario.func_cpf}}</td>
           <td>{{funcionario.func_cidade}}</td>
           <td>{{funcionario.ca_nome}}</td>
           <td>{{funcionario.ca_atribuicao}}</td>
+          <!-- <td>{{funcionario.dep_nome}}</td> -->
         </tr>
       </tbody>
     </table>
   </div>
+<div *ngIf="isModal ">
+  <div class="myModal p-2 w-25 mb-5" *ngFor="let funcionario of funcionarios ">
+    <img src="{{funcionario.func_foto}}" class="card-img-top" alt="...">
+    <legend>{{funcionario.func_nome}}</legend>
+    <div class="tituloModal">
+       {{funcionario.func_cidade}}
+       <br>
+       {{funcionario.ca_nome}}
+    </div>
+    <button class="btn mx-1 btn-modal" (click)="cancelarAcao()">OK</button>
+  </div>
+</div>
+
+
 

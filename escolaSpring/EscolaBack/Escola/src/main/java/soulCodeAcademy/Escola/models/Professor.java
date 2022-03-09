@@ -26,6 +26,8 @@ public class Professor {
 	@Column(nullable = true, length = 100)
 	private String pro_foto;
 
+	@Column(nullable = true, length = 20)
+	private String pro_cpf;
 
 	@OneToOne
 	@JoinColumn(name = "id_turma", unique = true)
@@ -80,6 +82,16 @@ public class Professor {
 
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+
+
+	public String getPro_cpf() {
+		return pro_cpf;
+	}
+
+
+	public void setPro_cpf(String pro_cpf) {
+		this.pro_cpf = pro_cpf;
 	}
 
 

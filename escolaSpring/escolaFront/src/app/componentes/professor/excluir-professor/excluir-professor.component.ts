@@ -14,7 +14,8 @@ export class ExcluirProfessorComponent implements OnInit {
     id_professor:'',
     pro_nome:'',
     pro_formacao:'',
-    pro_foto:''
+    pro_foto:'',
+    pro_cpf: ''
   }
 
   constructor(private professorService:ProfessorService,
@@ -32,10 +33,12 @@ export class ExcluirProfessorComponent implements OnInit {
 
   excluirProfessor() {
     this.professorService.excluirProfessor(this.professor.id_professor).subscribe({
-      complete: () => alert('Professor excluído com sucesso!'),
-      error: () => alert('Erro ao excluir professor.'),
+      complete: () => {alert('Professor excluído com sucesso!')
+                        this.router.navigate(['/professor']);},
+      error: () => {alert('Erro ao excluir professor.')
+                        this.router.navigate(['/professor']);},
     });
-    this.router.navigate(['/professor']);
+
 
     }
 

@@ -18,40 +18,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Funcionario;
 import soulCodeAcademy.EmpresaAsd.repositorys.FuncionarioRepository;
 import soulCodeAcademy.EmpresaAsd.services.FuncionarioService;
-import soulCodeAcademy.EmpresaAsd.models.Cargo;
 
-//Mapeamento dos endpoints
 
 @CrossOrigin
 @RestController
 @RequestMapping("empresa")
 public class FuncionarioController {
 
-	// Precisamos da injeção de dependências
-
+	@Autowired
+	private FuncionarioService funcionarioService;
+	
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 
-	@Autowired
-	private FuncionarioService funcionarioService;
-
 	@GetMapping("/funcionario")
-	public  List<Funcionario> mostrarTodosFuncionarios() {
-//		dentro do objeto funcionario vai estar o resultado
+	public List<Funcionario> mostrarTodosFuncionarios() {
 		List<Funcionario> funcionario = funcionarioService.findAll();
 		return funcionario;
 	}
-	
+
 	
 	@GetMapping("/funcionario-cargo")
-	public List<List> funcionarioComCargo(){
-		List<List> funcionarioCargo= funcionarioService.funcionarioComCargo();
+	public List<List> funcionariosComCargo() {
+		List<List> funcionarioCargo = funcionarioService.funcionariosComCargo();
 		return funcionarioCargo;
-		
-}
+	}
 
 	@GetMapping("/funcionario/{id_funcionario}")
 	public ResponseEntity<?> buscarUmFuncionario(@PathVariable Integer id_funcionario) {
@@ -63,14 +58,19 @@ public class FuncionarioController {
 	public List<Funcionario> buscarFuncionarioCargo(@PathVariable Integer id_cargo) {
 		List<Funcionario> funcionario = funcionarioService.buscarFuncionarioCargo(id_cargo);
 		return funcionario;
-		// Aqui retorna-se o funcionário do cargo em questão
+		
 	}
- 
+	
+	@GetMapping("/funcionario-cpf/{func_cpf}")
+	public ResponseEntity<Funcionario> buscarFuncionarioPeloCpf(@PathVariable String func_cpf){
+		Funcionario funcionario = funcionarioService.buscarFuncionarioPeloCpf(func_cpf);
+		return ResponseEntity.ok().body(funcionario);
+	}
+	
 	@PostMapping("/funcionario")
-	public ResponseEntity<Funcionario> inserirFuncionario(@RequestParam(value = "cargo") Integer id_cargo,
-			@RequestBody Funcionario funcionario) {
-		funcionario = funcionarioService.inserirFuncionario(id_cargo, funcionario);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/funcionario/{id}")
+	public ResponseEntity<Funcionario> inserirFuncionario(@RequestBody Funcionario funcionario) {
+		funcionario = funcionarioService.inserirFuncionario(funcionario);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(funcionario.getId_funcionario()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
@@ -89,6 +89,20 @@ public class FuncionarioController {
 		funcionario = funcionarioService.editarFuncionario(funcionario);
 		return ResponseEntity.noContent().build();
 	}
+
+	@PutMapping("/funcionario/inserir-cargo/{id_funcionario}")
+	public ResponseEntity<Funcionario> inserirFuncionarioNoCargo(@PathVariable Integer id_funcionario,
+			@RequestBody Cargo cargo) {
+		funcionarioService.inserirFuncionarioNoCargo(id_funcionario, cargo);
+		return ResponseEntity.noContent().build();
+	}
+
+	@PutMapping("/funcionario/deixar-sem-cargo/{id_funcionario}")
+	public ResponseEntity<Funcionario> deixarFuncionarioSemCargo(@PathVariable Integer id_funcionario) {
+		 funcionarioService.deixarFuncionarioSemCargo(id_funcionario);
+		return ResponseEntity.noContent().build();
+	}
+	
+	
+	
 }
-
-

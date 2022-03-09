@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,7 +59,7 @@ public class DepartamentoController {
 		return departamentoCargo;
 	}
 	
-
+	
 	@PostMapping("/departamento")
 	public ResponseEntity<Departamento> inserirDepartamentoComCargo(@RequestParam(value="cargo", required = false)Integer id_cargo,@RequestBody Departamento departamento){
 		departamento = departamentoService.inserirDepartamento(id_cargo, departamento);	
@@ -74,6 +75,12 @@ public class DepartamentoController {
 		cargo.setDepartamento(departamento);
 		departamento = departamentoService.editarDepartamento(departamento);
 		
+		return ResponseEntity.noContent().build();
+	}
+	
+	@DeleteMapping("/departamento/{id_departamento}")
+	public ResponseEntity<Void> deletarUmDepertamento(@PathVariable Integer id_departamento) {
+		departamentoService.deletarUmDepartamento(id_departamento);
 		return ResponseEntity.noContent().build();
 	}
 }

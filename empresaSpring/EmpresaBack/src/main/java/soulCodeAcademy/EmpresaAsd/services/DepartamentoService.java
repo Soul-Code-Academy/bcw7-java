@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Departamento;
 import soulCodeAcademy.EmpresaAsd.repositorys.DepartamentoRepository;
+import soulCodeAcademy.EmpresaAsd.services.exceptions.DataIntegrityViolationException;
 
 
 @Service
@@ -52,9 +53,23 @@ public class DepartamentoService {
 		return departamentoRepository.save(departamento);	
 	}
 	
+	
+	
 	public Departamento editarDepartamento(Departamento departamento) {
 		mostrarUmDepartamento(departamento.getId_departamento());
 		return departamentoRepository.save(departamento);
+	}
+	
+	public void deletarUmDepartamento(Integer id_departamento){
+		mostrarUmDepartamento(id_departamento);
+		try {
+			departamentoRepository.deleteById(id_departamento);
+		} catch (org.springframework.dao.DataIntegrityViolationException e) {
+			// O catch vem diretamente do Spring
+			throw new DataIntegrityViolationException
+			// Aqui no throw será inserido o tratamento de erro personalizado
+			("O departamento não pode ser deletado.");
+		}
 	}
 	
 }

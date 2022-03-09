@@ -13,7 +13,10 @@ export class ListarAlunoComponent implements OnInit {
   id_turma: string = ''
   alunos:Aluno[]=[]
   search:any
-  constructor(private alunoService:AlunoService, private route:ActivatedRoute, private router:Router) {  this.id_turma = this.route.snapshot.paramMap.get('id_turma')!; }
+  constructor(private alunoService:AlunoService,
+              private route:ActivatedRoute,
+              private router:Router) {
+                 this.id_turma = this.route.snapshot.paramMap.get('id_turma')!; }
 
   ngOnInit(): void {
 

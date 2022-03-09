@@ -22,7 +22,8 @@ export class CadastrarProfessorTurmaComponent implements OnInit {
       id_professor: '',
       pro_nome: '',
       pro_formacao: '',
-      pro_foto:''
+      pro_foto:'',
+      pro_cpf:''
   }
 
   turma:Turma={
@@ -32,9 +33,9 @@ export class CadastrarProfessorTurmaComponent implements OnInit {
    }
 
   constructor(private professorService:ProfessorService,
-    private route:ActivatedRoute,
-    private router:Router,
-    private turmaService:TurmaService) {
+              private route:ActivatedRoute,
+              private router:Router,
+              private turmaService:TurmaService) {
         this.id_turma = this.route.snapshot.paramMap.get('id_turma')! }
 
 

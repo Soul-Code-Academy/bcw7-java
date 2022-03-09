@@ -17,6 +17,13 @@ export class ListarDepartamentoComponent implements OnInit {
   departamentos:any=[]
 
 
+  deletado = false;
+  error = false;
+
+  isModal:boolean = false
+
+  idExcluir!:any
+
   constructor(private departamentoService:DepartamentoService,
               private route:ActivatedRoute,
               private router:Router) {
@@ -24,6 +31,7 @@ export class ListarDepartamentoComponent implements OnInit {
       this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!; }
 
     ngOnInit(): void {
+
       this.buscarTodosDepartamentos();
     }
     buscarTodosDepartamentos(){
@@ -33,21 +41,21 @@ export class ListarDepartamentoComponent implements OnInit {
     let depto: any ={
       id_departamento:'',
       dep_nome:'',
-      func_nome: '',
+      // func_nome: '',
       ca_nome: '',
       ca_atribuicao:''
     }
 
     depto.id_departamento = departamento[0]
     depto.dep_nome = departamento[1]
-    depto.func_nome = departamento[2]
-    depto.ca_nome = departamento[3]
-    depto.ca_atribuicao = departamento[4]
+    // depto.func_nome = departamento[2]
+    depto.ca_nome = departamento[2]
+    depto.ca_atribuicao = departamento[3]
 
 
     if(depto.ca_nome == undefined){
       depto.ca_nome ='Departamento sem cargo associado.'
-      depto.func_nome  ='Departamento sem funcionário.'
+      // depto.func_nome  ='Departamento sem funcionário.'
       depto.ca_atribuicao = 'Departamento sem cargo associado.'
       this.departamentoCadastrado=false
       this.departamentos.push(depto)
@@ -60,8 +68,46 @@ export class ListarDepartamentoComponent implements OnInit {
     })
   })
 }
+
+excluirDepartamento() {
+  this.departamentoService.excluirUmDepartamento(this.idExcluir).subscribe({
+    next: () => {this.deletado=true,
+                setTimeout(() => {
+                  this.isModal= false
+                }, 2000),
+                setTimeout(() => {
+                  this.deletado= false
+                }, 2000)
+                this.router.navigate(["/departamento"])},
+    error: () => {this.error=true
+                setTimeout(() => {
+                  this.isModal= false
+                }, 2000),
+                setTimeout(() => {
+                  this.error= false
+                }, 2000)
+                this.router.navigate(["/departamento"])},
+    complete:() => setTimeout(() => {
+      this.router.navigate(["/departamento"])
+    }, 2000)
+  })
+}
     resetSearch(){
       this.search=''
-      }
+    }
+
+    cancelarAcao(){
+      this.isModal=false
+    }
+
+    mostrarModal(id_departamento:any){
+      this.isModal= true
+      this.idExcluir = id_departamento
+    }
+
+    fechar(){
+      this.deletado = false;
+      this.error = false
+    }
 
 }

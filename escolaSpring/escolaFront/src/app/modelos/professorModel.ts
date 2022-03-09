@@ -3,4 +3,5 @@ export interface Professor{
   pro_nome: String
   pro_formacao: String
   pro_foto: String
+  pro_cpf:String
 }

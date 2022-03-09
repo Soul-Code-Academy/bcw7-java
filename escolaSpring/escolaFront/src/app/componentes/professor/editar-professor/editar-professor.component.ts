@@ -14,7 +14,8 @@ export class EditarProfessorComponent implements OnInit {
     id_professor:'',
     pro_nome:'',
     pro_formacao:'',
-    pro_foto:''
+    pro_foto:'',
+    pro_cpf:''
   }
 
   constructor(private professorService:ProfessorService,
