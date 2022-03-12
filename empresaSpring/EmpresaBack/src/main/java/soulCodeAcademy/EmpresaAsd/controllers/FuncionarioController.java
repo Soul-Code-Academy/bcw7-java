@@ -32,33 +32,29 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
-	@Autowired
-	private FuncionarioRepository funcionarioRepository;
 
 	@GetMapping("/funcionario")
-	public List<Funcionario> mostrarTodosFuncionarios() {
-		List<Funcionario> funcionario = funcionarioService.findAll();
+	private List<Funcionario> mostrarTodosFuncionarios() {
+		List<Funcionario> funcionario = funcionarioService.mostrarTodosFuncionarios();
 		return funcionario;
 	}
-
 	
 	@GetMapping("/funcionario-cargo")
-	public List<List> funcionariosComCargo() {
-		List<List> funcionarioCargo = funcionarioService.funcionariosComCargo();
-		return funcionarioCargo;
+		public List<List> funcionariosComCargo(){
+			List<List> funcionarioCargo = funcionarioService.funcionariosComCargo();
+			return funcionarioCargo;		
 	}
-
+	
 	@GetMapping("/funcionario/{id_funcionario}")
-	public ResponseEntity<?> buscarUmFuncionario(@PathVariable Integer id_funcionario) {
+	public ResponseEntity<Funcionario> buscarUmFuncionario(@PathVariable Integer id_funcionario) {
 		Funcionario funcionario = funcionarioService.buscarUmFuncionario(id_funcionario);
 		return ResponseEntity.ok().body(funcionario);
 	}
-
+	
 	@GetMapping("/funcionario/busca-cargo/{id_cargo}")
-	public List<Funcionario> buscarFuncionarioCargo(@PathVariable Integer id_cargo) {
-		List<Funcionario> funcionario = funcionarioService.buscarFuncionarioCargo(id_cargo);
+	public List<Funcionario> buscarFuncionarioPorCargo(@PathVariable Integer id_cargo){
+		List<Funcionario> funcionario = funcionarioService.buscarFuncionarioPorCargo(id_cargo);
 		return funcionario;
-		
 	}
 	
 	@GetMapping("/funcionario-cpf/{func_cpf}")
@@ -66,43 +62,30 @@ public class FuncionarioController {
 		Funcionario funcionario = funcionarioService.buscarFuncionarioPeloCpf(func_cpf);
 		return ResponseEntity.ok().body(funcionario);
 	}
-	
+
 	@PostMapping("/funcionario")
-	public ResponseEntity<Funcionario> inserirFuncionario(@RequestBody Funcionario funcionario) {
-		funcionario = funcionarioService.inserirFuncionario(funcionario);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(funcionario.getId_funcionario()).toUri();
+	public ResponseEntity<Funcionario> inserirFuncionario(@RequestParam(value="cargo")Integer id_cargo, @RequestBody Funcionario funcionario){
+		funcionario = funcionarioService.inserirFuncionario(id_cargo, funcionario);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/funcionario/{id}").buildAndExpand(funcionario.getId_funcionario()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
-
+	
+	
 	@DeleteMapping("/funcionario/{id_funcionario}")
-	public ResponseEntity<Void> deletarUmFuncionario(@PathVariable Integer id_funcionario) {
+	public ResponseEntity<Void>deletarUmFuncionario(@PathVariable Integer id_funcionario){
 		funcionarioService.deletarUmFuncionario(id_funcionario);
-		return ResponseEntity.noContent().build();
+		return  ResponseEntity.noContent().build();
 	}
+	
 
 	@PutMapping("/funcionario/{id_funcionario}")
-	public ResponseEntity<Void> editarFuncionario(@RequestParam(value = "cargo") Cargo cargo,
-			@PathVariable Integer id_funcionario, @RequestBody Funcionario funcionario) {
+	public ResponseEntity<Void>editarFuncionario(@RequestParam(value = "cargo")Cargo cargo, @PathVariable Integer id_funcionario, @RequestBody Funcionario funcionario){
 		funcionario.setId_funcionario(id_funcionario);
 		funcionario.setCargo(cargo);
 		funcionario = funcionarioService.editarFuncionario(funcionario);
 		return ResponseEntity.noContent().build();
 	}
-
-	@PutMapping("/funcionario/inserir-cargo/{id_funcionario}")
-	public ResponseEntity<Funcionario> inserirFuncionarioNoCargo(@PathVariable Integer id_funcionario,
-			@RequestBody Cargo cargo) {
-		funcionarioService.inserirFuncionarioNoCargo(id_funcionario, cargo);
-		return ResponseEntity.noContent().build();
-	}
-
-	@PutMapping("/funcionario/deixar-sem-cargo/{id_funcionario}")
-	public ResponseEntity<Funcionario> deixarFuncionarioSemCargo(@PathVariable Integer id_funcionario) {
-		 funcionarioService.deixarFuncionarioSemCargo(id_funcionario);
-		return ResponseEntity.noContent().build();
-	}
 	
-	
+
 	
 }

@@ -23,8 +23,8 @@ export class CargoService {
   }
 
 
-  mostrarUmCargo(id:string):Observable<Cargo>{
-    const url = `${this.baseUrl}/cargo/${id}`
+  mostrarUmCargo(id_cargo:string):Observable<Cargo>{
+    const url = `${this.baseUrl}/cargo/${id_cargo}`
     return this.http.get<Cargo>(url)
   }
 
@@ -63,4 +63,10 @@ export class CargoService {
     return this.http.put<void>(url,cargo);
 
   }
+
+  nomeCargo():Observable<Cargo[]>{
+    const url = `${this.baseUrl}/cargo/nome-cargo`
+    return this.http.get<Cargo[]>(url)
+  }
+
 }

@@ -28,6 +28,8 @@ public class CargoService {
 		return cargoRepository.findAll();
 	}
 
+	
+	
 	public Cargo buscarUmCargo(Integer id_cargo) {
 		Optional<Cargo> cargo = cargoRepository.findById(id_cargo);
 		// Lançamento de exceção. Tratamento de erro para ooperações críticas, passíveis de erro.

@@ -17,4 +17,7 @@ public interface CargoRepository extends JpaRepository<Cargo, Integer>{
 	
 	@Query(value="SELECT cargo.id_cargo,cargo.ca_nome,cargo.ca_atribuicao,departamento.id_departamento,departamento.dep_nome FROM cargo left JOIN departamento ON departamento.id_cargo = cargo.id_cargo order by cargo.ca_nome;",nativeQuery = true)
 	List<List> cargoComSeuDepartamento();
+	
+	 
+
 }

@@ -1,14 +1,19 @@
 section{
   /* background: radial-gradient(circle, var(--color3) 0%, var(--color1) 100%); */
-  background-image: url("/assets/img/vangogh1.jpg");
+  background: var(--color3);
   color: var(--color2);
 }
 
 form{
-  background: var(--color1);
-  color: #000;
+  background-image: url("/assets/img/vangogh1.jpg");
+  color: var(--color4);
 
 }
+
+.bg{
+ background: var(--color1);
+}
+
 
 
 

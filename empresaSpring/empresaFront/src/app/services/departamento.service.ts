@@ -46,6 +46,13 @@ export class DepartamentoService {
     const url = `${this.baseUrl}/departamento/${id_departamento}`
     return this.http.delete<Departamento>(url)
   }
+
+  buscarDepartamentoNome():Observable<Departamento[]>{
+    const url = `${this.baseUrl}/departamento/departamento-nome`
+    return this.http.get<Departamento[]>(url)
+  }
+
+
 }
 
 

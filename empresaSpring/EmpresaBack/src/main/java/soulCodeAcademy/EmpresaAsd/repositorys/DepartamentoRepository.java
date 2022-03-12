@@ -17,5 +17,8 @@ public interface DepartamentoRepository extends JpaRepository<Departamento,Integ
 	
 	@Query(value = "SELECT departamento.id_departamento,departamento.dep_nome,cargo.ca_nome,cargo.ca_atribuicao FROM cargo right JOIN departamento ON departamento.id_departamento = cargo.id_cargo order by departamento.dep_nome",nativeQuery = true)
 	List<List> departamentoComSeuCargo();
+	
+	
+
 }
 

@@ -20,60 +20,58 @@ public class FuncionarioService {
 	@Autowired
 	private CargoService cargoService;
 	
-	public List<Funcionario> findAll() {
-		return funcionarioRepository.findAll();
+	public List<Funcionario>mostrarTodosFuncionarios(){
+		return funcionarioRepository.findAll();	//findAll mostra todos os registros
+		}
+	
+	public List<List> funcionariosComCargo(){
+		return funcionarioRepository.funcionariosComCargo();
 	}
-
-	public List<List> funcionariosComCargo() {
-		return funcionarioRepository.funcionarioComCargo();
+	
+	public Funcionario buscarUmFuncionario(Integer id_Funcionario) {
+		
+		//Optional - evita os erros NullPointerExcetion, tirando a necessidade da verificação por criação de código. Ex.: (if funcionario != null
+		//orElseThrow() - se o funcionario estiver no banco de dads, retorna o funcionario. Se não, lança uma exceção.
+		Optional<Funcionario>funcionario = funcionarioRepository.findById(id_Funcionario);
+		return funcionario.orElseThrow(() -> new ObjectNotFoundException("Objeto não cadastrado. ID: " + id_Funcionario));
 	}
-
-	public Funcionario buscarUmFuncionario(Integer id_funcionario) {
-		Optional<Funcionario> funcionario = funcionarioRepository.findById(id_funcionario);
-		return funcionario.orElseThrow();
-	}
-
-	public Funcionario inserirFuncionario(Funcionario funcionario) {
+	
+	public Funcionario inserirFuncionario(Integer id_cargo, Funcionario funcionario) {
 		funcionario.setId_funcionario(null);
+		Cargo cargo = cargoService.buscarUmCargo(id_cargo);
+		funcionario.setCargo(cargo);		
 		return funcionarioRepository.save(funcionario);
 	}
-
-
+	
+	
 	public void deletarUmFuncionario(Integer id_funcionario) {
 		funcionarioRepository.deleteById(id_funcionario);
 	}
-
+	
 	public Funcionario editarFuncionario(Funcionario funcionario) {
 		buscarUmFuncionario(funcionario.getId_funcionario());
 		return funcionarioRepository.save(funcionario);
 	}
-
-	public List<Funcionario> buscarFuncionarioCargo(Integer id_cargo) {
+	
+	public List<Funcionario> buscarFuncionarioPorCargo(Integer id_cargo){
 		List<Funcionario> funcionario = funcionarioRepository.fetchByCargo(id_cargo);
 		return funcionario;
 	}
 	
-	public Funcionario buscarFuncionarioPeloCpf(String func_cpf){
-		Funcionario funcionario= funcionarioRepository.fetchByCpf(func_cpf);
-		return funcionario;
-	}
-
-	public Funcionario inserirFuncionarioNoCargo(Integer id_funcionario, Cargo cargo) {
-		Funcionario funcionario = buscarUmFuncionario(id_funcionario);
-		funcionario.setCargo(cargo);
-		return funcionarioRepository.save(funcionario);
-	}
-
-	public Funcionario deixarFuncionarioSemCargo(Integer id_funcionario) {
-		Funcionario funcionario = buscarUmFuncionario(id_funcionario);
-		funcionario.setCargo(null);
-		return funcionarioRepository.save(funcionario);
-	}
 	
 	public Funcionario salvarFoto(Integer id_funcionario, String caminhoFoto){
 		Funcionario funcionario = buscarUmFuncionario(id_funcionario);
 		funcionario.setFunc_foto(caminhoFoto);
 		return funcionarioRepository.save(funcionario);
 	}
+	
+
+	public Funcionario buscarFuncionarioPeloCpf(String func_cpf) {
+		Funcionario funcionario = funcionarioRepository.fetchByCpf(func_cpf);
+		return funcionario;
+	}
+	
 
 }
+
+

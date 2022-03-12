@@ -8,7 +8,6 @@ import { EditarFuncionarioComponent } from './views/funcionario/editar-funcionar
 import { GaleriaComponent } from './views/galeria/galeria.component';
 import { HomeComponent } from './views/home/home.component';
 import { ListarCargosComponent } from './views/cargo/listar-cargos/listar-cargos.component';
-import { ListarTodosFuncionariosComponent } from './views/funcionario/listar-todos-funcionarios/listar-todos-funcionarios.component';
 import { ListarFuncionariosCargoComponent } from './views/funcionario/listar-funcionarios-cargo/listar-funcionarios-cargo.component';
 import { TelaLoginComponent } from './security/tela-login/tela-login.component';
 import { FooterComponent } from './templates/footer/footer.component';
@@ -19,6 +18,8 @@ import { EditarDadosDepartamentoComponent } from './views/departamento/editar-da
 import { ListarContraChequeFuncionarioComponent } from './views/contraCheque/listar-contra-cheque-funcionario/listar-contra-cheque-funcionario.component';
 import { CadastrarContraChequeComponent } from './views/contraCheque/cadastrar-contra-cheque/cadastrar-contra-cheque.component';
 import { EditarContraChequeComponent } from './views/contraCheque/editar-contra-cheque/editar-contra-cheque.component';
+import { ListarDadosFuncionarioComponent } from './views/funcionario/listar-dados-funcionario/listar-dados-funcionario.component';
+import { ListarDadosUnitarioComponent } from './views/funcionario/listar-dados-unitario/listar-dados-unitario.component';
 const routes: Routes = [
     {path: "", redirectTo: "/home", pathMatch: 'full'},
     {path: "home", component:HomeComponent},
@@ -31,7 +32,6 @@ const routes: Routes = [
     {path: "editarFuncionario/:id_funcionario/:id_cargo", component:EditarFuncionarioComponent},
     {path: "galeria", component:GaleriaComponent},
     {path: "contato", component:ContatoComponent},
-    {path: "listarFuncionariosGeral", component:ListarTodosFuncionariosComponent},
     {path: "login", component:TelaLoginComponent},
     {path: "footer", component:FooterComponent},
     {path: "departamento", component:ListarDepartamentoComponent},
@@ -40,7 +40,9 @@ const routes: Routes = [
     {path: "editarDepartamento/:id_departamento", component:EditarDadosDepartamentoComponent},
     {path: "listarContraCheque/:id_funcionario", component:ListarContraChequeFuncionarioComponent},
     {path: "cadastrarContraCheque/:id_funcionario", component:CadastrarContraChequeComponent},
-    { path: "editarContraCheque/:matricula/:id_funcionario", component: EditarContraChequeComponent},
+    {path: "editarContraCheque/:matricula/:id_funcionario", component: EditarContraChequeComponent},
+    {path: "listarDadosFuncionario", component: ListarDadosFuncionarioComponent},
+    { path: "listarDadosUnitario/:id_funcionario", component: ListarDadosUnitarioComponent},
 
   ];
 

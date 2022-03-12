@@ -15,41 +15,47 @@ export class FuncionarioService {
 
   constructor(private http:HttpClient) { }
 
-    buscarFuncionarioCargo(id_cargo: string):Observable<Funcionario[]>{
-    const url = `${this.baseUrl}/funcionario/busca-cargo/${id_cargo}`
-    return this.http.get<Funcionario[]>(url)
-  }
+    buscarFuncionariosCargo(id_cargo: string):Observable<Funcionario[]>{
+      const url = `${this.baseUrl}/funcionario/busca-cargo/${id_cargo}`
+      return this.http.get<Funcionario[]>(url)
+    }
 
-  mostrarTodosFuncionarios():Observable<Funcionario[]>{
-    const url = `${this.baseUrl}/funcionario-cargo`
-    return this.http.get<Funcionario[]>(url)
-  }
+    buscarTodosFuncionarios():Observable<Funcionario[]>{
+      const url = `${this.baseUrl}/funcionario-cargo`
+      return this.http.get<Funcionario[]>(url)
+    }
 
-  cadastrarFuncionario(funcionario:Funcionario, id_cargo:any):Observable<Funcionario>{
-    const url = `${this.baseUrl}/funcionario?cargo=${id_cargo}`
-    return this.http.post<Funcionario>(url,funcionario)
-  }
+    cadastrarFuncionario(funcionario:Funcionario, id_cargo:string):Observable<Funcionario>{
+      const url = `${this.baseUrl}/funcionario?cargo=${id_cargo}`
+      return this.http.post<Funcionario>(url,funcionario)
+    }
 
-  mostrarUmFuncionario(id_funcionario:string):Observable<Funcionario>{
-    const url = `${this.baseUrl}/funcionario/${id_funcionario}`
-    return this.http.get<Funcionario>(url)
-  }
+    mostrarUmFuncionario(id_funcionario:string):Observable<Funcionario>{
+      const url = `${this.baseUrl}/funcionario/${id_funcionario}`
+      return this.http.get<Funcionario>(url)
+    }
 
-  excluirUmFuncionario(id_funcionario:string):Observable<Funcionario>{
-    const url = `${this.baseUrl}/funcionario/${id_funcionario}`
-    return this.http.delete<Funcionario>(url)
+    excluirUmFuncionario(id_funcionario:string):Observable<Funcionario>{
+      const url = `${this.baseUrl}/funcionario/${id_funcionario}`
+      return this.http.delete<Funcionario>(url)
+    }
 
-  }
+    editarFuncionario(funcionario:Funcionario, id_funcionario:string, id_cargo:string):Observable<Funcionario>{
+      const url = `${this.baseUrl}/funcionario/${id_funcionario}?cargo=${id_cargo}`
+      return this.http.put<Funcionario>(url,funcionario)
+    }
 
-  editarFuncionario(funcionario:Funcionario, id_funcionario:string, id_cargo:string):Observable<Funcionario>{
-    const url = `${this.baseUrl}/funcionario/${id_funcionario}?cargo=${id_cargo}`
-    return this.http.put<Funcionario>(url,funcionario)
-  }
+    buscarFuncionarioPeloCpf(func_cpf:String):Observable<Funcionario>{
+      const url = `${this.baseUrl}/funcionario-cpf/${func_cpf}`
+      return this.http.get<Funcionario>(url)
+    }
+
+    buscarTodosFuncionarios2():Observable<any>{
+
+      const url = `${this.baseUrl}/funcionario`
+      return this.http.get<any>(url)
+    }
 
 
-  buscarFuncionarioPeloCpf(func_cpf:String):Observable<Funcionario>{
-    const url = `${this.baseUrl}/funcionario-cpf/${func_cpf}`
-    return this.http.get<Funcionario>(url)
-  }
 
 }

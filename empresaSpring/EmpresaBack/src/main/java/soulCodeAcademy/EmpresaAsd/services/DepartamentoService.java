@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Departamento;
+import soulCodeAcademy.EmpresaAsd.repositorys.CargoRepository;
 import soulCodeAcademy.EmpresaAsd.repositorys.DepartamentoRepository;
 import soulCodeAcademy.EmpresaAsd.services.exceptions.DataIntegrityViolationException;
 
@@ -21,15 +22,20 @@ public class DepartamentoService {
 	@Autowired
 	private CargoService cargoService;
 	
+	@Autowired
+	private CargoRepository cargoRepository;
+	
 	public List<Departamento> mostrarTodosDepartamentos(){
 		return departamentoRepository.findAll();	
 	}
+	
 	
 	public Departamento mostrarUmDepartamento(Integer id_departamento) {
 		Optional<Departamento> departamento = departamentoRepository.findById(id_departamento);
 		return departamento.orElseThrow();
 	}
 	
+
 	public Departamento buscarDepartamentoDoCargo(Integer id_cargo){
 		Departamento departamento = departamentoRepository.buscarDepartamentoDoCargo(id_cargo);
 		return departamento;
@@ -43,6 +49,7 @@ public class DepartamentoService {
 		return departamentoRepository.departamentoComSeuCargo();
 	}
 	
+
 	public Departamento inserirDepartamento(Integer id_cargo, Departamento departamento) {
 		departamento.setId_departamento(null);
 		

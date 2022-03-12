@@ -47,12 +47,12 @@ export class EditarContraChequeComponent implements OnInit {
       this.nomeFunc = resultado.func_nome
     })
 
-    // this.contraChequeService.buscarUmContraCheque(this.matricula).subscribe(resultado => {
-    //   this.cc = resultado
-    //   console.log(resultado)
-    //   this.cc.cc_dataAdmissao= resultado.cc_dataAdmissao.slice(0, 10)
-    //   this.cc.cc_dataPagamento= resultado.cc_dataPagamento.slice(0, 10)
-    // })
+    this.contraChequeService.buscarUmContraCheque(this.matricula).subscribe(resultado => {
+      this.cc = resultado
+      console.log(resultado)
+      this.cc.cc_dataAdmissao= resultado.cc_dataAdmissao.slice(0, 10)
+      this.cc.cc_dataPagamento= resultado.cc_dataPagamento.slice(0, 10)
+    })
 
     this.contraChequeService.listarContraChequesDoFuncionario(this.id_funcionario).subscribe(resultado =>{
       this.c = resultado
@@ -65,14 +65,14 @@ export class EditarContraChequeComponent implements OnInit {
     this.contraChequeService.editarContraCheque(this.cc, this.matricula, this.id_funcionario).subscribe({
       next: () => {this.editado=true
         setTimeout(() => {
-          this.location.back()
+          this.router.navigate([`/listarContraCheque/${this.id_funcionario}`])
         }, 2000)},
       error: () => {this.error=true
         setTimeout(() => {
           this.location.back()
         }, 2000)},
       complete:() => {setTimeout(() => {
-            this.location.back()
+        this.router.navigate([`/listarContraCheque/${this.id_funcionario}`])
             }, 2000)}
         })
   }

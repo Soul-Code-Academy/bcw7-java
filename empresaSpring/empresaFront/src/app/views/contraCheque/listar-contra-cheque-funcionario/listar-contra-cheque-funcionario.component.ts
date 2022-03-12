@@ -40,7 +40,7 @@ export class ListarContraChequeFuncionarioComponent implements OnInit {
   ) {
     this.id_funcionario = this.route.snapshot.paramMap.get('id_funcionario')
     this.matricula = this.route.snapshot.paramMap.get('matricula')
-    this.id_cargo = this.route.snapshot.paramMap.get('id')
+    this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')
   }
 
   ngOnInit(): void {
@@ -54,6 +54,7 @@ export class ListarContraChequeFuncionarioComponent implements OnInit {
 
     this.cargoService.mostrarUmCargo(this.id_cargo).subscribe(resultado => {
       this.cargoFunc = resultado.ca_nome
+      console.log(this.cargoFunc + 'wu')
     })
   }
 
@@ -64,11 +65,11 @@ export class ListarContraChequeFuncionarioComponent implements OnInit {
     })
   }
 
-
   pagarContraCheque(cc: ContraCheque, matricula: any) {
     this.contraChequeService.pagarContraCheque(cc,matricula).subscribe({
         next: () => {this.pago=true
                     setTimeout(() => {
+
                       this.listarContraCheques()
                     }, 2000)},
         error: () => {this.error=true

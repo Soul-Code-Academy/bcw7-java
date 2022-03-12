@@ -13,6 +13,8 @@ export class ListarFuncionariosCargoComponent implements OnInit {
   search:any
   id_cargo: string = ''
 
+  nome:any
+
   funcionarioCadastrado: boolean = false
   isModal:boolean = false
 
@@ -20,16 +22,9 @@ export class ListarFuncionariosCargoComponent implements OnInit {
   error = false;
 
   idExcluir!:any
+  idCard!:any
 
-  funcionarios:Funcionario[] = []
-
-  funcionario: Funcionario={
-    id_funcionario:'',
-    func_nome:'',
-    func_cidade:'',
-    func_foto:'',
-    func_cpf:''
-  }
+  funcionarios: Funcionario[] = []
 
   constructor(private funcionarioService:FuncionarioService,
               private route:ActivatedRoute,
@@ -38,19 +33,16 @@ export class ListarFuncionariosCargoComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.funcionarioService.buscarFuncionarioCargo(this.id_cargo).subscribe((resultado)=>{
+    this.funcionarioService.buscarFuncionariosCargo(this.id_cargo).subscribe((resultado)=>{
       this.funcionarios = resultado;
     })
-    this.funcionarioService.mostrarUmFuncionario(this.funcionario.id_funcionario).subscribe((resposta) => {
-      this.funcionario=resposta
-      console.log(this.funcionario)
-      })
+
+
   }
 
   excluirFuncionario() {
     this.funcionarioService.excluirUmFuncionario(this.idExcluir ).subscribe({
       next: () => {this.deletado=true
-
                   setTimeout(() => {
                     this.router.navigate(["/listarCargos"])
                   }, 2000)},
@@ -73,6 +65,11 @@ export class ListarFuncionariosCargoComponent implements OnInit {
     this.idExcluir = id_funcionario
   }
 
+  cardList(id_funcionario:any){
+    this.idCard= id_funcionario
+  }
+
+
   fechar(){
     this.deletado=false
     this.error=false
@@ -82,4 +79,9 @@ export class ListarFuncionariosCargoComponent implements OnInit {
     this.search = '';
 
     }
+
+
+
+
+
 }

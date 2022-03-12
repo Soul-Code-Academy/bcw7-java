@@ -21,49 +21,52 @@ public class ContraChequeService {
 	private FuncionarioService funcionarioService;
 
 	public List<ContraCheque> buscarTodosContraCheques() {
-		return contraChequeRepository.findAll();
-	}
+        return contraChequeRepository.findAll();
+    }
 
-	public ContraCheque buscarUmContraCheque(Integer matricula) {
-		Optional<ContraCheque> contraCheque = contraChequeRepository.findById(matricula);
-		return contraCheque.orElseThrow();
-	}
+//	public List<List> contraCheques(){
+//		return contraChequeRepository.contraCheques();
+//	}
+	
+    public ContraCheque buscarUmContraCheque(Integer matricula) {
+        Optional<ContraCheque> contraCheque = contraChequeRepository.findById(matricula);
+        return contraCheque.orElseThrow();
+    }
 
-	public List<ContraCheque> buscarContrasChequesDoFuncionario(Integer id_funcionario) {
-		List<ContraCheque> contraCheque = contraChequeRepository.buscarContrasChequesDoFuncionario(id_funcionario);
-		return contraCheque;
-	}
+    public List<ContraCheque> buscarContraChequesDeUmFuncionario(Integer id_funcionario) {
+        List<ContraCheque> contraCheque = contraChequeRepository.buscarContrasChequesDoFuncionario(id_funcionario);
+        return contraCheque;
+    }
 
-	public ContraCheque inserirContraCheque(ContraCheque contraCheque, Integer id_funcionario) {
-		contraCheque.setMatricula(null);
-		Funcionario funcionario = funcionarioService.buscarUmFuncionario(id_funcionario);
-		contraCheque.setFuncionario(funcionario);
-		return contraChequeRepository.save(contraCheque);
-	}
+    public ContraCheque adicionarUmContraCheque(ContraCheque contraCheque, Integer id_funcionario) {
+        contraCheque.setMatricula(null);
+        Funcionario funcionario = funcionarioService.buscarUmFuncionario(id_funcionario);
+        contraCheque.setFuncionario(funcionario);
+        return contraChequeRepository.save(contraCheque);
+    }
 
-	public void deletarUmContraCheque(Integer matricula) {
-		contraChequeRepository.deleteById(matricula);
-	}
+    public void deletarUmContraCheque(Integer matricula) {
+        contraChequeRepository.deleteById(matricula);
+    }
 
-	public ContraCheque editarContraCheque(ContraCheque contraCheque, Integer matricula, Integer id_funcionario) {
-		buscarUmContraCheque(contraCheque.getMatricula());
-		Funcionario funcionario = funcionarioService.buscarUmFuncionario(id_funcionario);
-		contraCheque.setFuncionario(funcionario);
-		return contraChequeRepository.save(contraCheque);
-	}
+    public ContraCheque editarContraCheque(ContraCheque contraCheque, Integer id_funcionario) {
+        buscarUmContraCheque(contraCheque.getMatricula());
+        Funcionario funcionario = funcionarioService.buscarUmFuncionario(id_funcionario);
+        contraCheque.setFuncionario(funcionario);
+        return contraChequeRepository.save(contraCheque);
+    }
 
-	public ContraCheque quitarContraCheque(Integer matricula) {
-		ContraCheque contraCheque = buscarUmContraCheque(matricula);
-		StatusPagamento st1 = StatusPagamento.PAGO;
-		contraCheque.setCc_status(st1);
-		return contraChequeRepository.save(contraCheque);
-	}
+    public ContraCheque pagarContraCheque(Integer matricula) {
+        ContraCheque contraCheque = buscarUmContraCheque(matricula);
+        StatusPagamento st1 = StatusPagamento.PAGO;
+        contraCheque.setCc_status(st1);
+        return contraChequeRepository.save(contraCheque);
+    }
 
-	public ContraCheque cancelarContraCheque(Integer matricula) {
-		ContraCheque contraCheque = buscarUmContraCheque(matricula);
-		StatusPagamento st1 = StatusPagamento.CANCELADO;
-		contraCheque.setCc_status(st1);
-		return contraChequeRepository.save(contraCheque);
-	}
-
+    public ContraCheque cancelarContraCheque(Integer matricula) {
+        ContraCheque contraCheque = buscarUmContraCheque(matricula);
+        StatusPagamento st1 = StatusPagamento.CANCELADO;
+        contraCheque.setCc_status(st1);
+        return contraChequeRepository.save(contraCheque);
+    }
 }

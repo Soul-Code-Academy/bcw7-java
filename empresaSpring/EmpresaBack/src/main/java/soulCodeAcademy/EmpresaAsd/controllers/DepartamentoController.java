@@ -36,11 +36,14 @@ public class DepartamentoController {
 		return  departamento;
 	}
 	
+	
+	
 	@GetMapping("/departamento/{id_departamento}")
 	public ResponseEntity<Departamento> mostrarUmDepartamento(@PathVariable Integer id_departamento) {
 		Departamento departamento = departamentoService.mostrarUmDepartamento(id_departamento);
 		return ResponseEntity.ok().body(departamento);
 	}
+	
 	
 	@GetMapping("/departamento-cargo/{id_cargo}")
 	public ResponseEntity<Departamento> buscarDepartamentoDoCargo(@PathVariable Integer id_cargo){
@@ -59,7 +62,6 @@ public class DepartamentoController {
 		return departamentoCargo;
 	}
 	
-	
 	@PostMapping("/departamento")
 	public ResponseEntity<Departamento> inserirDepartamentoComCargo(@RequestParam(value="cargo", required = false)Integer id_cargo,@RequestBody Departamento departamento){
 		departamento = departamentoService.inserirDepartamento(id_cargo, departamento);	
@@ -67,14 +69,22 @@ public class DepartamentoController {
 				.buildAndExpand(departamento.getId_departamento()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
+//	
+//	@PutMapping("/departamento/{id_departamento}/{id_cargo}")
+//	public ResponseEntity<Departamento> editarDepartamento(@RequestParam(value="cargo")Cargo cargo, @PathVariable Integer id_departamento, @RequestBody Departamento departamento){
+//		departamento.setId_departamento(id_departamento);
+//		departamento.setCargo(cargo);
+//		cargo.setDepartamento(departamento);
+//		departamento = departamentoService.editarDepartamento(departamento);
+//		
+//		return ResponseEntity.noContent().build();
+//	}
 	
 	@PutMapping("/departamento/{id_departamento}")
-	public ResponseEntity<Departamento> editarDepartamento(@RequestParam(value="cargo")Cargo cargo, @PathVariable Integer id_departamento, @RequestBody Departamento departamento){
+	public ResponseEntity<Departamento> editarDepartamento( @PathVariable Integer id_departamento, @RequestBody Departamento departamento){
 		departamento.setId_departamento(id_departamento);
-		departamento.setCargo(cargo);
-		cargo.setDepartamento(departamento);
 		departamento = departamentoService.editarDepartamento(departamento);
-		
+	
 		return ResponseEntity.noContent().build();
 	}
 	

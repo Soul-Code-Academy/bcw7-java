@@ -23,24 +23,23 @@ import soulCodeAcademy.EmpresaAsd.services.FuncionarioService;
 		private FuncionarioService funcionarioService;
 
 		@PostMapping("/envio/{id_funcionario}")
-		public ResponseEntity<String> enviarDados(@PathVariable Integer id_funcionario, MultipartFile foto, @RequestParam(value="nomeDoArquivo")String nome){
+		public ResponseEntity<String> enviarDados(@PathVariable Integer id_funcionario, MultipartFile foto, @RequestParam(value="nome")String nome){
 			String fileName = nome;
 			
-			String uploadDir = "/eclipse-workspace/java/empresaSpring/empresaFront/src/assets/img";
+			String uploadDir = "/home/alanadias/eclipse-workspace/java/empresaSpring/empresaFront/src/assets/img";
 			
-//			String nomeMaisCaminho = "c:" + uploadDir + "/" + nome;
-			
-			String nomeMaisCaminho = "c:" + "assets/img" + "/" + nome;
-			
+			String nomeMaisCaminho = "assets/img" + "/" + nome;
+
 			Funcionario funcionario = funcionarioService.salvarFoto(id_funcionario, nomeMaisCaminho);
-			
+
 			try {
 				UploadFileUtil.salvarArquivo(uploadDir, fileName, foto);
-			}catch(Exception e) {
-				System.out.print("Arquivo não enviado" +  e );
+			} catch (Exception e) {
+				System.out.println("O arquivo não foi enviado" + e);
 			}
-				System.out.println("Arquivo enviado!" + nomeMaisCaminho);
-				return ResponseEntity.ok("Finalizado!");
+			System.out.println("Deu certo: " + nomeMaisCaminho);
+			return ResponseEntity.ok("Arquivo enviado");
 		}
+
 	}
 

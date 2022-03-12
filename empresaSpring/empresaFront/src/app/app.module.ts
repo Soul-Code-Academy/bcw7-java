@@ -20,7 +20,6 @@ import { EditarFuncionarioComponent } from './views/funcionario/editar-funcionar
 import { CadastrarFuncionarioComponent } from './views/funcionario/cadastrar-funcionario/cadastrar-funcionario.component';
 import { GaleriaComponent } from './views/galeria/galeria.component';
 import { ContatoComponent } from './views/contato/contato.component';
-import { ListarTodosFuncionariosComponent } from './views/funcionario/listar-todos-funcionarios/listar-todos-funcionarios.component';
 import { ListarFuncionariosCargoComponent } from './views/funcionario/listar-funcionarios-cargo/listar-funcionarios-cargo.component';
 import { TelaLoginComponent } from './security/tela-login/tela-login.component';
 import { FooterComponent } from './templates/footer/footer.component';
@@ -33,6 +32,8 @@ import { EditarDadosDepartamentoComponent } from './views/departamento/editar-da
 import { ListarContraChequeFuncionarioComponent } from './views/contraCheque/listar-contra-cheque-funcionario/listar-contra-cheque-funcionario.component';
 import { CadastrarContraChequeComponent } from './views/contraCheque/cadastrar-contra-cheque/cadastrar-contra-cheque.component';
 import { EditarContraChequeComponent } from './views/contraCheque/editar-contra-cheque/editar-contra-cheque.component';
+import { ListarDadosFuncionarioComponent } from './views/funcionario/listar-dados-funcionario/listar-dados-funcionario.component';
+import { ListarDadosUnitarioComponent } from './views/funcionario/listar-dados-unitario/listar-dados-unitario.component';
 
 registerLocaleData(localePt)
 
@@ -51,7 +52,7 @@ registerLocaleData(localePt)
     CadastrarFuncionarioComponent,
     GaleriaComponent,
     ContatoComponent,
-    ListarTodosFuncionariosComponent,
+
 
     TelaLoginComponent,
      FooterComponent,
@@ -62,6 +63,8 @@ registerLocaleData(localePt)
      ListarContraChequeFuncionarioComponent,
      CadastrarContraChequeComponent,
      EditarContraChequeComponent,
+     ListarDadosFuncionarioComponent,
+     ListarDadosUnitarioComponent,
 
   ],
   imports: [

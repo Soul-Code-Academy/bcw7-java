@@ -13,7 +13,7 @@
           <th scope="col">Matrícula</th>
           <th scope="col">Referência</th>
           <th scope="col">Nome</th>
-          <th scope="col">Cargo</th>
+          <!-- <th scope="col">Cargo</th> -->
           <th scope="col">CPF</th>
           <th scope="col">PIS</th>
           <th scope="col">Admissão</th>
@@ -36,10 +36,10 @@
           <th scope="row">{{cc.matricula}}</th>
           <td>{{cc.cc_descricao}}</td>
           <td>{{nomeFunc}}</td>
-          <td>{{cargoFunc}}</td>
+          <!-- <td>{{cargoFunc}}</td> -->
           <td>{{cpfFunc}}</td>
           <td>{{cc.cc_pis}}</td>
-          <td>{{cc.cc_admissao  | date : 'dd/MM/yyyy' }}</td>
+          <td>{{cc.cc_dataAdmissao  | date : 'dd/MM/yyyy' }}</td>
           <td>{{cc.cc_dataPagamento  | date : 'dd/MM/yyyy'}}</td>
           <td>{{cc.cc_auxilioAlimentacao | currency: 'BRL'}}</td>
           <td>{{cc.cc_auxilioTransporte | currency: 'BRL'}}</td>
@@ -48,8 +48,8 @@
           <td>{{cc.cc_status}}</td>
           <td>{{this.total | currency: 'BRL'}}</td>
           <td>
-            <a (click)="pagarContraCheque(cc,cc.cc_matricula)" *ngIf="cc.cc_status == 'PENDENTE'" class='btn btn-success me-3'><i class="fa-regular fa-circle-check"></i></a>
-            <a (click)="cancelarContraCheque(cc,cc.cc_matricula)" *ngIf="cc.cc_status == 'PENDENTE'" class='btn btn-danger'><i class="fa-regular fa-rectangle-xmark"></i></a>
+            <a  *ngIf="cc.cc_status == 'PENDENTE'"  (click)="pagarContraCheque(cc,cc.matricula)" class='btn btn-success me-3'><i class="fa-regular fa-circle-check"></i></a>
+            <a *ngIf="cc.cc_status == 'PENDENTE'"  (click)="cancelarContraCheque(cc,cc.matricula)" class='btn btn-danger'><i class="fa-regular fa-rectangle-xmark"></i></a>
           </td>
           <td>
              <a  routerLink="/editarContraCheque/{{cc.matricula}}/{{id_funcionario}}" class="btn btn-success" title="Editar Dados"><i class="fa-solid fa-pen-to-square"></i></a>

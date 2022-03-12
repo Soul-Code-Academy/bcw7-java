@@ -26,11 +26,20 @@ export class EditarFuncionarioComponent implements OnInit {
   cargos: Cargo [] = []
 
   funcionario:Funcionario= {
-    id_funcionario:'',
-    func_nome:'',
-    func_cidade:'',
-    func_foto:'',
-    func_cpf:''
+    id_funcionario: '',
+    func_nome: '',
+    func_cidade: '',
+    func_bairro: '',
+    func_estado:'',
+    func_rua: '',
+    func_foto: '',
+    func_cpf: '',
+    func_telefone: '',
+    func_email:'',
+    func_cep:'',
+    func_numero:'',
+    func_referencia:'',
+    func_dataNascimento:''
   }
 
   constructor(private funcionarioService:FuncionarioService,
@@ -65,7 +74,7 @@ export class EditarFuncionarioComponent implements OnInit {
     }
 
     transferirCargo(){
-      this.funcionarioService.editarFuncionario(this.funcionario, this.funcionario.id_funcionario,this.id_cargo).subscribe({
+      this.funcionarioService.editarFuncionario(this.funcionario, this.funcionario.id_funcionario, this.id_cargo).subscribe({
         next: () => {this.transferido=true},
         error: () => {this.error=true},
         complete:() => setTimeout(() => {
@@ -73,7 +82,9 @@ export class EditarFuncionarioComponent implements OnInit {
         }, 2000)
 
       })
-      }
+     }
+
+
 
     cancelarAcao(){
       this.isModal=false
@@ -90,5 +101,5 @@ export class EditarFuncionarioComponent implements OnInit {
       this.editado=false
     }
 
-   
+
 }

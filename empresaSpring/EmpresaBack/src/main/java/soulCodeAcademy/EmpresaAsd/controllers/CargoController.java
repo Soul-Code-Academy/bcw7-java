@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -28,11 +29,14 @@ public class CargoController {
 	@Autowired
 	private CargoService cargoService;
 
+
 	@GetMapping("/cargo")
 	public List<Cargo> mostrarTodosCargos() {
 		List<Cargo> cargo = cargoService.mostrarTodosCargos();
 		return cargo;
 	}
+	
+	
 
 	@GetMapping("/cargo/{id_cargo}")
 	public ResponseEntity<Cargo> buscarUmCargo(@PathVariable Integer id_cargo) {
@@ -94,4 +98,3 @@ public class CargoController {
 		return ResponseEntity.noContent().build();
 	}
 }
-

@@ -28,56 +28,65 @@ public class ContraChequeController {
     @Autowired
     private ContraChequeService contraChequeService;
 
+
     @GetMapping(value = "/funcionario/contraCheque")
     public List<ContraCheque> buscarTodosContraCheques() {
         List<ContraCheque> contraCheque = contraChequeService.buscarTodosContraCheques();
         return contraCheque;
     }
+    
+//	@GetMapping("/contra-cheque")
+//	public List<List> contraCheques(){
+//		List<List> contraCheques = contraChequeService.contraCheques();
+//		return contraCheques;		
+//}
+//	
 
     @GetMapping("/funcionario/contraCheque/{matricula}")
     public ResponseEntity<ContraCheque> buscarUmContraCheque(@PathVariable Integer matricula) {
         ContraCheque contraCheque = contraChequeService.buscarUmContraCheque(matricula);
         return ResponseEntity.ok().body(contraCheque);
     }
-    
 
     @GetMapping("/funcionario/contraCheque-funcionario/{id_funcionario}")
-    public List<ContraCheque> buscarContrasChequesDoFuncionario(@PathVariable Integer id_funcionario) {
-        List<ContraCheque> contraCheque = contraChequeService.buscarContrasChequesDoFuncionario(id_funcionario);
+    public List<ContraCheque> buscarContraChequesDeUmFuncionario(@PathVariable Integer id_funcionario) {
+        List<ContraCheque> contraCheque = contraChequeService.buscarContraChequesDeUmFuncionario(id_funcionario);
         return contraCheque;
     }
-    
+
     @PostMapping("/funcionario/contraCheque/{id_funcionario}")
-	public ResponseEntity<ContraCheque> inserirContraCheque(@RequestBody ContraCheque contraCheque, @PathVariable Integer id_funcionario){
-		contraCheque = contraChequeService.inserirContraCheque(contraCheque,id_funcionario);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(contraCheque.getMatricula()).toUri();
-		return ResponseEntity.created(uri).build();
-		
-	}
-	
-	@DeleteMapping("/funcionario/contraCheque/{matricula}")
-	public ResponseEntity<Void> deletarUmBoleto(@PathVariable Integer matricula){
-		contraChequeService.deletarUmContraCheque(matricula);
-		return ResponseEntity.noContent().build();
-	}
-	
-	@PutMapping("/funcionario/contraCheque/{matricula}/{id_funcionario}")
-	public ResponseEntity<ContraCheque> editarContraCheque( @RequestBody ContraCheque contraCheque, @PathVariable Integer matricula, @PathVariable Integer id_funcionario){
-		contraCheque.setMatricula(matricula);
-		contraCheque = contraChequeService.editarContraCheque(contraCheque, id_funcionario, matricula);
-		return ResponseEntity.noContent().build();
-	}
-	
-	@PutMapping("/funcionario/pagar-contraCheque/{matricula}")
-	public ResponseEntity<ContraCheque> quitarContraCheque(@PathVariable Integer matricula){
-		contraChequeService.quitarContraCheque(matricula);
-		return ResponseEntity.noContent().build();
-	}
-	
-	@PutMapping("/funcionario/cancelar-contraCheque/{matricula}")
-	public ResponseEntity<ContraCheque> cancelarContraCheque(@PathVariable Integer matricula){
-		contraChequeService.cancelarContraCheque(matricula);
-		return ResponseEntity.noContent().build();
-	}
+    public ResponseEntity<ContraCheque> adicionarUmContraCheque(@RequestBody ContraCheque contraCheque,
+            @PathVariable Integer id_funcionario) {
+        contraCheque = contraChequeService.adicionarUmContraCheque(contraCheque, id_funcionario);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(contraCheque.getMatricula()).toUri();
+        return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping("/funcionario/contraCheque/{matricula}")
+    public ResponseEntity<Void> deletarUmContraCheque(@PathVariable Integer matricula) {
+        contraChequeService.deletarUmContraCheque(matricula);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/funcionario/contraCheque/{matricula}/{id_funcionario}")
+    public ResponseEntity<ContraCheque> editarContraCheque(@PathVariable Integer matricula,
+            @PathVariable Integer id_funcionario,
+            @RequestBody ContraCheque contraCheque) {
+        contraCheque.setMatricula(matricula);
+        contraCheque = contraChequeService.editarContraCheque(contraCheque, id_funcionario);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("funcionario/pagar-contraCheque/{matricula}")
+    public ResponseEntity<ContraCheque> pagarContraCheque(@PathVariable Integer matricula) {
+        contraChequeService.pagarContraCheque(matricula);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("funcionario/cancelar-contraCheque/{matricula}")
+    public ResponseEntity<ContraCheque> cancelarContraCheque(@PathVariable Integer matricula) {
+        contraChequeService.cancelarContraCheque(matricula);
+        return ResponseEntity.noContent().build();
+    }
 }
