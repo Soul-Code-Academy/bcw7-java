@@ -27,10 +27,7 @@ public class Funcionario {
 	@Column(nullable = false, length = 60)
 	private String func_nome;
 	
-	@DateTimeFormat(pattern="dd-MM-yyyy")
-	@Column(columnDefinition = "date", nullable = false)
-	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
-	private Date func_dataNascimento;
+	
 
 	@Column(nullable = false, length = 30)
 	private String func_cidade;
@@ -64,6 +61,11 @@ public class Funcionario {
 
 	@Column(nullable = true, length = 1000)
 	private String func_foto;
+	
+	@DateTimeFormat(pattern="dd-MM-yyyy")
+	@Column(columnDefinition = "date", nullable = false)
+	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
+	private Date func_nascimento;
 	
 	@JsonIgnore
 	@ManyToOne
@@ -185,13 +187,15 @@ public class Funcionario {
 		this.func_email = func_email;
 	}
 
-	public Date getFunc_dataNascimento() {
-		return func_dataNascimento;
+	public Date getFunc_nascimento() {
+		return func_nascimento;
 	}
 
-	public void setFunc_dataNascimento(Date func_dataNascimento) {
-		this.func_dataNascimento = func_dataNascimento;
+	public void setFunc_nascimento(Date func_nascimento) {
+		this.func_nascimento = func_nascimento;
 	}
+
+	
 	
 	
 	

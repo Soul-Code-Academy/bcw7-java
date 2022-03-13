@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cargo } from 'src/app/models/cargoModelo';
@@ -28,7 +29,8 @@ export class ListarCargosComponent implements OnInit {
 
   constructor(private cargoService: CargoService,
               private activatedRoute:ActivatedRoute,
-              private router:Router) {
+              private router:Router,
+              private location: Location) {
     this.cargo.id_cargo = this.activatedRoute.snapshot.paramMap.get('id_cargo')!
   }
 
@@ -65,7 +67,7 @@ export class ListarCargosComponent implements OnInit {
       }, 2000)
 
     })
-    }
+  }
 
     resetSearch() {
       this.search = '';

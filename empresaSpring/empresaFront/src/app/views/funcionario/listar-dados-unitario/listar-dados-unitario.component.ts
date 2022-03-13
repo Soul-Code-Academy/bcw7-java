@@ -10,7 +10,8 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class ListarDadosUnitarioComponent implements OnInit {
 
-  nome:any
+  func_nome:any
+  ca_nome:any
   atribuicao:any
   funcionarios:any=[]
 
@@ -28,7 +29,7 @@ export class ListarDadosUnitarioComponent implements OnInit {
     func_cep:'',
     func_numero:'',
     func_referencia:'',
-    func_dataNascimento:''
+   func_nascimento:''
   }
 
   constructor(private funcionarioService:FuncionarioService,
@@ -41,6 +42,7 @@ export class ListarDadosUnitarioComponent implements OnInit {
   ngOnInit(): void {
     this.funcionarioService.mostrarUmFuncionario(this.funcionario.id_funcionario).subscribe((resposta)=>{
       this.funcionario = resposta
+      this.func_nome = resposta.func_nome
       console.log(this.funcionario)
     })
 
@@ -50,11 +52,11 @@ export class ListarDadosUnitarioComponent implements OnInit {
           ca_atribuicao:'',
           ca_nome:''
         }
-          funcionariosGeral.ca_nome = func[13]
-          funcionariosGeral.ca_atribuicao= func[14]
+          funcionariosGeral.ca_nome = func[15]
+          funcionariosGeral.ca_atribuicao= func[16]
           // funcionariosGeral.dep_nome = funcionario[12]
           this.funcionarios.push(funcionariosGeral)
-          this.nome=funcionariosGeral.ca_nome
+          this.ca_nome=funcionariosGeral.ca_nome
           this.atribuicao=funcionariosGeral.ca_atribuicao
         })
     })

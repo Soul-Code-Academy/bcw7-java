@@ -31,8 +31,8 @@
             <input
               type="date"
               class="form-control"
-              [(ngModel)]="funcionario.func_dataNascimento"
-              name="func_dataNascimento"
+              [(ngModel)]="funcionario.func_nascimento"
+              name="func_nascimento"
             />
           </div>
         </div>
@@ -168,13 +168,10 @@
     <div class="myModal w-50 mx-auto mb-5 pb-3" style="height: 50%">
       <div class="tituloModal">
         <label class="form-label fs-3">Foto</label>
-        <div
-          [(ngModel)]="funcionario.func_foto"
-          name="func_nome"
-          style="width: 8rem; height: 8rem"
-          class="border border-warning my-3 p-1 mx-auto"
-          (change)="subirFoto($event)"
-        ></div>
+
+        <img src="{{funcionario.func_foto}}" alt="..." style="width:200px; height:200px;" class="border border-success rounded-3 mb-5 p-1 img-fluid" name="func_foto"(change)="subirFoto($event)">
+
+
         <input
           type="file"
           class="form-control"

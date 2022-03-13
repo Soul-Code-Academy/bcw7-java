@@ -12,5 +12,5 @@ export interface Funcionario{
   func_cep:String
   func_numero:String
   func_referencia:String
-  func_dataNascimento:String
+  func_nascimento:any
 }

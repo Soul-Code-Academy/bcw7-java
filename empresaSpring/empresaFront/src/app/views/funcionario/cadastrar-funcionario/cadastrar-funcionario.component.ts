@@ -48,7 +48,7 @@ export class CadastrarFuncionarioComponent implements OnInit {
   func_cep:'',
   func_numero:'',
   func_referencia:'',
-  func_dataNascimento:''
+  func_nascimento:''
 }
 
   constructor(private funcionarioService: FuncionarioService,

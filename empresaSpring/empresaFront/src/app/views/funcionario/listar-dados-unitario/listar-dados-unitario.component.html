@@ -1,5 +1,10 @@
 <div class="container mt-3 p-5">
-  <h3 class="text-start  mb-3 ">Ficha Individual</h3>
+  <div  class="d-flex justify-content-between">
+    <h3 class="text-start  mb-3 ">Ficha Individual</h3>
+    <h4 class="h3 bg-success p-1 rounded-3 text-white fw-bold">{{func_nome}}</h4>
+  </div>
+
+
   <hr>
    <div *ngIf="funcionario">
     <div class=" card  p-2  mb-5 fs-5" >
@@ -17,7 +22,7 @@
             <li>Identificação Interna: {{funcionario.id_funcionario}}</li>
             <li>Nome: {{funcionario.func_nome}}</li>
            <div >
-            <li> Cargo: {{this.nome}}</li>
+            <li> Cargo: {{this.ca_nome}}</li>
             <li>Atribuição do Cargo: {{this.atribuicao}}</li>
            </div>
           </ul>
@@ -25,6 +30,7 @@
          <div class="col-lg-6">
           <ul>
             <li>CPF: {{funcionario.func_cpf}}</li>
+            <li>Data de Nascimento: {{funcionario.func_nascimento | date: "dd/MM/yyyy"}}</li>
             <li>Telefone: {{funcionario.func_telefone}}</li>
             <li>Email: {{funcionario.func_email}} </li>
            </ul>

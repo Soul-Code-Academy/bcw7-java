@@ -35,6 +35,7 @@ export class ListarFuncionariosCargoComponent implements OnInit {
   ngOnInit(): void {
     this.funcionarioService.buscarFuncionariosCargo(this.id_cargo).subscribe((resultado)=>{
       this.funcionarios = resultado;
+      
     })
 
 

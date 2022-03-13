@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cargo } from 'src/app/models/cargoModelo';
@@ -18,14 +19,23 @@ export class CadastrarCargoComponent implements OnInit {
     ca_atribuicao: ''
   }
 
-  constructor(private cargoService:CargoService, private router:Router) { }
+  constructor(private cargoService:CargoService,
+              private router:Router,
+              private location: Location) { }
 
   ngOnInit(): void {}
 
   cadastrarCargo(){
     this.cargoService.cadastrarCargo(this.cargo).subscribe({
-      next: () => {this.cadastrado=true},
-      error: () => {this.error=true},
+      next: () => {this.cadastrado=true
+        setTimeout(() => {
+          this.router.navigate(['/listarCargos'])
+    }, 2000)
+      },
+      error: () => {this.error=true
+        setTimeout(() => {
+          this.location.back()
+        }, 2000)},
       complete:() => setTimeout(() => {
               this.router.navigate(['/listarCargos'])
         }, 2000)

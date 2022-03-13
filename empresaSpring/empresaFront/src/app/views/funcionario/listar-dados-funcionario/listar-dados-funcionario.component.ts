@@ -27,7 +27,7 @@ export class ListarDadosFuncionarioComponent implements OnInit {
           func_foto:'',
           func_nome: '',
           func_cpf:'',
-          func_dataNascimento:'',
+          func_nascimento:'',
           func_telefone:'',
           func_email:'',
           func_cep:'',
@@ -45,19 +45,20 @@ export class ListarDadosFuncionarioComponent implements OnInit {
           funcionariosGeral.func_foto = funcionario[1]
           funcionariosGeral.func_nome = funcionario[2]
           funcionariosGeral.func_cpf = funcionario[3]
-          // funcionariosGeral.func_dataNascimento = funcionario[3]
-          funcionariosGeral.func_telefone = funcionario[4]
-          funcionariosGeral.func_email = funcionario[5]
-          funcionariosGeral.func_cep= funcionario[6]
-          funcionariosGeral.func_cidade = funcionario[7]
-          funcionariosGeral.func_bairro = funcionario[8]
-          funcionariosGeral.func_rua = funcionario[9]
-          funcionariosGeral.func_numero = funcionario[10]
-          funcionariosGeral.func_referencia= funcionario[11]
-          funcionariosGeral.func_estado = funcionario[12]
-          funcionariosGeral.ca_nome = funcionario[13]
-          funcionariosGeral.ca_atribuicao = funcionario[14]
+          funcionariosGeral.func_nascimento = funcionario[4]
+          funcionariosGeral.func_telefone = funcionario[5]
+          funcionariosGeral.func_email = funcionario[6]
+          funcionariosGeral.func_cep= funcionario[8]
+          funcionariosGeral.func_cidade = funcionario[9]
+          funcionariosGeral.func_bairro = funcionario[10]
+          funcionariosGeral.func_rua = funcionario[11]
+          funcionariosGeral.func_numero = funcionario[12]
+          funcionariosGeral.func_referencia= funcionario[13]
+          funcionariosGeral.func_estado = funcionario[14]
+          funcionariosGeral.ca_nome = funcionario[15]
+          funcionariosGeral.ca_atribuicao = funcionario[16]
           // funcionariosGeral.dep_nome = funcionario[12]
+          console.log(funcionario[4] + "esse")
 
           if(funcionariosGeral.func_nome == undefined){
             funcionariosGeral.func_foto = '***'

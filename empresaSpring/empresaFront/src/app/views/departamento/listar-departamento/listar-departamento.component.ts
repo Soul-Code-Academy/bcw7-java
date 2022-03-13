@@ -71,24 +71,19 @@ export class ListarDepartamentoComponent implements OnInit {
 
 excluirDepartamento() {
   this.departamentoService.excluirUmDepartamento(this.idExcluir).subscribe({
-    next: () => {this.deletado=true,
+    next: () => {this.deletado=true
                 setTimeout(() => {
                   this.isModal= false
-                }, 2000),
-                setTimeout(() => {
-                  this.deletado= false
                 }, 2000)
                 this.router.navigate(["/departamento"])},
     error: () => {this.error=true
                 setTimeout(() => {
                   this.isModal= false
-                }, 2000),
-                setTimeout(() => {
-                  this.error= false
                 }, 2000)
                 this.router.navigate(["/departamento"])},
     complete:() => setTimeout(() => {
-      this.router.navigate(["/departamento"])
+                   this.deletado=true
+                 this.router.navigate(["/departamento"])
     }, 2000)
   })
 }

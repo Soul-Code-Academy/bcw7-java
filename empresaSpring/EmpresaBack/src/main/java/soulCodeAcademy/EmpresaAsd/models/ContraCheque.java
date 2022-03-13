@@ -32,12 +32,15 @@ public class ContraCheque {
 	@Column(nullable = false)
 	private String cc_pis;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	@Column(nullable = false)
 	private String cc_bonificacao;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	@Column(nullable = false)
 	private String cc_auxilioAlimentacao;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	@Column(nullable = false)
 	private String cc_auxilioTransporte;
 	

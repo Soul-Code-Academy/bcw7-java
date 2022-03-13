@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cargo } from 'src/app/models/cargoModelo';
@@ -22,6 +23,7 @@ export class EditarFuncionarioComponent implements OnInit {
   isModalCargo:boolean = false
 
   id_cargo: any = ''
+  foto: any
 
   cargos: Cargo [] = []
 
@@ -39,21 +41,25 @@ export class EditarFuncionarioComponent implements OnInit {
     func_cep:'',
     func_numero:'',
     func_referencia:'',
-    func_dataNascimento:''
+    func_nascimento:''
   }
 
   constructor(private funcionarioService:FuncionarioService,
     private route: ActivatedRoute,
     private router: Router,
+    private http: HttpClient,
     private cargoService: CargoService) {
       this.funcionario.id_funcionario = this.route.snapshot.paramMap.get('id_funcionario')
       this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')
      }
 
   ngOnInit(): void {
+
     this.funcionarioService.mostrarUmFuncionario(this.funcionario.id_funcionario).subscribe((resposta)=>{
       this.funcionario = resposta
-      console.log(this.funcionario)
+      console.log(resposta.func_nascimento +"oi")
+      this.funcionario.func_nascimento = resposta.func_nascimento.slice(0,10)
+      console.log( this.funcionario.func_nascimento + 'esse')
     })
     this.cargoService.mostrarTodosCargos().subscribe(resposta =>{
       this.cargos = resposta
@@ -83,6 +89,29 @@ export class EditarFuncionarioComponent implements OnInit {
 
       })
      }
+
+     subirFoto(event:any){
+
+      if(event.target.files && event.target.files[0]){
+        this.foto = event.target.files[0]
+
+        const formData = new FormData
+        formData.append("foto",this.foto)
+
+        const nome:string = this.funcionario.func_cpf + "-" + event.target.files[0].name
+
+
+
+        this.http.post(`http://localhost:8080/empresa/envio/${this.funcionario.func_cpf}?nome=${nome}`,formData).subscribe({
+
+      }
+
+    )}
+
+  }
+
+
+
 
 
 
