@@ -1,6 +1,7 @@
-package soulCodeAcademy.EmpresaAsd.repositorys;
+package soulCodeAcademy.EmpresaAsd.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +12,10 @@ public interface ContraChequeRepository extends JpaRepository<ContraCheque, Inte
 	 @Query(value = "SELECT * FROM bd_empresa.contra_cheque WHERE id_funcionario= :id_funcionario", nativeQuery = true)
 	    List<ContraCheque> buscarContrasChequesDoFuncionario(Integer id_funcionario);
 	 
-	 	 @Query(value = "SELECT SUM(cc_auxilio_alimentacao + cc_auxilio_transporte + cc_bonificacao + cc_valor) FROM contra_cheque", nativeQuery = true)
-	List<List> somaContraCheque();
+	 	 @Query(value = "SELECT SUM(cc_auxilio_alimentacao + cc_auxilio_transporte + cc_bonificacao + cc_valor)  as cc_total FROM contra_cheque", nativeQuery = true)
+	List<ContraCheque> somaContraCheque(Double cc_total);
+	 	 
+	 	
+	 	 
+	 	
 }

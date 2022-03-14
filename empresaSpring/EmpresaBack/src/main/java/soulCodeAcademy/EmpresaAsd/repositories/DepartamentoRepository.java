@@ -1,4 +1,4 @@
-package soulCodeAcademy.EmpresaAsd.repositorys;
+package soulCodeAcademy.EmpresaAsd.repositories;
 
 import java.util.List;
 

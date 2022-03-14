@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Departamento;
-import soulCodeAcademy.EmpresaAsd.repositorys.CargoRepository;
-import soulCodeAcademy.EmpresaAsd.repositorys.DepartamentoRepository;
+import soulCodeAcademy.EmpresaAsd.repositories.CargoRepository;
+import soulCodeAcademy.EmpresaAsd.repositories.DepartamentoRepository;
 import soulCodeAcademy.EmpresaAsd.services.exceptions.DataIntegrityViolationException;
 
 

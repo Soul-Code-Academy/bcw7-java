@@ -16,7 +16,8 @@ export class CadastrarCargoComponent implements OnInit {
 
   cargo:Cargo = {
     ca_nome: '',
-    ca_atribuicao: ''
+    ca_atribuicao: '',
+    
   }
 
   constructor(private cargoService:CargoService,

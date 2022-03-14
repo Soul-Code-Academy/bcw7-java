@@ -31,7 +31,8 @@ export class EditarContraChequeComponent implements OnInit {
     cc_valor: 0,
     cc_dataAdmissao: '',
     cc_dataPagamento:'',
-    cc_status: ''
+    cc_status: '',
+    cc_total:0
   }
 
   constructor(private contraChequeService: ContraChequeService,

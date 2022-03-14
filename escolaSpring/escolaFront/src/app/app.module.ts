@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import localePt from '@angular/common/locales/pt';
 import { NgxCurrencyModule } from "ngx-currency";
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './templates/header/header.component';
@@ -31,6 +31,7 @@ import { registerLocaleData } from '@angular/common';
 import { CadastrarBoletoComponent } from './componentes/boleto/cadastrar-boleto/cadastrar-boleto.component';
 import { EditarBoletoComponent } from './componentes/boleto/editar-boleto/editar-boleto.component';
 import { ListarBoletoComponent } from './componentes/boleto/listar-boleto/listar-boleto.component';
+
 
 registerLocaleData(localePt)
 @NgModule({
@@ -67,7 +68,8 @@ registerLocaleData(localePt)
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide:LOCALE_ID, useValue:'pt-BR'},

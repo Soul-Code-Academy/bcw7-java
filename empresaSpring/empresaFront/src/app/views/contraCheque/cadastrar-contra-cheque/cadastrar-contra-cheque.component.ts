@@ -27,7 +27,8 @@ export class CadastrarContraChequeComponent implements OnInit {
     cc_valor: 0,
     cc_dataAdmissao: '',
     cc_dataPagamento:'',
-    cc_status: "PENDENTE"
+    cc_status: "PENDENTE",
+    cc_total:0
   }
 
   constructor(

@@ -48,6 +48,10 @@ public class ContraCheque {
 	@Column(nullable = false)
 	private Double cc_valor;
 	
+	@NumberFormat(pattern = "#,##0.00")
+	@Column(nullable = false)
+	private Double cc_total;
+	
 	
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	@Column(columnDefinition = "date", nullable = false)
@@ -153,6 +157,14 @@ public class ContraCheque {
 
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+
+	public Double getCc_total() {
+		return cc_total;
+	}
+
+	public void setCc_total(Double cc_total) {
+		this.cc_total = cc_total;
 	}
 
 	

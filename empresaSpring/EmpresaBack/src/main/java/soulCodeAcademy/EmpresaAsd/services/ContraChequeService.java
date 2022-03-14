@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import soulCodeAcademy.EmpresaAsd.models.ContraCheque;
 import soulCodeAcademy.EmpresaAsd.models.Funcionario;
 import soulCodeAcademy.EmpresaAsd.models.StatusPagamento;
-import soulCodeAcademy.EmpresaAsd.repositorys.ContraChequeRepository;
+import soulCodeAcademy.EmpresaAsd.repositories.ContraChequeRepository;
 
 @Service
 public class ContraChequeService {
@@ -37,6 +37,8 @@ public class ContraChequeService {
         List<ContraCheque> contraCheque = contraChequeRepository.buscarContrasChequesDoFuncionario(id_funcionario);
         return contraCheque;
     }
+
+  
 
     public ContraCheque adicionarUmContraCheque(ContraCheque contraCheque, Integer id_funcionario) {
         contraCheque.setMatricula(null);

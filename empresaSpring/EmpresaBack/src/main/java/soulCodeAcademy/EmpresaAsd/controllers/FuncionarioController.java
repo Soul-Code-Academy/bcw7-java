@@ -20,7 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import soulCodeAcademy.EmpresaAsd.models.Cargo;
 import soulCodeAcademy.EmpresaAsd.models.Funcionario;
-import soulCodeAcademy.EmpresaAsd.repositorys.FuncionarioRepository;
+import soulCodeAcademy.EmpresaAsd.repositories.FuncionarioRepository;
 import soulCodeAcademy.EmpresaAsd.services.FuncionarioService;
 
 

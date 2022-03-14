@@ -17,6 +17,7 @@ public class Aluno {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)//Informa que é auto-incremento
 	private Integer ra_aluno;
 	
+
 	@Column(nullable = false, length = 60) //Informa que é uma coluna da tabela, é um atributo que não pode ser nulo e tem tamanho máximo 60
 	private String al_nome;
 	

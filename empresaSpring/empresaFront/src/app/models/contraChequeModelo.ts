@@ -9,6 +9,7 @@ export interface ContraCheque{
   cc_dataAdmissao:any
   cc_dataPagamento:any
   cc_status:String
+  cc_total:any
 
 
 

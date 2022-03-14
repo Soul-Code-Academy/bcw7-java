@@ -34,9 +34,9 @@ export class EditarProfessorComponent implements OnInit {
 
   editarProfessor() {
     this.professorService.editarProfessor(this.professor).subscribe({
-      complete: () => {alert('Professor editado com sucesso!'),
+      complete: () => {alert('Professor editado com sucesso!')
                        this.router.navigate(['/professor'])},
-      error: () => {alert('Não foi possível editar a professor!'),
+      error: () => {alert('Não foi possível editar a professor!')
                       this.router.navigate(['/professor'])},
     });
 

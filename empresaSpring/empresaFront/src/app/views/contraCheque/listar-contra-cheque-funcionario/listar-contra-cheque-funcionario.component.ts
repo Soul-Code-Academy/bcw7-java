@@ -29,7 +29,21 @@ export class ListarContraChequeFuncionarioComponent implements OnInit {
 
   cc: ContraCheque[] = []
 
-  total:any
+  ccs: ContraCheque = {
+    matricula:'',
+    cc_descricao: '',
+    cc_pis: '',
+    cc_bonificacao: 0,
+    cc_auxilioAlimentacao: 0,
+    cc_auxilioTransporte: 0,
+    cc_valor: 0,
+    cc_dataAdmissao: '',
+    cc_dataPagamento:'',
+    cc_status: '',
+    cc_total:0
+  }
+ 
+
 
   constructor(
     private contraChequeService: ContraChequeService,
@@ -61,7 +75,6 @@ export class ListarContraChequeFuncionarioComponent implements OnInit {
   listarContraCheques() {
     this.contraChequeService.listarContraChequesDoFuncionario(this.id_funcionario).subscribe(resultado => {
       this.cc = resultado
-
     })
   }
 

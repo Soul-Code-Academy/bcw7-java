@@ -3,4 +3,5 @@ export interface Cargo{
   ca_nome: String
   ca_atribuicao: String
 
+
 }

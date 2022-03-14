@@ -53,6 +53,8 @@ public class ContraChequeController {
         List<ContraCheque> contraCheque = contraChequeService.buscarContraChequesDeUmFuncionario(id_funcionario);
         return contraCheque;
     }
+    
+   
 
     @PostMapping("/funcionario/contraCheque/{id_funcionario}")
     public ResponseEntity<ContraCheque> adicionarUmContraCheque(@RequestBody ContraCheque contraCheque,

@@ -46,7 +46,7 @@
           <td>{{cc.cc_bonificacao | currency: 'BRL'}}</td>
           <td>{{cc.cc_valor | currency: 'BRL'}}</td>
           <td>{{cc.cc_status}}</td>
-          <td>{{this.total | currency: 'BRL'}}</td>
+          <td>{{cc.cc_total | currency: 'BRL'}}</td>
           <td>
             <a  *ngIf="cc.cc_status == 'PENDENTE'"  (click)="pagarContraCheque(cc,cc.matricula)" class='btn btn-success me-3'><i class="fa-regular fa-circle-check"></i></a>
             <a *ngIf="cc.cc_status == 'PENDENTE'"  (click)="cancelarContraCheque(cc,cc.matricula)" class='btn btn-danger'><i class="fa-regular fa-rectangle-xmark"></i></a>
