@@ -18,7 +18,7 @@ public class Departamento {
 	private Integer id_departamento;
 	
 	
-	@Column(nullable = false, length = 500)
+	@Column(nullable = false, length = 100)
 	private String dep_nome;
 	
 	

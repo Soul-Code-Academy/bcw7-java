@@ -26,10 +26,10 @@ public class ContraCheque {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer matricula;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length=100)
 	private String cc_descricao;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length=11)
 	private String cc_pis;
 	
 	@NumberFormat(pattern = "#,##0.00")
@@ -55,12 +55,12 @@ public class ContraCheque {
 	
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	@Column(columnDefinition = "date", nullable = false)
-	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
+//	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
 	private Date cc_dataAdmissao;
 	
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	@Column(columnDefinition = "date", nullable = false)
-	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
+//	@Temporal(TemporalType.DATE) //sem salvar a hora, só o dia
 	private Date cc_dataPagamento;
 	
 	@Enumerated(EnumType.STRING)

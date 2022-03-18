@@ -35,13 +35,7 @@ public class ContraChequeController {
         return contraCheque;
     }
     
-//	@GetMapping("/contra-cheque")
-//	public List<List> contraCheques(){
-//		List<List> contraCheques = contraChequeService.contraCheques();
-//		return contraCheques;		
-//}
-//	
-
+   
     @GetMapping("/funcionario/contraCheque/{matricula}")
     public ResponseEntity<ContraCheque> buscarUmContraCheque(@PathVariable Integer matricula) {
         ContraCheque contraCheque = contraChequeService.buscarUmContraCheque(matricula);
@@ -54,7 +48,6 @@ public class ContraChequeController {
         return contraCheque;
     }
     
-   
 
     @PostMapping("/funcionario/contraCheque/{id_funcionario}")
     public ResponseEntity<ContraCheque> adicionarUmContraCheque(@RequestBody ContraCheque contraCheque,
@@ -63,12 +56,6 @@ public class ContraChequeController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(contraCheque.getMatricula()).toUri();
         return ResponseEntity.created(uri).build();
-    }
-
-    @DeleteMapping("/funcionario/contraCheque/{matricula}")
-    public ResponseEntity<Void> deletarUmContraCheque(@PathVariable Integer matricula) {
-        contraChequeService.deletarUmContraCheque(matricula);
-        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/funcionario/contraCheque/{matricula}/{id_funcionario}")
@@ -80,6 +67,7 @@ public class ContraChequeController {
         return ResponseEntity.noContent().build();
     }
 
+    
     @PutMapping("funcionario/pagar-contraCheque/{matricula}")
     public ResponseEntity<ContraCheque> pagarContraCheque(@PathVariable Integer matricula) {
         contraChequeService.pagarContraCheque(matricula);
@@ -91,4 +79,5 @@ public class ContraChequeController {
         contraChequeService.cancelarContraCheque(matricula);
         return ResponseEntity.noContent().build();
     }
+    
 }
