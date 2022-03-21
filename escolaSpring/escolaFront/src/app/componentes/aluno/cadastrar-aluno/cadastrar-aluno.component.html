@@ -1,0 +1,46 @@
+<div class="container p-5 w-75">
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Cadastrar Aluno</h5>
+        <form #f="ngForm" (ngSubmit)="cadastrarAluno(f.value)">
+          <div class="mb-3">
+            <label ngModel class="form-label">Nome do aluno</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_nome" name="al_nome" minlength='3' maxlength="60" #al_nome="ngModel" required>
+
+          </div>
+
+          <div class="text-danger">
+            <p *ngIf="al_nome.errors?.['minlength']" >
+              Nome deve ter no mínimo 3 caracters.
+            </p>
+            <p *ngIf="al_nome.errors?.['maxlength']" >
+              Nome deve ter no máximo 60 caracteres.
+            </p>
+            <p *ngIf="al_nome.errors?.['required']">
+              *Nome é obrigatório.
+            </p>
+
+          </div>
+
+
+
+
+
+          <div class="mb-3">
+            <label class="form-label">Nome do responsável</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_responsavel"  name="al_responsavel" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome da cidade</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_cidade"  name="al_cidade" required>
+          </div>
+          <button  class="btn btn-success"[disabled]="!f.valid">Cadastrar</button>
+          <button type="reset" class="btn btn-dark mx-3">Limpar</button>
+          <button  routerLink="/alunoTurma/{{id_turma}}" class="btn btn-dark">Cancelar</button>
+        </form>
+
+      </div>
+    </div>
+</div>
+
+

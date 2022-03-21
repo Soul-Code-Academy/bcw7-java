@@ -1,0 +1,25 @@
+<div class="container p-5 w-75">
+  <div class="card">
+      <div class="card-body">
+        <button (click)="trocarTurma()" class="btn btn-dark my-3 float-end">Transferir de Turma</button>
+        <h5 class="card-title text-center">Editar Aluno</h5>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nome do aluno</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_nome" name="al_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome do responsável</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_responsavel"  name="al_responsavel">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome da cidade</label>
+            <input type="text" class="form-control" [(ngModel)]="aluno.al_cidade"  name="al_cidade">
+          </div>
+          <button (click)="editarAluno()" class="btn btn-success">Salvar</button>
+          <button  routerLink="/turma"class="btn btn-dark mx-3">Cancelar</button>
+        </form>
+
+      </div>
+    </div>
+</div>
